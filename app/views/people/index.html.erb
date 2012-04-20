@@ -1,0 +1,63 @@
+<h1>Listing people</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>First name</th>
+    <th>Surname</th>
+    <th>Dob</th>
+    <th>Other name</th>
+    <th>Sex</th>
+    <th>Post address</th>
+    <th>Tel home</th>
+    <th>Tel office</th>
+    <th>Tel mobile</th>
+    <th>Email</th>
+    <th>Home address</th>
+    <th>City</th>
+    <th>Township</th>
+    <th>Province</th>
+    <th>Post code</th>
+    <th>Nationality</th>
+    <th>Pin</th>
+    <th>Employer</th>
+    <th>Occupation</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @people.each do |person| %>
+  <tr>
+    <td><%= person.title %></td>
+    <td><%= person.first_name %></td>
+    <td><%= person.surname %></td>
+    <td><%= person.dob %></td>
+    <td><%= person.other_name %></td>
+    <td><%= person.sex %></td>
+    <td><%= person.post_address %></td>
+    <td><%= person.tel_home %></td>
+    <td><%= person.tel_office %></td>
+    <td><%= person.tel_mobile %></td>
+    <td><%= person.email %></td>
+    <td><%= person.home_address %></td>
+    <td><%= person.city %></td>
+    <td><%= person.township %></td>
+    <td><%= person.province %></td>
+    <td><%= person.post_code %></td>
+    <td><%= person.nationality %></td>
+    <td><%= person.pin %></td>
+    <td><%= person.employer %></td>
+    <td><%= person.occupation %></td>
+    <td><%= person.user %></td>
+    <td><%= link_to 'Show', person %></td>
+    <td><%= link_to 'Edit', edit_person_path(person) %></td>
+    <td><%= link_to 'Destroy', person, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Person', new_person_path %>
