@@ -3,6 +3,7 @@ ProjectX::Application.routes.draw do
 
   resources :people
   resources :users
+  resources :medical_aid
   resources :person_medical_aids
 
   get "home/index"

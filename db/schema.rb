@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120423094428) do
+ActiveRecord::Schema.define(:version => 20120423221051) do
 
   create_table "medical_aid_plans", :force => true do |t|
     t.integer  "medical_aids_id"
@@ -24,20 +24,18 @@ ActiveRecord::Schema.define(:version => 20120423094428) do
   add_index "medical_aid_plans", ["id"], :name => "index_medical_aid_plans_on_id"
 
   create_table "medical_aids", :force => true do |t|
-    t.string   "name",          :limit => 20
-    t.string   "tel",           :limit => 15
-    t.text     "address"
-    t.string   "fax",           :limit => 15
-    t.string   "contactPerson", :limit => 50
-    t.string   "city",          :limit => 15
-    t.string   "province",      :limit => 25
-    t.string   "country",       :limit => 100
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.string   "name",           :limit => 50,  :null => false
+    t.string   "address",        :limit => 250
+    t.string   "city",           :limit => 50
+    t.string   "province",       :limit => 50
+    t.string   "country",        :limit => 50
+    t.string   "contact_person"
+    t.string   "email",          :limit => 50
+    t.string   "tel",            :limit => 15
+    t.string   "fax",            :limit => 15
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
-
-  add_index "medical_aids", ["id"], :name => "index_medical_aids_on_id"
-  add_index "medical_aids", ["name"], :name => "index_medical_aids_on_name"
 
   create_table "people", :force => true do |t|
     t.string   "title",                  :limit => 5
