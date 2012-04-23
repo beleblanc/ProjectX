@@ -12,11 +12,11 @@ gem 'simple_form'
 gem 'mysql2'
 gem 'paperclip'
 gem 'haml'
-<<<<<<< HEAD
+
 gem 'capistrano'
-=======
+
 gem 'rspec'
->>>>>>> e9775fd49e1a1ec5df8ac57b05a7f762590f5e92
+
 
 
 
