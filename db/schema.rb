@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120422180606) do
+ActiveRecord::Schema.define(:version => 20120423075356) do
 
   create_table "people", :force => true do |t|
     t.string   "title",                  :limit => 5
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(:version => 20120422180606) do
     t.datetime "pin_image_updated_at"
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
+  end
+
+  create_table "person_medical_aids", :force => true do |t|
+    t.integer "person_id"
+    t.string  "medicalaid_number",  :limit => 20
+    t.integer "medicalAidPlan_id"
+    t.date    "medicalAidJoinDate"
   end
 
   create_table "roles", :force => true do |t|
