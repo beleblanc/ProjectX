@@ -8,6 +8,7 @@ class CreatePersonMedicalAids < ActiveRecord::Migration
       t.date :joinDate
       t.timestamps
     end
+    add_index("person_medical_aids", "id")
     add_index("person_medical_aids", "people_id")
     add_index("person_medical_aids", "medical_aids_id")
   end

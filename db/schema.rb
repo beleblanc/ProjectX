@@ -11,7 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120422180606) do
+ActiveRecord::Schema.define(:version => 20120423094428) do
+
+  create_table "medical_aid_plans", :force => true do |t|
+    t.integer  "medical_aids_id"
+    t.string   "PlanName",        :limit => 50
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "medical_aid_plans", ["PlanName"], :name => "index_medical_aid_plans_on_PlanName"
+  add_index "medical_aid_plans", ["id"], :name => "index_medical_aid_plans_on_id"
+
+  create_table "medical_aids", :force => true do |t|
+    t.string   "name",          :limit => 20
+    t.string   "tel",           :limit => 15
+    t.text     "address"
+    t.string   "fax",           :limit => 15
+    t.string   "contactPerson", :limit => 50
+    t.string   "city",          :limit => 15
+    t.string   "province",      :limit => 25
+    t.string   "country",       :limit => 100
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "medical_aids", ["id"], :name => "index_medical_aids_on_id"
+  add_index "medical_aids", ["name"], :name => "index_medical_aids_on_name"
 
   create_table "people", :force => true do |t|
     t.string   "title",                  :limit => 5
@@ -42,6 +68,42 @@ ActiveRecord::Schema.define(:version => 20120422180606) do
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
   end
+
+  create_table "person_medical_aids", :force => true do |t|
+    t.integer  "people_id"
+    t.integer  "aid_number"
+    t.integer  "medical_aids_id"
+    t.string   "status",          :limit => 15
+    t.date     "joinDate"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "person_medical_aids", ["id"], :name => "index_person_medical_aids_on_id"
+  add_index "person_medical_aids", ["medical_aids_id"], :name => "index_person_medical_aids_on_medical_aids_id"
+  add_index "person_medical_aids", ["people_id"], :name => "index_person_medical_aids_on_people_id"
+
+  create_table "person_relations", :id => false, :force => true do |t|
+    t.integer  "person1_id"
+    t.integer  "People_id"
+    t.integer  "person2_id"
+    t.integer  "relation_id"
+    t.integer  "RelationType_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "person_relations", ["person1_id"], :name => "index_person_relations_on_person1_id"
+  add_index "person_relations", ["person2_id"], :name => "index_person_relations_on_person2_id"
+  add_index "person_relations", ["relation_id"], :name => "index_person_relations_on_relation_id"
+
+  create_table "relation_types", :force => true do |t|
+    t.string   "relationType", :limit => 30
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "relation_types", ["id"], :name => "index_relation_types_on_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"

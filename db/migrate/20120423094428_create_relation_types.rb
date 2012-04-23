@@ -4,7 +4,7 @@ class CreateRelationTypes < ActiveRecord::Migration
       t.string :relationType, :limit => 30
       t.timestamps
     end
-    add_index("relation_types", "relation_types_id")
+    add_index("relation_types", "id")
   end
 
   def down

@@ -5,7 +5,7 @@ class CreateMedicalAidPlans < ActiveRecord::Migration
 	t.string :PlanName, :limit => 50
 	t.timestamps
     end
-	add_index("medical_aid_plans", "medical_aid_id")
+	add_index("medical_aid_plans", "id")
 	add_index("medical_aid_plans", "PlanName")
   end
 

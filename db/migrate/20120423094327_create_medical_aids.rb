@@ -11,7 +11,7 @@ class CreateMedicalAids < ActiveRecord::Migration
 	t.string :country, :limit => 100
 	t.timestamps
     end
-	add_index("medical_aids", "medical_aid_id")
+	add_index("medical_aids", "id")
 	add_index("medical_aids", "name")
   end
 
