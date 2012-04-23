@@ -1,4 +1,4 @@
-oot = "/home/passenger/apps/ProjectX/"
+root = "/home/passenger/apps/ProjectX/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
