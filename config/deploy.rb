@@ -6,7 +6,7 @@ set :application, "ProjectX"
 set :user, "passenger"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
-set :use_sudo, true
+set :use_sudo, false
 
 set :scm, "git"
 set :repository, "git@github.com:ZenAnthro/#{application}.git"
