@@ -12,6 +12,7 @@ gem 'simple_form'
 gem 'mysql2'
 gem 'paperclip'
 gem 'haml'
+gem 'rspec'
 
 
 
