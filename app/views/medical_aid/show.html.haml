@@ -18,9 +18,10 @@
     %p= @medical_aid.tel
     %h4 Fax
     %p= @medical_aid.fax
-  .span8
+  .span8.well
     %h2.span7 Medical Aid Plans
     - @medical_aid.medical_aid_plan.each do |p|
-      %h4.span4 p.plan_name
-      %h2.span2 = link_to "Delete", medical_aid_plan_path(p.medical_aids_id)
-
+      %h4.span4=p.plan_name
+  .clearfix
+  =link_to "Edit", edit_medical_aid_path(@medical_aid), :class => "btn"
+  =link_to "Delete", @medical_aid, confirm: 'Are you sure?', method: :delete , :class => "btn btn-important"

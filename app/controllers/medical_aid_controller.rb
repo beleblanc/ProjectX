@@ -67,7 +67,7 @@ class MedicalAidController < ApplicationController
      @medical_aid.destroy
      
      respond_to do |format|
-       format.html {redirect_to medical_aid_index}
+       format.html {redirect_to medical_aid_path}
        format.json {head :no_content}
     end   
 
