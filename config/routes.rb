@@ -1,10 +1,13 @@
 ProjectX::Application.routes.draw do
+  get "medical_aid_plan/destroy"
+
   devise_for :users , :controllers => {:registrations=>'users/registrations'}
 
   resources :people
   resources :users
   resources :medical_aid
   resources :person_medical_aids
+  resources :medical_aid_plan
 
   get "home/index"
 

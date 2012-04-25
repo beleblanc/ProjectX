@@ -44,8 +44,6 @@ class MedicalAidController < ApplicationController
   
   def edit
     @medical_aid = MedicalAid.find(params[:id])
-
-
   end
 
   def update

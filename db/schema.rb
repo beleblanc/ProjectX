@@ -11,17 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120423221051) do
+ActiveRecord::Schema.define(:version => 20120424180914) do
 
   create_table "medical_aid_plans", :force => true do |t|
     t.integer  "medical_aids_id"
-    t.string   "PlanName",        :limit => 50
+    t.string   "plan_name",       :limit => 50
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
 
-  add_index "medical_aid_plans", ["PlanName"], :name => "index_medical_aid_plans_on_PlanName"
   add_index "medical_aid_plans", ["id"], :name => "index_medical_aid_plans_on_id"
+  add_index "medical_aid_plans", ["plan_name"], :name => "index_medical_aid_plans_on_PlanName"
 
   create_table "medical_aids", :force => true do |t|
     t.string   "name",           :limit => 50,  :null => false

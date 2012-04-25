@@ -1,0 +1,2 @@
+module MedicalAidPlanHelper
+end
