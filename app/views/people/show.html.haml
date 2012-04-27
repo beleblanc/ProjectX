@@ -1,0 +1,50 @@
+
+%h3.span8="#{@person.surname}, #{@person.first_name}, #{@person.title}"
+.span4
+  %h3 Personal Details
+  %h4 Sex
+  %p=@person.sex
+  %h4 Date of Birth
+  %p=@person.dob
+  %h4 Other Name(s)
+  %p=@person.other_name
+  %h4 Nationality
+  %p=@person.nationality
+  %h4 Pin:
+  %p=@person.pin
+  %h4 Pin ImageL
+  =image_tag @person.pin_image.url (:medium)
+  %h4 Employer
+  %p= @person.employer
+  %h4 Occupation
+  %p= @person.occupation
+.span4.well
+  %h3 Contact Details
+  %h4 Postal Address
+  %p=@person.post_address
+  %h4 Home Address
+  %p=@person.home_address
+  %h4 City
+  %p=@person.city
+  %h4 Province
+  %p=@person.province
+  %h4 Tel home:
+  %p=@person.tel_home
+  %h4 Tel office
+  %p=@person.tel_office
+  %h4 Tel mobile:
+  %p=@person.tel_mobile
+  %h4 Email
+  %p= @person.email
+  %h4 Post code
+  %p= @person.post_code
+
+
+
+
+
+
+.span3.well
+  = render 'person_medical_aid', f: @person.person_medical_aids
+= link_to 'Edit', edit_person_path(@person)
+= link_to 'Back', people_path
