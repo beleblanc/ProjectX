@@ -1,0 +1,19 @@
+%h2 Patient Waiting List
+%table
+  - @waitlist.each do |t|
+    %tr
+      %th="Date / Time"
+      %th="Patient #"
+      %th="Next Action"
+      %th="Next Action Staff"
+    %tr
+      %td=t.datetime_in
+      %td=t.people_id
+      %td=t.next_action
+      %td=t.next_action_name
+      %td=link_to "View", wait_list_path(t.id)
+      %td=link_to "Edit", wait_list_path(t.id)
+      %td=link_to "Delete", wait_list_path(t.id),confirm: 'Are you sure you want to delete this patient from the waiting list?', method: :delete
+
+
+=link_to "Bring In Patient", new_wait_list_path
