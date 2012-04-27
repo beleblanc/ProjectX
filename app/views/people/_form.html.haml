@@ -1,0 +1,37 @@
+=simple_form_for(@person) do |f|
+  -if @person.errors.any?
+    .alert.alert-error
+      %button.close{"data-dismiss".to_sym => "alert"} x
+      %a
+      =pluralize(@person.errors.count, "error") + "prohibited this person from being saved:"
+      %ul
+        -@person.errors.full_messages.each do |msg|
+          %li= msg
+    
+  =f.input :title
+  =f.label :first_name
+  =f.input :surname
+  =f.date_select :dob, :as => :date, :start_year => Date.today.year - 90, :end_year => Date.today.year,  :order => [:day,:month, :year]
+  =f.input :other_name
+  =f.input :sex
+  =f.input :post_address
+  =f.input :tel_home
+  =f.input :tel_office
+  =f.input :tel_mobile
+  =f.input :email
+  =f.input :home_address
+  =f.input :city
+  =f.input :township
+  =f.input :province
+  =f.input :post_code
+  =f.input :nationality
+  =f.input :pin
+  =f.input :employer
+  =f.input :occupation
+  =f.hidden_field :user
+  =f.file_field :pin_image
+
+  =f.fields_for :person_medical_aids do |medaid|
+    =render 'people/person_medical_aids_fields', f: medaid
+  =link_to_add_fields "Add Plan", f, :person_medical_aids
+  =f.submit

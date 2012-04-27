@@ -1,5 +1,5 @@
 ProjectX::Application.routes.draw do
-  get "medical_aid_plan/destroy"
+  #get "medical_aid_plan/destroy"
 
   devise_for :users , :controllers => {:registrations=>'users/registrations'}
 
@@ -8,7 +8,7 @@ ProjectX::Application.routes.draw do
   resources :medical_aid
   resources :person_medical_aids
   resources :medical_aid_plan
-  resources :wait_lists
+  resources :wait_list
 
   get "home/index"
 

@@ -11,3 +11,6 @@
  *= require_self
  *= require_tree .
 */
+
+.left{float:left}
+.right{float:right}

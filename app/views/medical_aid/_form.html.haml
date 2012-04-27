@@ -10,10 +10,11 @@
       =f.input :email
       =f.input :tel
       =f.input :fax
-
+      =f.button :submit
   .span4
     =f.fields_for :medical_aid_plan do |plan|
       =render 'medical_aid_plan_fields', f: plan
     =link_to_add_fields "Add Plan", f, :medical_aid_plan
-    =f.button :submit
+
+
 
