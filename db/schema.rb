@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120425211323) do
+ActiveRecord::Schema.define(:version => 20120427104639) do
 
   create_table "medical_aid_plans", :force => true do |t|
     t.integer  "medical_aids_id"
@@ -131,9 +131,24 @@ ActiveRecord::Schema.define(:version => 20120425211323) do
     t.datetime "locked_at"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "redirect"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "wait_lists", :force => true do |t|
+    t.date     "datetime_in"
+    t.string   "payment_type",     :limit => 10
+    t.integer  "people_id"
+    t.string   "next_action",      :limit => 10
+    t.string   "next_action_name", :limit => 30
+    t.boolean  "attended",                       :default => false
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
+  end
+
+  add_index "wait_lists", ["id"], :name => "index_wait_lists_on_id"
+  add_index "wait_lists", ["people_id"], :name => "index_wait_lists_on_people_id"
 
 end
