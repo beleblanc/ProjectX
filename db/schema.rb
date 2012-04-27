@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120424180914) do
+ActiveRecord::Schema.define(:version => 20120425211323) do
 
   create_table "medical_aid_plans", :force => true do |t|
     t.integer  "medical_aids_id"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(:version => 20120424180914) do
     t.integer  "aid_number"
     t.integer  "medical_aids_id"
     t.string   "status",          :limit => 15
-    t.date     "joinDate"
+    t.date     "join_date"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end

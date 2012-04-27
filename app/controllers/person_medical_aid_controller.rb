@@ -16,7 +16,7 @@ class PersonMedicalAidController < ApplicationController
     @p_med_aid = PersonMedicalAid.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # show.html.haml
       format.json { render json: @p_med_aid }
     end
   end
