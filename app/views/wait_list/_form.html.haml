@@ -1,0 +1,11 @@
+=simple_form_for(@waitlist,:html => {:class=>"form-inline "}) do |f|
+  .span4
+    %fieldset
+      =f.input :datetime_in
+      =f.input :people_id
+      =f.input :next_action
+      =f.input :next_action_name
+      =f.input :payment_type
+
+      =f.button :submit
+
