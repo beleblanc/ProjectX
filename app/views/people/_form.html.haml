@@ -32,6 +32,6 @@
   =f.file_field :pin_image
 
   =f.fields_for :person_medical_aids do |medaid|
-    =render 'people/person_medical_aids_fields', f: medaid
+    =render 'people/person_medical_aid_fields', f: medaid
   =link_to_add_fields "Add Plan", f, :person_medical_aids
   =f.submit
