@@ -1,5 +1,9 @@
 
 %h3.span8="#{@person.surname}, #{@person.first_name}, #{@person.title}"
+%hr.clearfix.span9
+= link_to 'Edit', edit_person_path(@person), :class => 'btn btn-success right'
+= link_to 'Back', people_path, :class => 'btn btn-primary right'
+%hr.clearfix.span9
 .span4
   %h3 Personal Details
   %h4 Sex
@@ -46,5 +50,7 @@
 
 .span4.well
   = render 'person_medical_aid', f: @person.person_medical_aids
-= link_to 'Edit', edit_person_path(@person)
-= link_to 'Back', people_path
+= render 'waitlist', id: @person.wait_lists.last
+%hr.clearfix.span9
+= link_to 'Edit', edit_person_path(@person), :class => 'btn btn-success left'
+= link_to 'Back', people_path, :class => 'btn btn-primary left'

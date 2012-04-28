@@ -1,7 +1,7 @@
-=simple_form_for(@waitlist,:html => {:class=>"form-inline "}) do |f|
+=simple_form_for(id,:html => {:class=>"form-inline "}) do |f|
   .span4
     %fieldset
-      =f.input :datetime_in
+      =f.date_select :datetime_in
       =f.hidden_field :people_id, :value => id
       =f.input :next_action
       =f.input :next_action_name

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class WaitListControllerTest < ActionController::TestCase
+class WaitListsControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

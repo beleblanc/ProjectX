@@ -1,4 +1,4 @@
-class WaitListController < ApplicationController
+class WaitListsController < ApplicationController
   # GET /waitlist
   # GET /waitlist.json
   def index
