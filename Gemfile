@@ -17,6 +17,10 @@ gem 'capistrano'
 
 gem 'rspec'
 
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-ui-themes'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require jquery.ui.core
+//= require jquery-ui.theme
+//= require dataTables/src/demo_table_jui
 //= require_tree .
