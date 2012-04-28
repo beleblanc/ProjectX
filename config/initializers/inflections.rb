@@ -6,7 +6,7 @@
 #   inflect.plural /^(ox)$/i, '\1en'
 #   inflect.singular /^(ox)en/i, '\1'
 #   inflect.irregular 'person', 'people'
-#  inflect.uncountable %w( fish sheep medical_aid )
+#  inflect.uncountable %w( fish sheep medical_aids )
 #end
 #
 # These inflection rules are supported but not enabled by default:

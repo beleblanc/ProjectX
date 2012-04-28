@@ -5,7 +5,7 @@ ProjectX::Application.routes.draw do
 
   resources :people
   resources :users
-  resources :medical_aid
+  resources :medical_aids
   resources :person_medical_aids
   resources :medical_aid_plan
   resources :wait_list
