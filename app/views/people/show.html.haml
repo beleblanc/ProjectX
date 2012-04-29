@@ -50,7 +50,7 @@
 
 .span4.well
   = render 'person_medical_aid', f: @person.person_medical_aids
-= render 'waitlist', id: @person.wait_lists.last
+= render 'waitlist', id: @waitlist
 %hr.clearfix.span9
 = link_to 'Edit', edit_person_path(@person), :class => 'btn btn-success left'
 = link_to 'Back', people_path, :class => 'btn btn-primary left'
