@@ -1,11 +1,11 @@
 %h2 Patient Waiting List
 %table
+  %tr
+    %th="Date / Time"
+    %th="Patient #"
+    %th="Next Action"
+    %th="Next Action Staff"
   - @waitlist.each do |t|
-    %tr
-      %th="Date / Time"
-      %th="Patient #"
-      %th="Next Action"
-      %th="Next Action Staff"
     %tr
       %td=t.datetime_in
       %td=t.people_id

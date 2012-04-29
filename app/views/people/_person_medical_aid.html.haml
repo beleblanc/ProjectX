@@ -6,6 +6,6 @@
     %th Policy Number
   -@person.person_medical_aids.each do |m|
     %tr
-      %td=m.medical_aid_plans.medical_aid.name +"-"+m.medical_aid_plan.plan_name
+      %td="#{m.medical_aid_plan.medical_aid.name} #{m.medical_aid_plan.plan_name}"
       %td=m.join_date
       %td=m.aid_number
