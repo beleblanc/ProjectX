@@ -1,10 +1,13 @@
 %h2 Patient Waiting List
-%table
-  %tr
-    %th="Date / Time"
-    %th="Patient #"
-    %th="Next Action"
-    %th="Next Action Staff"
+%table.dataTable
+
+  %thead
+    %tr
+      %th="Date / Time"
+      %th="Patient #"
+      %th="Next Action"
+      %th="Next Action Staff"
+  %tbody
   - @waitlist.each do |t|
     %tr
       %td=t.datetime_in
