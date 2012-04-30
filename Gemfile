@@ -17,10 +17,6 @@ gem 'capistrano'
 
 gem 'rspec'
 
-gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
-gem 'jquery-ui-rails'
-gem 'jquery-ui-themes'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -28,6 +24,9 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'twitter-bootstrap-rails'
   gem 'jquery-ui-rails'
+
+  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+  gem 'jquery-ui-themes'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
