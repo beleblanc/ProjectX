@@ -1,10 +1,12 @@
-=simple_form_for(@waitlist,{:html => {:class=>"form-inline "}, :controller => :wait_lists, :action=>:new}) do |f|
-  .span4
+#wait-list.modal.fade{:style=>"display:none;"}
+  %h3 Check-In Patient
+  =simple_form_for(@waitlist,{:html => {:class=>"form-inline form-HORIZONTAL "}, :controller => :wait_lists, :action=>:new}) do |f|
     %fieldset
-      =f.date_select :datetime_in
+      =f.input :datetime_in
       =f.hidden_field :people_id, :value => id
       =f.input :next_action
       =f.input :next_action_name
       =f.input :payment_type
 
       =f.button :submit
+%a.btn.btn-large{"data-toggle"=> "modal", :href=>"#wait-list"}check-In

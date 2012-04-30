@@ -44,8 +44,9 @@ class WaitListsController < ApplicationController
 
     respond_to do |format|
       if @waitlist.save
-        format.html { redirect_to wait_lists_path, notice: 'Patient was successfully checked-in.' }
+        format.html { redirect_to people_path, notice: 'Patient was successfully checked-in.' }
         format.json { render json: @waitlist, status: :created, location: @waitlist }
+
       else
         format.html { render action: "new" }
         format.json { render json: @waitlist.errors, status: :unprocessable_entity }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120427104639) do
+ActiveRecord::Schema.define(:version => 20120429142049) do
 
   create_table "medical_aid_plans", :force => true do |t|
     t.integer  "medical_aids_id"
@@ -138,7 +138,7 @@ ActiveRecord::Schema.define(:version => 20120427104639) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "wait_lists", :force => true do |t|
-    t.date     "datetime_in"
+    t.datetime "datetime_in",                                       :null => false
     t.string   "payment_type",     :limit => 10
     t.integer  "people_id"
     t.string   "next_action",      :limit => 10
