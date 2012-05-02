@@ -39,7 +39,7 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @profile = Profile.new(params[:profiles])
+    @profile = Profile.new(params[:profile])
 
     respond_to do |format|
       if @profile.save
@@ -60,7 +60,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
 
     respond_to do |format|
-      if @profile.update_attributes(params[:profiles])
+      if @profile.update_attributes(params[:profile])
         format.html { redirect_to @profile, notice: 'profiles was successfully updated.' }
         format.json { head :no_content }
       else
