@@ -11,7 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> consultations-in-progress
 ActiveRecord::Schema.define(:version => 20120502094731) do
 
   create_table "consultations", :force => true do |t|
