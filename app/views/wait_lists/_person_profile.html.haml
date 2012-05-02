@@ -14,9 +14,13 @@
       %td=@waitlist.next_action
       %td=@waitlist.next_action_name
   %h2="Patient Profile"
-  -if @profile <=> ""
-    =render(:partial => "person_profile", :locals => {:id => @person.id})
+  -unless @profile.nil?
+    %table.table.table-striped.table-bordered.table-condensed
+      %tr
+        %th="Profile Check"
+        %th="Result"
+      %tr
+        %td=@profile.profile_type.name
+        %td=@profile.description
   -else
-    %p="No Patient Profile Found"
-.span8
-  =link_to "Create patient profile", "#", :class => "btn btn-success"
+    =link_to "Create patient profile", "#", :class => "btn btn-success"

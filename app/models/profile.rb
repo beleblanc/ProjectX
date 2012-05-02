@@ -4,7 +4,7 @@ class Profile < ActiveRecord::Base
 
   belongs_to :person
 
-  has_many :profile_type
+  belongs_to :profile_type
 
   has_many :profile_sub_values, :through => :profile_type
   has_many :profile_sub_types, :through => :profile_type

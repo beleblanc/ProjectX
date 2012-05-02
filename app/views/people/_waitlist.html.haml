@@ -4,7 +4,7 @@
     %fieldset
       =f.hidden_field :datetime_in, :value => DateTime.now
       =f.hidden_field :people_id, :value => id
-      =f.input :next_action
+      =f.input :next_action, :collection => ["Doctor", "Nurse", "Review", "Quick"], :include_blank => false
       =f.input :next_action_name
       =f.input :payment_type
 
