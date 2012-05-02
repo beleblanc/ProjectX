@@ -11,6 +11,7 @@ ProjectX::Application.routes.draw do
   resources :consultations
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
   resources :profiles
@@ -21,6 +22,8 @@ ProjectX::Application.routes.draw do
   resources :consultations
 
 
+=======
+>>>>>>> consultations-in-progress
 =======
 >>>>>>> consultations-in-progress
 =======
