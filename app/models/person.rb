@@ -7,6 +7,7 @@ class Person < ActiveRecord::Base
   has_many :orders, :through => :soaps
   has_many :diagnoses, :through => :soaps
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   has_many :profiles
 
@@ -17,6 +18,8 @@ class Person < ActiveRecord::Base
   has_many :orders, :through => :soaps
   has_many :diagnoses, :through => :soaps
 
+=======
+>>>>>>> consultations-in-progress
 =======
 >>>>>>> consultations-in-progress
 

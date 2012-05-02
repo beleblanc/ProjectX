@@ -13,7 +13,10 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> consultations-in-progress
 =======
 >>>>>>> consultations-in-progress
 =======
@@ -70,6 +73,9 @@ ActiveRecord::Schema.define(:version => 20120502094731) do
   end
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> consultations-in-progress
+=======
 >>>>>>> consultations-in-progress
 =======
 >>>>>>> consultations-in-progress
