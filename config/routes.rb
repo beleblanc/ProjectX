@@ -9,9 +9,6 @@ ProjectX::Application.routes.draw do
   resources :medical_aid_plan
   resources :wait_lists
   resources :consultations
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 
   resources :profiles
@@ -22,12 +19,7 @@ ProjectX::Application.routes.draw do
   resources :consultations
 
 
-=======
->>>>>>> consultations-in-progress
-=======
->>>>>>> consultations-in-progress
-=======
->>>>>>> consultations-in-progress
+
 
   get "home/index"
 
