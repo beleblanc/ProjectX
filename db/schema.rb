@@ -271,7 +271,7 @@ ActiveRecord::Schema.define(:version => 20120502094731) do
   end
 
   create_table "wait_lists", :force => true do |t|
-    t.date     "datetime_in"
+    t.datetime "datetime_in",                                       :null => false
     t.string   "payment_type",     :limit => 10
     t.integer  "people_id"
     t.string   "next_action",      :limit => 10

@@ -17,7 +17,7 @@ class WaitListsController < ApplicationController
     @person = Person.find(@waitlist.people_id)
     @profile = Profile.find_by_person_id(@waitlist.people_id)
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # show.html.haml
       format.json { render json: @waitlist }
     end
   end
