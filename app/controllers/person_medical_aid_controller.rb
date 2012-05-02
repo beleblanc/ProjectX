@@ -27,7 +27,7 @@ class PersonMedicalAidController < ApplicationController
     @p_med_aid = PersonMedicalAid.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # new.html.haml
       format.json { render json: @p_med_aid }
     end
   end

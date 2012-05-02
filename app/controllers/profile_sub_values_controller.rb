@@ -27,7 +27,7 @@ class ProfileSubValuesController < ApplicationController
     @ProfileSubValue = ProfileSubValue.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # new.html.haml
       format.json { render json: @ProfileSubValue }
     end
   end

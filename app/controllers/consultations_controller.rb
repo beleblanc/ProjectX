@@ -1,16 +1,16 @@
 class ConsultationsController < ApplicationController
   def new
-    @consultation = Consultation.new
-
+    @consultation = Consultation.new(:person_id=>params[:person_id])
+    @waitlist = WaitList.find(params[:wait_list_id])
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # new.html.haml
       format.json { render json: @consultation }
     end
 
   end
 
   def create
-    @consultation = Consultation.new(params[:consultation])
+    @consultation = Consultation.new(params[:consultations])
 
     respond_to do |format|
       if @consultation.save
@@ -42,7 +42,7 @@ class ConsultationsController < ApplicationController
     @consultation = WaitList.find(params[:id])
 
     respond_to do |format|
-      if @consultation.update_attributes(params[:consultation])
+      if @consultation.update_attributes(params[:consultations])
         format.html { redirect_to @consultation, notice: 'Waiting Patient info was successfully updated.' }
         format.json { head :no_content }
       else

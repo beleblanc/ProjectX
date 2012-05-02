@@ -16,7 +16,7 @@
     %td=t.people_id
     %td=t.next_action
     %td=t.next_action_name
-    %td=link_to "Triage", new_consultation_path(:person_id=>t.people_id), :class => "btn"
+    %td=link_to "Triage", new_consultation_path({:person_id=>t.people_id, :wait_list_id => t.id}), :class => "btn"
     %td=link_to "Edit", wait_list_path(t.id), :class => "btn"
     %td=link_to "Delete", wait_list_path(t.id),confirm: 'Are you sure you want to delete this patient from the waiting list?', method: :delete, :class => "btn"
 

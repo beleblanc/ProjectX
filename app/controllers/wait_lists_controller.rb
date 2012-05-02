@@ -29,7 +29,7 @@ class WaitListsController < ApplicationController
     @waitlist = WaitList.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # new.html.haml
       format.json { render json: @waitlist }
     end
   end

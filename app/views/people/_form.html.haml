@@ -13,7 +13,7 @@
   =f.input :surname
   =f.input :dob, :as => :date, :start_year => Date.today.year - 100, :end_year => Date.today.year,  :order => [:year,:month, :day]
   =f.input :other_name
-  =f.input :sex
+  =f.input :sex ,:collection=> ["M","F"], :include_blank=>true
   =f.input :post_address
   =f.input :tel_home
   =f.input :tel_office
