@@ -1,0 +1,22 @@
+%h2="Waiting Patient Details"
+.span8
+  =link_to 'Back', {:controller => "wait_lists", :action => "index"}, :class => "btn right"
+  %br
+  %hr.clearfix
+  %table.table.table-striped.table-bordered.table-condensed
+    %th="Patient"
+    %th="Date In"
+    %th="Next Action"
+    %th="Action By"
+    %tr
+      %td="#{@person.title} #{@person.first_name} #{@person.surname}"
+      %td=@waitlist.datetime_in
+      %td=@waitlist.next_action
+      %td=@waitlist.next_action_name
+  %h2="Patient Profile"
+  -if @profile <=> ""
+    =render(:partial => "person_profile", :locals => {:id => @person.id})
+  -else
+    %p="No Patient Profile Found"
+.span8
+  =link_to "Create patient profile", "#", :class => "btn btn-success"

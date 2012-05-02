@@ -14,7 +14,8 @@ class WaitListsController < ApplicationController
   # GET /waitlist/1.json
   def show
     @waitlist = WaitList.find(params[:id])
-
+    @person = Person.find(@waitlist.people_id)
+    @profile = Profile.find_by_person_id(@waitlist.people_id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @waitlist }
@@ -53,8 +54,6 @@ class WaitListsController < ApplicationController
       end
     end
   end
-
-
 
   # PUT /waitlist/1
   # PUT /waitlist/1.json

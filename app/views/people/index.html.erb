@@ -1,5 +1,5 @@
 <h1>Listing Person</h1>
-<div class='span9'>
+<div class='span8'>
 <table id="peopleData">
   <thead>
   <tr>
@@ -8,13 +8,12 @@
     <th>Surname</th>
     <th>Other name</th>
     <th>Sex</th>
-    <th>Post address</th>
     <th>Tel home</th>
     <th>Tel mobile</th>
     <th>Pin</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
 </thead>
 <tbody>
@@ -25,13 +24,12 @@
     <td><%= person.surname %></td>
     <td><%= person.other_name %></td>
     <td><%= person.sex %></td>
-    <td><%= person.post_address %></td>
     <td><%= person.tel_home %></td>
     <td><%= person.tel_mobile %></td>
     <td><%= person.pin %></td>
-    <td><%= link_to 'Show', person %></td>
-    <td><%= link_to 'Edit', edit_person_path(person) %></td>
-    <td><%= link_to 'Delete', person, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', person, :class => "btn" %></td>
+    <td><%= link_to 'Edit', edit_person_path(person), :class => "btn" %></td>
+    <td><%= link_to 'Delete', person, confirm: 'Are you sure?', method: :delete, :class => "btn" %></td>
   </tr>
 <% end %>
 </tbody>
@@ -39,5 +37,7 @@
 </div>
 
 <br />
-
-<%= link_to 'New Person', new_person_path %>
+<div class="span8">
+<br />
+<%= link_to 'New Person', new_person_path, :class => "btn btn-success" %>
+</div>

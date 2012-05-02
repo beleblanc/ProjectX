@@ -9,6 +9,10 @@ ProjectX::Application.routes.draw do
   resources :person_medical_aids
   resources :medical_aid_plan
   resources :wait_lists
+  resources :profiles
+  resources :profile_types
+  resources :profile_sub_types
+  resources :profile_sub_values
 
   get "home/index"
 
