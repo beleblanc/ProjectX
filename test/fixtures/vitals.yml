@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  soap_id: 1
+  time: 
+  blood_pressure: MyString
+  pulse: 1
+  temperature: 9.99
+  respiratory_rate: 1
+  height: 9.99
+  weight: 9.99
+
+two:
+  soap_id: 1
+  time: 
+  blood_pressure: MyString
+  pulse: 1
+  temperature: 9.99
+  respiratory_rate: 1
+  height: 9.99
+  weight: 9.99

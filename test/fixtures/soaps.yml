@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  consultation_id: 1
+  soap_type_id: 1
+  comment: 1
+  user_id: 1
+
+two:
+  consultation_id: 1
+  soap_type_id: 1
+  comment: 1
+  user_id: 1
