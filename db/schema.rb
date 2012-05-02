@@ -11,16 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> consultations-in-progress
-=======
->>>>>>> consultations-in-progress
-=======
->>>>>>> consultations-in-progress
 ActiveRecord::Schema.define(:version => 20120502094731) do
 
   create_table "consultations", :force => true do |t|
@@ -71,16 +62,6 @@ ActiveRecord::Schema.define(:version => 20120502094731) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> consultations-in-progress
-=======
->>>>>>> consultations-in-progress
-=======
->>>>>>> consultations-in-progress
-=======
->>>>>>> consultations-in-progress
 
   create_table "medical_aid_plans", :force => true do |t|
     t.integer  "medical_aids_id"
