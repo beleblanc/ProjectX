@@ -6,6 +6,7 @@ class Person < ActiveRecord::Base
   has_many :soaps, :through => :consultations
   has_many :orders, :through => :soaps
   has_many :diagnoses, :through => :soaps
+<<<<<<< HEAD
 
   has_many :profiles
 
@@ -16,6 +17,8 @@ class Person < ActiveRecord::Base
   has_many :orders, :through => :soaps
   has_many :diagnoses, :through => :soaps
 
+=======
+>>>>>>> consultations-in-progress
 
   accepts_nested_attributes_for :person_medical_aids, :allow_destroy => true
   accepts_nested_attributes_for :profiles, :allow_destroy => true
