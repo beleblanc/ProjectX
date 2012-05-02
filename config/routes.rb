@@ -10,12 +10,14 @@ ProjectX::Application.routes.draw do
   resources :wait_lists
   resources :consultations
 
+
   resources :profiles
   resources :profile_types
   resources :profile_sub_types
   resources :profile_sub_values
 
   resources :consultations
+
 
 
   get "home/index"
