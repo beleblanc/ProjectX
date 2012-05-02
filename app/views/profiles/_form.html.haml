@@ -12,11 +12,7 @@
       .well
         %p="Select Profile Type to Add"
         =f.collection_select :profile_type_id, ProfileType.order(:name), :id, :name
-        -#=link_to "Add Profile Type", profiles_path, :class => "btn btn-success"
-        =f.input :description
-        =f.input :snapshot
-        %br
-        %br
-        =f.submit
+        -# =link_to "Add Profile Type", "#", :class => "btn btn-success"
+
   .span4
 

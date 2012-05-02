@@ -5,4 +5,3 @@ class WaitList < ActiveRecord::Base
   belongs_to :people
 
 end
-                                          git
