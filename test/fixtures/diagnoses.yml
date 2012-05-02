@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  soap_id: 1
+  icd_id: 1
+  comments: MyText
+  time: 2012-05-02 11:43:23
+  user_id: 1
+
+two:
+  soap_id: 1
+  icd_id: 1
+  comments: MyText
+  time: 2012-05-02 11:43:23
+  user_id: 1

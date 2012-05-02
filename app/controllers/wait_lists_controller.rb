@@ -78,7 +78,7 @@ class WaitListsController < ApplicationController
     @waitlist.destroy
 
     respond_to do |format|
-      format.html { redirect_to waitlist_url }
+      format.html { redirect_to wait_lists_path }
       format.json { head :no_content }
     end
   end
