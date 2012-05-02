@@ -8,6 +8,7 @@ ProjectX::Application.routes.draw do
   resources :person_medical_aids
   resources :medical_aid_plan
   resources :wait_lists
+  resources :consultations
 
   resources :profiles
   resources :profile_types

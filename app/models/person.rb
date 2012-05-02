@@ -2,6 +2,10 @@ class Person < ActiveRecord::Base
   has_attached_file :pin_image, :styles => { :medium => "250x250>", :thumb => "100x100>" }
   has_many :person_medical_aids, :foreign_key => :people_id
   has_many :wait_lists, :foreign_key => :people_id
+  has_many :consultations
+  has_many :soaps, :through => :consultations
+  has_many :orders, :through => :soaps
+  has_many :diagnoses, :through => :soaps
 
   has_many :profiles
 
