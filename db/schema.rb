@@ -11,7 +11,56 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120429142049) do
+ActiveRecord::Schema.define(:version => 20120502094731) do
+
+  create_table "consultations", :force => true do |t|
+    t.datetime "time"
+    t.integer  "person_id"
+    t.integer  "user_id"
+    t.string   "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "department_operations", :force => true do |t|
+    t.integer  "department_id"
+    t.string   "name"
+    t.string   "code"
+    t.text     "description"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "departments", :force => true do |t|
+    t.string   "name"
+    t.integer  "staff_id"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "diagnoses", :force => true do |t|
+    t.integer  "soap_id"
+    t.integer  "icd_id"
+    t.text     "comments"
+    t.datetime "time"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "icd_categories", :force => true do |t|
+    t.text     "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "icds", :force => true do |t|
+    t.text     "description"
+    t.integer  "icd_category_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "medical_aid_plans", :force => true do |t|
     t.integer  "medical_aids_id"
@@ -35,6 +84,16 @@ ActiveRecord::Schema.define(:version => 20120429142049) do
     t.string   "fax",            :limit => 15
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "orders", :force => true do |t|
+    t.integer  "soaps_id"
+    t.integer  "department_operations_id"
+    t.text     "comments"
+    t.datetime "time"
+    t.integer  "user_id"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   create_table "people", :force => true do |t|
@@ -114,6 +173,22 @@ ActiveRecord::Schema.define(:version => 20120429142049) do
     t.integer "user_id"
   end
 
+  create_table "soap_types", :force => true do |t|
+    t.string   "name"
+    t.text     "instructions"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "soaps", :force => true do |t|
+    t.integer  "consultation_id"
+    t.integer  "soap_type_id"
+    t.integer  "comment"
+    t.integer  "user_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "username",               :default => ""
@@ -136,6 +211,19 @@ ActiveRecord::Schema.define(:version => 20120429142049) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "vitals", :force => true do |t|
+    t.integer  "soap_id"
+    t.datetime "time"
+    t.string   "blood_pressure"
+    t.integer  "pulse"
+    t.decimal  "temperature",      :precision => 10, :scale => 0
+    t.integer  "respiratory_rate"
+    t.decimal  "height",           :precision => 10, :scale => 0
+    t.decimal  "weight",           :precision => 10, :scale => 0
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
+  end
 
   create_table "wait_lists", :force => true do |t|
     t.datetime "datetime_in",                                       :null => false
