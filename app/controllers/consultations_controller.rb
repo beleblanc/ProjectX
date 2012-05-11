@@ -1,7 +1,12 @@
 class ConsultationsController < ApplicationController
   def new
     @consultation = Consultation.new(:person_id=>params[:person_id])
-    @waitlist = WaitList.find(params[:wait_list_id])
+    if params.has_key?:wait_list_id
+      @waitlist = WaitList.find(params[:wait_list_id])
+      @consultation.person = @waitlist.person
+    end
+
+
     respond_to do |format|
       format.html # new.html.haml
       format.json { render json: @consultation }

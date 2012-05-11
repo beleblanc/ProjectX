@@ -1,0 +1,4 @@
+%fieldset
+  =f.input :soap_type_id, :collection =>SoapType.all, :label_method=>:name, :value_method=>:id
+  =f.input :comment, :as=> :text, :input_html=>{:class => "span7" }, :wrapper_html=>{:class=>"left"}
+    
