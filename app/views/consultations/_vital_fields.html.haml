@@ -1,8 +1,10 @@
 %fieldset
-  =f.input :blood_pressure
-  =f.input :pulse
-  =f.input :respiratory_rate
-  =f.input :temperature
-  =f.input :height
-  =f.input :weight
-  =f.hidden_field :time, :value=> DateTime.now
+
+  %h3.offset1 Vitals
+  %hr
+  .well.span2=f.input :blood_pressure,:wrapper_html=>{:class=>"span2"},:input_html =>{:class=>"span1"}
+  .well.span2=f.input :pulse ,:wrapper_html=>{:class=>"span2"},:input_html =>{:class=>"span1"}
+  .well.span2=f.input :respiratory_rate,:wrapper_html=>{:class=>"span2"},:input_html =>{:class=>"span1"}
+  .well.span2=f.input :temperature,:wrapper_html=>{:class=>"span2"},:input_html =>{:class=>"span1"}
+  .well.span2=f.input :height,:wrapper_html=>{:class=>"span2"},:input_html =>{:class=>"span1"}
+  .well.span2=f.input :weight,:wrapper_html=>{:class=>"span2"},:input_html =>{:class=>"span1"}

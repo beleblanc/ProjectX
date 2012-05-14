@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120502094731) do
+ActiveRecord::Schema.define(:version => 20120514095305) do
 
   create_table "consultations", :force => true do |t|
     t.datetime "time"
@@ -228,7 +228,7 @@ ActiveRecord::Schema.define(:version => 20120502094731) do
   create_table "soaps", :force => true do |t|
     t.integer  "consultation_id"
     t.integer  "soap_type_id"
-    t.integer  "comment"
+    t.text     "comment"
     t.integer  "user_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false

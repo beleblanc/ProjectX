@@ -1,2 +1,16 @@
-%h5 Consultation for #{@consulta}
-<p>Find me in app/views/consultation/show.html.erb</p>
+%h2 Consultation for #{@consultation.person.first_name} #{@consultation.person.surname}
+
+%h3.span4.well Consultation Status: #{@consultation.status}
+
+.clearfix
+
+%h3 SOAPS
+
+-@consultation.soaps.each do |soap|
+  =soap.soap_type.name
+  =soap.comment
+  -soap.vitals.each do |v|
+    =v.blood_pressure
+    =v.height
+    =v.weight
+

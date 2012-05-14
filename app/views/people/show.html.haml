@@ -48,13 +48,16 @@
 
 .notices.span4.well
   %h3 Notices
-  -unless @person.wait_lists.where(:attended=>false).nil?
+  -if @person.wait_lists.where(:attended=>false).exists?
     %h4 Checked-in
     -@person.wait_lists.where(:attended=>false).each do |w|
       ="#{w.datetime_in.strftime("at %I:%M%p on %a the %d ")} #{w.next_action} #{w.next_action_name} "
       %br
   -unless @person.consultations.find_by_status("Closed").nil?
     %h4 In Consultation
+    -@person.consultations.where(:status != "Closed").each do |consul|
+      =link_to consul.status, consultation_path(consul), :class => "btn btn-primary"
+      %hr
 
 
 

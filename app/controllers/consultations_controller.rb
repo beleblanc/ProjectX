@@ -1,10 +1,23 @@
 class ConsultationsController < ApplicationController
+
+  def index
+    @consultations = Consultation.all
+
+    respond_to do |format|
+      format.html
+    end
+
+  end
+
   def new
-    @consultation = Consultation.new(:person_id=>params[:person_id])
+    @consultation = Consultation.new
     if params.has_key?:wait_list_id
       @waitlist = WaitList.find(params[:wait_list_id])
-      @consultation.person = @waitlist.person
+      @waitlist.attended= true
+      @waitlist.save
     end
+
+    @consultation.person_id = params[:person_id]
 
 
     respond_to do |format|
@@ -15,7 +28,7 @@ class ConsultationsController < ApplicationController
   end
 
   def create
-    @consultation = Consultation.new(params[:consultations])
+    @consultation = Consultation.new(params[:consultation])
 
     respond_to do |format|
       if @consultation.save
@@ -55,5 +68,9 @@ class ConsultationsController < ApplicationController
         format.json { render json: @consultation.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def close
+
   end
 end

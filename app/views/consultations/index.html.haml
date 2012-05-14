@@ -1,0 +1,20 @@
+%h1 All Consultations
+
+%table.dataTable
+  %thead
+    %tr
+      %th Patient
+      %th Status
+      %th Time
+      %th Show
+      %th Edit
+      %th Close
+  %tbody
+    -@consultations.each do |c|
+      %tr
+        %td="#{c.person.surname}, #{c.person.first_name}"
+        %td= c.status
+        %td= c.time
+        %td= link_to "Show", consultation_path(c), :class=>"btn btn-primary"
+        %td= link_to "Edit", edit_consultation_path(c), :class => "btn btn-inverse"
+        %td= link_to "Close Consultation", {:controller => :consultations, :action => :close}, :class => "btn btn-danger"

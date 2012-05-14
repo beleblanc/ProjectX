@@ -2,7 +2,7 @@ class WaitListsController < ApplicationController
   # GET /waitlist
   # GET /waitlist.json
   def index
-    @waitlist = WaitList.all
+    @waitlist = WaitList.find_all_by_attended(false)
 
     respond_to do |format|
       format.html # index.html.erb

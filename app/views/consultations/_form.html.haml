@@ -1,12 +1,14 @@
 =simple_form_for @consultation, :class=>"form-inline form-horizontal" do |f|
   =f.input :status
   =f.hidden_field :time, :value=> DateTime.now
-
+  =f.hidden_field :person_id, :value=> @consultation.person_id
   =f.fields_for :soaps do |soap|
     =render 'soap_fields', f: soap
 
   =link_to_add_fields "Add SOAP", f, :soaps
+  %hr.clearfix
+
   =f.submit
 
-
+%hr.clearfix
 =link_to "Return to Consultations", consultations_path, :class=>"btn btn-primary"
