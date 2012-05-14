@@ -23,6 +23,10 @@ a {
     color: #fff;
     background-color: #000; } }
 
+.btn:visited { color: black; }
+.btn-primary:visited, .btn-warning:visited, .btn-danger:visited, .btn-success:visited, .btn-info:visited, .btn-inverse:visited {
+  color: white;
+}
 div {
   &.field, &.actions {
     margin-bottom: 10px; } }

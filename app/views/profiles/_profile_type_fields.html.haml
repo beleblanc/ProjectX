@@ -1,8 +1,0 @@
-%fieldset
-  =f.collection_select :profile_type_id, ProfileType.order(:name), :id, :name
-  -#=link_to "Add Profile Type", profiles_path, :class => "btn btn-success"
-  =f.input :description
-  =f.input :snapshot
-  =f.input :name
-  =f.hidden_field :_destroy
-  =link_to "Remove", "#", :class => "remove_fields btn btn-danger"

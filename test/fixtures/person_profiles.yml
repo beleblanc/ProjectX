@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  person_id: 1
+  time: 2012-05-14 10:15:45
+  user_id: 1
+  comments: MyString
+
+two:
+  person_id: 1
+  time: 2012-05-14 10:15:45
+  user_id: 1
+  comments: MyString

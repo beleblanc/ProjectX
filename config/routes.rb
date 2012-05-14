@@ -11,10 +11,11 @@ ProjectX::Application.routes.draw do
   resources :consultations
 
 
-  resources :profiles
+  resources :person_profiles
   resources :profile_types
   resources :profile_sub_types
-  resources :profile_sub_values
+  resources :profile_sub_items
+  resources :profile_items
 
   resources :consultations
 

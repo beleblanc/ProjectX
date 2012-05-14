@@ -7,7 +7,7 @@ class Person < ActiveRecord::Base
   has_many :orders, :through => :soaps
   has_many :diagnoses, :through => :soaps
 
-  has_many :profiles
+  has_one :person_profile
 
   attr_accessible :city, :dob, :email, :employer, :first_name, :home_address, :nationality, :occupation, :other_name, :pin, :post_address, :post_code, :province, :sex, :surname, :tel_home, :tel_mobile, :tel_office, :title, :township, :user,:pin_image, :person_medical_aids_attributes, :profile_attributes
 

@@ -1,85 +1,75 @@
 class ProfileTypesController < ApplicationController
-  # GET /ProfileTypes
-  # GET /ProfileTypes.json
   def index
-    @ProfileTypes = ProfileType.all
+    @profile_types = ProfileType.all
+
+    respond_to do |format|
+      format.html # index.html.haml
+      format.json { render json: @profile_types }
+    end
+  end
+
+  def show
+    @profile_type = ProfileType.find(params[:id])
+
+    respond_to do |format|
+      format.html # index.html.haml
+      format.json { render json: @profile_type }
+    end
+  end
+
+  def new
+    @profile_type = ProfileType.new
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @ProfileTypes }
+      format.json { render json: @profile_type }
     end
   end
 
-  # GET /ProfileTypes/1
-  # GET /ProfileTypes/1.json
-  def show
-    @ProfileType = ProfileType.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.haml
-      format.json { render json: @ProfileType }
-    end
-  end
-
-  # GET /ProfileTypes/new
-  # GET /ProfileTypes/new.json
-  def new
-    @ProfileType = ProfileType.new
-
-    respond_to do |format|
-      format.html # new.html.haml
-      format.json { render json: @ProfileType }
-    end
-  end
-
-  # GET /ProfileTypes/1/edit
-  def edit
-    @ProfileType = ProfileType.find(params[:id])
-  end
-
-  # POST /ProfileTypes
-  # POST /ProfileTypes.json
   def create
-    @ProfileType = ProfileType.new(params[:profile_type])
+    @profile_type = ProfileType.new(params[:profile_type])
 
     respond_to do |format|
-      if @ProfileType.save
-        format.html { redirect_to profile_types_path, notice: 'Profile Type was successfully created.' }
-        format.json { render json: @ProfileType, status: :created, location: @ProfileType }
+      if @profile_type.save
+        format.html { redirect_to @profile_type, notice: 'Profile Type was successfully created.' }
+        format.json { render json: @profile_type, status: :created, location: @profile_type}
       else
         format.html { render action: "new" }
-        format.json { render json: @ProfileType.errors, status: :unprocessable_entity }
+        format.json { render json: @profile_type.errors, status: :unprocessable_entity }
       end
     end
   end
 
 
 
-  # PUT /ProfileTypes/1
-  # PUT /ProfileTypes/1.json
+  def edit
+    @profile_type = ProfileType.find(params[:id])
+  end
+
   def update
-    @ProfileType = ProfileType.find(params[:id])
+    @profile_type = ProfileType.find(params[:id])
 
     respond_to do |format|
-      if @ProfileType.update_attributes(params[:profile_type])
-        format.html { redirect_to @ProfileType, notice: 'Profile Type was successfully updated.' }
+      if @profile_type.update_attributes(params[:profile_types])
+        format.html { redirect_to @profile_type, notice: 'Profile Type was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @ProfileType.errors, status: :unprocessable_entity }
+        format.json { render json: @profile_type.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /ProfileTypes/1
-  # DELETE /ProfileTypes/1.json
+
+
   def destroy
-    @ProfileType = ProfileType.find(params[:id])
-    @ProfileType.destroy
+    @profile_type = ProfileType.find(params[:id])
+    @profile_type.destroy
 
     respond_to do |format|
-      format.html { redirect_to profile_types_url }
-      format.json { head :no_content }
+      format.html {redirect_to profile_item_path}
+      format.json {head :no_content}
     end
+
   end
 end
