@@ -154,51 +154,6 @@ ActiveRecord::Schema.define(:version => 20120502094731) do
   add_index "person_relations", ["person2_id"], :name => "index_person_relations_on_person2_id"
   add_index "person_relations", ["relation_id"], :name => "index_person_relations_on_relation_id"
 
-  create_table "profile_sub_types", :force => true do |t|
-    t.integer  "profile_type_id"
-    t.string   "name",            :limit => 50
-    t.string   "description"
-    t.string   "validation"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-  end
-
-  add_index "profile_sub_types", ["name"], :name => "index_profile_sub_types_on_name"
-  add_index "profile_sub_types", ["profile_type_id"], :name => "index_profile_sub_types_on_profile_type_id"
-
-  create_table "profile_sub_values", :force => true do |t|
-    t.integer  "profile_id"
-    t.integer  "profile_sub_type_id"
-    t.string   "value"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-  end
-
-  add_index "profile_sub_values", ["profile_id"], :name => "index_profile_sub_values_on_profile_id"
-  add_index "profile_sub_values", ["profile_sub_type_id"], :name => "index_profile_sub_values_on_profile_sub_type_id"
-
-  create_table "profile_types", :force => true do |t|
-    t.string   "name",       :limit => 50
-    t.boolean  "snapshot",                 :default => false
-    t.datetime "created_at",                                  :null => false
-    t.datetime "updated_at",                                  :null => false
-  end
-
-  add_index "profile_types", ["name"], :name => "index_profile_types_on_name"
-
-  create_table "profiles", :force => true do |t|
-    t.integer  "person_id"
-    t.integer  "profile_type_id"
-    t.string   "description"
-    t.date     "time"
-    t.integer  "user_id"
-    t.boolean  "snapshot",        :default => false
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
-  end
-
-  add_index "profiles", ["person_id"], :name => "index_profiles_on_person_id"
-
   create_table "relation_types", :force => true do |t|
     t.string   "relationType", :limit => 30
     t.datetime "created_at",                 :null => false
