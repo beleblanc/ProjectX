@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120502094731) do
+ActiveRecord::Schema.define(:version => 20120514083304) do
 
   create_table "consultations", :force => true do |t|
     t.datetime "time"
@@ -140,6 +140,15 @@ ActiveRecord::Schema.define(:version => 20120502094731) do
   add_index "person_medical_aids", ["medical_aids_id"], :name => "index_person_medical_aids_on_medical_aids_id"
   add_index "person_medical_aids", ["people_id"], :name => "index_person_medical_aids_on_people_id"
 
+  create_table "person_profiles", :force => true do |t|
+    t.integer  "person_id"
+    t.datetime "time"
+    t.integer  "user_id"
+    t.string   "comments"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "person_relations", :id => false, :force => true do |t|
     t.integer  "person1_id"
     t.integer  "People_id"
@@ -153,6 +162,41 @@ ActiveRecord::Schema.define(:version => 20120502094731) do
   add_index "person_relations", ["person1_id"], :name => "index_person_relations_on_person1_id"
   add_index "person_relations", ["person2_id"], :name => "index_person_relations_on_person2_id"
   add_index "person_relations", ["relation_id"], :name => "index_person_relations_on_relation_id"
+
+  create_table "profile_items", :force => true do |t|
+    t.integer  "person_profile_id"
+    t.integer  "profile_type_id"
+    t.string   "value"
+    t.datetime "time"
+    t.integer  "user_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "profile_sub_items", :force => true do |t|
+    t.integer  "person_profile_id"
+    t.integer  "profile_sub_type_id"
+    t.string   "value"
+    t.datetime "time"
+    t.integer  "user_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  create_table "profile_sub_types", :force => true do |t|
+    t.integer  "profile_type_id"
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "profile_types", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "relation_types", :force => true do |t|
     t.string   "relationType", :limit => 30
