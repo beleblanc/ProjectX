@@ -1,0 +1,21 @@
+.row
+  %h1.span8="Profile Type"
+  .span4
+    %h3 Name
+    %p= @profile_type.name
+    %h3 Description
+    %p= @profile_type.description
+  .span8.well
+    %h3.span7 Profile Sub Types
+    %table.table.table-striped.table-bordered.table-condensed
+      %tr
+        %th="Type"
+        %th="Description"
+      - @profile_type.profile_sub_types.each do |p|
+        %tr
+          %td=p.name
+          %td=p.description
+  .clearfix
+  =link_to "Edit", edit_profile_type_path(@profile_type), :class => "btn"
+  =link_to "Delete", @profile_type, confirm: 'Are you sure?', method: :delete , :class => "btn btn-important"
+  =link_to "Back", profile_types_path, :class => "btn"

@@ -1,0 +1,11 @@
+=simple_form_for(@profile_type,:html => {:class=>"form-inline "}) do |f|
+  .span4
+    %fieldset
+      =f.input :name
+      =f.input :description
+
+      =f.button :submit
+  .span4
+    =f.fields_for :profile_sub_types do |stype|
+      =render 'profile_sub_type_fields', f: stype
+    =link_to_add_fields "Add Sub Type", f, :profile_sub_types

@@ -3,17 +3,17 @@ class ProfileTypesController < ApplicationController
     @profile_types = ProfileType.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @profile_types }
     end
   end
 
   def show
-    @profile_types = ProfileType.find(params[:id])
+    @profile_type = ProfileType.find(params[:id])
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @profile_types }
+      format.html # index.html.haml
+      format.json { render json: @profile_type }
     end
   end
 
