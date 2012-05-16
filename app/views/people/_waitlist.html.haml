@@ -9,5 +9,5 @@
       =f.input :payment_type
 
       =f.button :submit
--if @person.wait_lists.find_by_attended(false).nil? && @person.consultations.find_by_status("Closed").nil?
+-if @person.wait_lists.find_by_attended(false).nil? && !@person.consultations.where('status !="Closed"').exists?
   %a.btn.btn-large{"data-toggle"=> "modal", :href=>"#wait-list"}Check-In

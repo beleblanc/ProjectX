@@ -1,5 +1,5 @@
 
-%h3.span8="#{@person.surname}, #{@person.first_name}, #{@person.title}"
+%h3.span8="#{@person}"
 %hr.clearfix.span9
 = link_to 'Edit', edit_person_path(@person), :class => 'btn btn-success right'
 = link_to 'Back', people_path, :class => 'btn btn-primary right'
@@ -53,9 +53,9 @@
     -@person.wait_lists.where(:attended=>false).each do |w|
       ="#{w.datetime_in.strftime("at %I:%M%p on %a the %d ")} #{w.next_action} #{w.next_action_name} "
       %br
-  -unless @person.consultations.find_by_status("Closed").nil?
+  -if @person.consultations.where('status !="Closed"').exists?
     %h4 In Consultation
-    -@person.consultations.where(:status != "Closed").each do |consul|
+    -@person.consultations.where('status != "Closed"').each do |consul|
       =link_to consul.status, consultation_path(consul), :class => "btn btn-primary"
       %hr
 

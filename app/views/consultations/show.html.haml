@@ -1,16 +1,44 @@
 %h2 Consultation for #{@consultation.person.first_name} #{@consultation.person.surname}
 
-%h3.span4.well Consultation Status: #{@consultation.status}
+%h3.well.offset5 Consultation Status: #{@consultation.status}
 
 .clearfix
 
 %h3 SOAPS
 
 -@consultation.soaps.each do |soap|
-  =soap.soap_type.name
-  =soap.comment
-  -soap.vitals.each do |v|
-    =v.blood_pressure
-    =v.height
-    =v.weight
+  .well.span3
+    %h4 Type
+    =soap.soap_type.name
+    %hr
+    %h4 Comment
+    =soap.comment
+    %hr
+    -soap.vitals.each do |v|
+      .span3
+        %h5 Vitals
+        %h6.span2 Blood Pressure
+        %p.span1=v.blood_pressure
+
+        %h6.span2  Pulse
+        %p.span1=v.pulse
+
+        %h6.span2  Respiratory Rate
+        %p.span1=v.respiratory_rate
+
+        %h6.span2  Temperature
+        %p.span1=v.temperature
+
+        %h6.span2  Height
+        %p.span1=v.height
+
+
+        %h6.span2  Weight
+        %p.span1=v.weight
+
+
+%hr.clearfix
+=link_to "Edit", edit_consultation_path(@consultation), :class => "btn btn-warning"
+
+
 

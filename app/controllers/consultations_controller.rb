@@ -45,6 +45,10 @@ class ConsultationsController < ApplicationController
 
   def edit
      @consultation = Consultation.find(params[:id])
+
+    respond_to do |format|
+      format.html       #edit.hmtl.haml
+    end
   end
 
   def show
@@ -57,11 +61,11 @@ class ConsultationsController < ApplicationController
   end
 
   def update
-    @consultation = WaitList.find(params[:id])
+    @consultation = Consultation.find(params[:id])
 
     respond_to do |format|
-      if @consultation.update_attributes(params[:consultations])
-        format.html { redirect_to @consultation, notice: 'Waiting Patient info was successfully updated.' }
+      if @consultation.update_attributes(params[:consultation])
+        format.html { redirect_to @consultation, notice: 'Consultation information was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
