@@ -17,4 +17,4 @@
         %td= c.time
         %td= link_to "Show", consultation_path(c), :class=>"btn btn-primary"
         %td= link_to "Edit", edit_consultation_path(c), :class => "btn btn-inverse"
-        %td= link_to "Close Consultation", {:controller => :consultations, :action => :close}, :class => "btn btn-danger"
+        %td= link_to 'Close Consultation', c , confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger"
