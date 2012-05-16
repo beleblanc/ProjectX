@@ -1,6 +1,6 @@
 #wait-list.modal.fade{:style=>"display:none;"}
   %h3 Check-In Patient
-  =simple_form_for(@waitlist,{:html => {:class=>"form-inline form-HORIZONTAL "}, :controller => :wait_lists, :action=>:new}) do |f|
+  =simple_form_for(@waitlist,{:html => {:class=>"form-inline form-horizontal"}, :controller => :wait_lists, :action=>:new}) do |f|
     %fieldset
       =f.hidden_field :datetime_in, :value => DateTime.now
       =f.hidden_field :people_id, :value => id
@@ -9,5 +9,5 @@
       =f.input :payment_type
 
       =f.button :submit
--if @person.wait_lists.find_by_attended(false).nil? && !@person.consultations.where('status !="Closed"').exists?
+-unless @person.wait_lists.where(:attended=>false).exists? && @person.consultations.where('status !="Closed"').exists?
   %a.btn.btn-large{"data-toggle"=> "modal", :href=>"#wait-list"}Check-In
