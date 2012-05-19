@@ -11,9 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-ActiveRecord::Schema.define(:version => 20120514095305) do
-
+ActiveRecord::Schema.define(:version => 20120516193338) do
 
   create_table "consultations", :force => true do |t|
     t.datetime "time"
@@ -193,12 +191,36 @@ ActiveRecord::Schema.define(:version => 20120514095305) do
     t.datetime "updated_at",      :null => false
   end
 
+  create_table "profile_sub_values", :force => true do |t|
+    t.integer  "profile_id"
+    t.integer  "profile_sub_type_id"
+    t.string   "value"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  add_index "profile_sub_values", ["profile_id"], :name => "index_profile_sub_values_on_profile_id"
+  add_index "profile_sub_values", ["profile_sub_type_id"], :name => "index_profile_sub_values_on_profile_sub_type_id"
+
   create_table "profile_types", :force => true do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "profiles", :force => true do |t|
+    t.integer  "person_id"
+    t.integer  "profile_type_id"
+    t.string   "description"
+    t.date     "time"
+    t.integer  "user_id"
+    t.boolean  "snapshot",        :default => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
+
+  add_index "profiles", ["person_id"], :name => "index_profiles_on_person_id"
 
   create_table "relation_types", :force => true do |t|
     t.string   "relationType", :limit => 30
@@ -210,14 +232,14 @@ ActiveRecord::Schema.define(:version => 20120514095305) do
 
   create_table "roles", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
-  create_table "roles_users", :id => false, :force => true do |t|
-    t.integer "role_id"
-    t.integer "user_id"
-  end
+  add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
+  add_index "roles", ["name"], :name => "index_roles_on_name"
 
   create_table "soap_types", :force => true do |t|
     t.string   "name"
@@ -258,6 +280,13 @@ ActiveRecord::Schema.define(:version => 20120514095305) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
+  create_table "users_roles", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+  end
+
+  add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
   create_table "vitals", :force => true do |t|
     t.integer  "soap_id"
     t.datetime "time"
@@ -274,7 +303,7 @@ ActiveRecord::Schema.define(:version => 20120514095305) do
   create_table "wait_lists", :force => true do |t|
     t.datetime "datetime_in",                                       :null => false
     t.string   "payment_type",     :limit => 10
-    t.integer  "people_id"
+    t.integer  "person_id"
     t.string   "next_action",      :limit => 10
     t.string   "next_action_name", :limit => 30
     t.boolean  "attended",                       :default => false
@@ -283,6 +312,6 @@ ActiveRecord::Schema.define(:version => 20120514095305) do
   end
 
   add_index "wait_lists", ["id"], :name => "index_wait_lists_on_id"
-  add_index "wait_lists", ["people_id"], :name => "index_wait_lists_on_people_id"
+  add_index "wait_lists", ["person_id"], :name => "index_wait_lists_on_people_id"
 
 end

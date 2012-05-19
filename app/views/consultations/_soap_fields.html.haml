@@ -1,4 +1,5 @@
 %fieldset.well.form-inline
+
   =f.input :soap_type_id, :collection =>SoapType.all, :label_method=>:name, :value_method=>:id ,:input_html=>{:class=>"span2"}
   %hr.clearfix
   =f.input :comment,:input_html=>{:class=>"span8",:rows=> 6}
@@ -6,3 +7,5 @@
   =f.fields_for :vitals do |vitals|
     =render 'vital_fields', f: vitals
   =link_to_add_fields "Add Vitals", f, :vitals
+  =f.hidden_field :_destroy
+  =link_to "Remove", "#", :class => "remove_fields btn btn-danger"

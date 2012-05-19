@@ -74,7 +74,14 @@ class ConsultationsController < ApplicationController
     end
   end
 
-  def close
+  def destroy
+    @consultation = Consultation.find(params[:id])
+    @consultation.status= "Closed"
+    @consultation.save!
+
+    respond_to do |format|
+        format.html {redirect_to consultations_path, notice: "Consultation successfully closed"}
+    end
 
   end
 end

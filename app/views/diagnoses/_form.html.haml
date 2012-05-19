@@ -1,0 +1,6 @@
+=simple_form_for @diagnosis do |f|
+  =f.hidden_field :soap_id, :value=> @diagnosis.soap_id
+  =f.input :icd_id, :collection =>Icd.all, :label_method=>:description, :value_method=>:id ,:wrapper_html=>{:class=>"span3"}, :input_html=>{:class=>"span2"}
+  =f.input :comments, :wrapper_html=>{:class=>"span5"},:input_html=>{:class=> "span4", :rows=>4}
+  =f.hidden_field :time, :value => DateTime.now
+  =f.submit

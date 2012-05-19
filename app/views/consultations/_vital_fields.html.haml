@@ -8,3 +8,5 @@
   .well.span2=f.input :temperature,:wrapper_html=>{:class=>"span2"},:input_html =>{:class=>"span1"}
   .well.span2=f.input :height,:wrapper_html=>{:class=>"span2"},:input_html =>{:class=>"span1"}
   .well.span2=f.input :weight,:wrapper_html=>{:class=>"span2"},:input_html =>{:class=>"span1"}
+  =f.hidden_field :_destroy
+  =link_to "Remove", "#", :class => "remove_fields btn btn-danger"

@@ -1,6 +1,6 @@
 %h2 Consultation for #{@consultation.person.first_name} #{@consultation.person.surname}
 
-%h3.well.offset5 Consultation Status: #{@consultation.status}
+%h3.well.offset5 Consultation: #{@consultation.status}
 
 .clearfix
 
@@ -36,9 +36,22 @@
         %h6.span2  Weight
         %p.span1=v.weight
 
+    -soap.diagnoses.order("id DESC").each do |diag|
+      .diagnosis
+        %h5 Diagnosis
+        =diag.icd
+        =diag.comments
+        %p.small=diag.time.strftime("at %I:%M%p on %a the %d ")
+        =link_to "Edit Diagnosis", edit_diagnosis_path(diag), :class => "btn-mini btn-warning"
+      %hr.clearfix
+    =link_to "Add Diagnosis", new_diagnosis_path(:soap_id => soap.id),:class => "btn btn-primary"
+
 
 %hr.clearfix
-=link_to "Edit", edit_consultation_path(@consultation), :class => "btn btn-warning"
+=link_to  edit_consultation_path(@consultation),:class=>"btn btn-warning" do
+
+  %i.icon-pencil
+  &nbsp;Edit
 
 
 

@@ -1,6 +1,8 @@
 ProjectX::Application.routes.draw do
 
-  devise_for :users , :controllers => {:registrations=>'users/registrations'}
+
+
+  devise_for :users
 
   resources :people
   resources :users
@@ -9,7 +11,7 @@ ProjectX::Application.routes.draw do
   resources :medical_aid_plan
   resources :wait_lists
   resources :consultations
-
+  resources :diagnoses
 
   resources :person_profiles
   resources :profile_types
