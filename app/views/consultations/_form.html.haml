@@ -1,14 +1,20 @@
-=simple_form_for @consultation, :class=>"form-inline form-horizontal" do |f|
-  =f.input :status
-  =f.hidden_field :time, :value=> DateTime.now
-  =f.hidden_field :person_id, :value=> @consultation.person_id
-  =f.fields_for :soaps do |soap|
-    =render 'soap_fields', f: soap
+.span9.well
+  -if @consultation.person.person_profile.nil? == true
+    =link_to "Person Has No Profile - Create Profile", new_person_profile_path, :class=>"btn btn-warning"
+  -else
+    =link_to "View Person Profile", person_profile_path(@consultation.person.person_profile.id), :class=>"btn btn-success"
 
-  =link_to_add_fields "Add SOAP", f, :soaps
-  %hr.clearfix
+%hr.clearfix
+.span9
+  =simple_form_for @consultation, :class=>"form-inline form-horizontal" do |f|
+    =f.hidden_field :time, :value=> DateTime.now
+    =f.hidden_field :person_id, :value=> @consultation.person_id
+    =f.fields_for :soaps do |soap|
+      =render 'soap_fields', f: soap
+    =link_to_add_fields "Add SOAP", f, :soaps
+    %hr.clearfix
 
-  =f.submit
+    =f.submit
 
 %hr.clearfix
 =link_to "Return to Consultations", consultations_path, :class=>"btn btn-primary"
