@@ -1,0 +1,9 @@
+#user_admin.btn-group.right
+  -if user_signed_in?
+    =link_to "Sign Out", destroy_user_session_path, :method=>:delete ,:class => "btn"
+  -else
+    =link_to "Sign In", new_user_session_path,:class => "btn"
+  -if user_signed_in?
+    =link_to "Edit Account", edit_user_registration_path,:class => "btn"
+    -if can?(:read, User)
+      =link_to "Admin", users_path,:class => "btn"

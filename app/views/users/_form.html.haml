@@ -1,0 +1,9 @@
+=simple_form_for @user do |f|
+  =f.input :username
+  =f.input :email
+
+  =habtm_checkboxes(@user,:role_ids,@accessible_roles,:name)
+  =f.input :password
+  =f.input :password_confirmation
+  =f.submit
+

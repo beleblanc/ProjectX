@@ -14,4 +14,5 @@
 */
 
 .left{float:left}
-.right{float:right}
+
+#user_admin{position: absolute; bottom:10px; right:10px}

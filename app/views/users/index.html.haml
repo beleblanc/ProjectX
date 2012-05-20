@@ -1,0 +1,21 @@
+%table.table.table-striped.table-bordered.table-condensed
+  %thead
+    %tr
+      %th Username
+      %th E-mail
+      %th Roles
+      %th Edit
+      %th Delete
+  %tbody
+    -@users.each do |u|
+      %tr
+        %td
+          =u.username
+        %td
+          =u.email
+        %td
+          =u.roles.collect {|r| r.name}
+        %td
+          =link_to_if(can?(:edit,User),"Edit",edit_user_path(u),:class=>"btn btn-warning")
+        %td
+          =link_to_if(can?(:delete,User),"Delete",u,:confirm=>"Are you sure?",:method=>:delete,:class=>"btn btn-danger")
