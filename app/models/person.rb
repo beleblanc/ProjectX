@@ -6,19 +6,15 @@ class Person < ActiveRecord::Base
   has_many :soaps, :through => :consultations
   has_many :orders, :through => :soaps
   has_many :diagnoses, :through => :soaps
+  has_many :dependencies
+  has_many :dependents, :through => :dependencies
 
   has_one :person_profile
-
-  attr_accessible :city, :dob, :email, :employer, :first_name, :home_address, :nationality, :occupation, :other_name, :pin, :post_address, :post_code, :province, :sex, :surname, :tel_home, :tel_mobile, :tel_office, :title, :township, :user,:pin_image, :person_medical_aids_attributes
-
-  has_many :consultations
-  has_many :soaps, :through => :consultations
-  has_many :orders, :through => :soaps
-  has_many :diagnoses, :through => :soaps
-
+  attr_accessor :relation
+  attr_accessible :city, :dob, :email, :employer, :first_name, :home_address, :nationality, :occupation, :other_name, :pin, :post_address, :post_code, :province, :sex, :surname, :tel_home, :tel_mobile, :tel_office, :title, :township, :user,:pin_image, :person_medical_aids_attributes,:dependencies_attributes, :relation
 
   accepts_nested_attributes_for :person_medical_aids, :allow_destroy => true
-
+  accepts_nested_attributes_for :dependencies, :allow_destroy => true
 
   validates_uniqueness_of :pin
 
@@ -26,6 +22,12 @@ class Person < ActiveRecord::Base
 
   def to_s
     "#{self.first_name} #{self.surname}"
+
+  end
+
+  def create_dependency(person_id )
+
+    Dependency.create(:person_id=> person_id, :dependent_id=> self.id, :relation_id => self.relation)
 
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120516193338) do
+ActiveRecord::Schema.define(:version => 20120521122106) do
 
   create_table "consultations", :force => true do |t|
     t.datetime "time"
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(:version => 20120516193338) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "dependencies", :id => false, :force => true do |t|
+    t.integer  "person_id"
+    t.integer  "dependent_id"
+    t.integer  "relation_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "diagnoses", :force => true do |t|
@@ -149,20 +157,6 @@ ActiveRecord::Schema.define(:version => 20120516193338) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "person_relations", :id => false, :force => true do |t|
-    t.integer  "person1_id"
-    t.integer  "People_id"
-    t.integer  "person2_id"
-    t.integer  "relation_id"
-    t.integer  "RelationType_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
-  add_index "person_relations", ["person1_id"], :name => "index_person_relations_on_person1_id"
-  add_index "person_relations", ["person2_id"], :name => "index_person_relations_on_person2_id"
-  add_index "person_relations", ["relation_id"], :name => "index_person_relations_on_relation_id"
-
   create_table "profile_items", :force => true do |t|
     t.integer  "person_profile_id"
     t.integer  "profile_type_id"
@@ -222,13 +216,9 @@ ActiveRecord::Schema.define(:version => 20120516193338) do
 
   add_index "profiles", ["person_id"], :name => "index_profiles_on_person_id"
 
-  create_table "relation_types", :force => true do |t|
-    t.string   "relationType", :limit => 30
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+  create_table "relations", :force => true do |t|
+    t.string "name"
   end
-
-  add_index "relation_types", ["id"], :name => "index_relation_types_on_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"

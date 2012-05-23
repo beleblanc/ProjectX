@@ -2,7 +2,9 @@ ProjectX::Application.routes.draw do
 
 
 
-  devise_for :users #, :controllers => {:registrations => 'registrations'}
+  devise_for :users# , :controllers => {:registrations => 'registrations'}
+
+
 
   resources :people
   resources :users
@@ -18,7 +20,7 @@ ProjectX::Application.routes.draw do
   resources :profile_sub_types
   resources :profile_sub_items
   resources :profile_items
-
+  resources :dependencies
   resources :consultations
 
 
@@ -27,6 +29,7 @@ ProjectX::Application.routes.draw do
   get "home/index"
 
   get "home/about"
+  get "home/admin"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

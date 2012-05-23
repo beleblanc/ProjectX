@@ -1,4 +1,11 @@
 =simple_form_for(@person) do |f|
+
+  -if session[:person_id] != nil
+    %fieldset.well.pull-right
+      %h3 Relation to #{Person.find(session[:person_id])}
+      =f.input :relation, :collection=> Relation.all, :label_method=>:name, :value_method=>:id, :input_html=>{class: "span1"}
+
+
   -if @person.errors.any?
     .alert.alert-error
       %button.close{"data-dismiss".to_sym => "alert"} x
