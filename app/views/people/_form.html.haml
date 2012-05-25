@@ -1,4 +1,13 @@
-=simple_form_for(@person) do |f|
+-if @person.errors.any?
+  .alert.alert-error
+    %button.close{"data-dismiss".to_sym => "alert"} x
+    %a
+    =pluralize(@person.errors.count, "error") + "prohibited this person from being saved:"
+    %ul
+      -@person.errors.full_messages.each do |msg|
+        %li= msg
+
+=simple_form_for @person ,:html=>{class: "form-horizontal"} do |f|
 
   -if session[:person_id] != nil
     %fieldset.well.pull-right
@@ -6,14 +15,7 @@
       =f.input :relation, :collection=> Relation.all, :label_method=>:name, :value_method=>:id, :input_html=>{class: "span1"}
 
 
-  -if @person.errors.any?
-    .alert.alert-error
-      %button.close{"data-dismiss".to_sym => "alert"} x
-      %a
-      =pluralize(@person.errors.count, "error") + "prohibited this person from being saved:"
-      %ul
-        -@person.errors.full_messages.each do |msg|
-          %li= msg
+
     
   =f.input :title
   =f.input :first_name

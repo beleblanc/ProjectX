@@ -62,6 +62,9 @@
 -if @person.dependents.any?
   =render 'dependents', f: @person
 
+-if !@person.inverse_dependent.nil?
+  =render 'providers', f: @person.inverse_dependent
+
 %hr.clearfix.span9
 =render 'waitlist', id: @person.id
 

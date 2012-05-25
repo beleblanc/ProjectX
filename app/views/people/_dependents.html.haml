@@ -1,4 +1,20 @@
+#dependents
 
-%h3 Dependents
--f.dependents.each do |dep|
-  =link_to "#{dep}", person_path(dep),class:"btn"
+  %table.table.span9
+    %thead
+      %tr
+        %th
+          %h3 Dependents
+      %tr
+        %th Name
+        %th Relationship
+        %th Show
+        %th Destroy Relationship
+    %tbody
+      -f.dependencies.each do |dep|
+        %tr
+          %td=link_to "#{dep.dependent}", person_path(dep.dependent)
+          %td=dep.relationship
+          %td=link_to "Show", person_path(dep.dependent),class:"btn btn-mini"
+          %td= #link_to "Destroy", dependency_path(dep), :method => :delete, :confirm => "Are you sure?", :class => 'btn btn-mini btn-danger'
+

@@ -2,19 +2,7 @@ ProjectX::Application.routes.draw do
 
 
 
-  get "orders/index"
 
-  get "orders/show"
-
-  get "orders/edit"
-
-  get "orders/update"
-
-  get "orders/new"
-
-  get "orders/create"
-
-  get "orders/destroy"
 
   devise_for :users# , :controllers => {:registrations => 'registrations'}
 
@@ -28,7 +16,7 @@ ProjectX::Application.routes.draw do
   resources :wait_lists
   resources :consultations
   resources :diagnoses
-
+  resources :orders
   resources :person_profiles
   resources :profile_types
   resources :profile_sub_types
