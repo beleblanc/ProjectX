@@ -11,7 +11,29 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require ajaxform
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require dataTables/jquery.dataTables
 //= require_tree .
+$(document).ready (function() {
+
+    $(document).on("change", ".ptid", function(){
+
+          alert($(".ptid :selected").val());
+
+        var selid = $(".ptid :selected").val();
+
+        // make a POST call and replace the content
+       // $.post("getPSub", function(data) {
+       //
+       // });
+
+        $.ajax({
+            type: 'POST',
+            url: 'getPSub',
+            data: {psubid: selid},
+        })
+    });
+
+});

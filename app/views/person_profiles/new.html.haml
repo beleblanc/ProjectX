@@ -1,3 +1,5 @@
 %h2="New Person Profile"
-=render 'form'
-=link_to "Back", person_profiles_path
+.span4
+  =link_to "Back", person_profiles_path, :class => "right"
+%hr.clearfix
+  =render 'form'

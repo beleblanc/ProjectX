@@ -74,4 +74,21 @@ class PersonProfilesController < ApplicationController
 
   end
 
+  def getPsub
+
+
+ #calculated = params[:id]
+ #  render(:profile_item_fields) {|page|
+ #     page << "$('.psubtype').html(#{calculated})"
+ #   }
+
+    @selected_id = params[:psubid]
+
+    respond_to do |format|
+      format.js
+    end
+
+
+  end
+
 end
