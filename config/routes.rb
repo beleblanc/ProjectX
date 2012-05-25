@@ -2,6 +2,20 @@ ProjectX::Application.routes.draw do
 
 
 
+  get "orders/index"
+
+  get "orders/show"
+
+  get "orders/edit"
+
+  get "orders/update"
+
+  get "orders/new"
+
+  get "orders/create"
+
+  get "orders/destroy"
+
   devise_for :users# , :controllers => {:registrations => 'registrations'}
 
 

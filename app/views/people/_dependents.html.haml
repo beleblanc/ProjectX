@@ -1,0 +1,4 @@
+
+%h3 Dependents
+-f.dependents.each do |dep|
+  =link_to "#{dep}", person_path(dep),class:"btn"

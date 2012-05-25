@@ -12,7 +12,7 @@ gem 'simple_form'
 gem 'mysql2'
 gem 'rolify'
 gem 'paperclip'
-gem 'haml'
+gem 'haml-rails'
 gem 'capistrano'
 gem 'rspec', :group => :development
 

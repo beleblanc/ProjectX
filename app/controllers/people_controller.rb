@@ -1,4 +1,7 @@
 class PeopleController < ApplicationController
+
+  before_filter :destroy_dependency, :except => [:new,:create ]
+
   # GET /people
   # GET /people.json
   def index
@@ -94,8 +97,11 @@ class PeopleController < ApplicationController
     end
   end
 
-  def destroy_dependency
-      session[:person_id] = nil
+private
 
-  end
+def destroy_dependency
+    session[:person_id] = nil
+
+end
+
 end

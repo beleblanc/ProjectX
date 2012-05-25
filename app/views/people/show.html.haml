@@ -59,8 +59,12 @@
       =link_to consul.status, consultation_path(consul), :class => "btn btn-primary"
       %hr
 
+-if @person.dependents.any?
+  =render 'dependents', f: @person
+
 %hr.clearfix.span9
 =render 'waitlist', id: @person.id
+
 = link_to 'Edit', edit_person_path(@person), :class => 'btn btn-success left'
 = link_to 'Back', people_path, :class => 'btn btn-primary left'
 

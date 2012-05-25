@@ -8,6 +8,10 @@ class Person < ActiveRecord::Base
   has_many :diagnoses, :through => :soaps
   has_many :dependencies
   has_many :dependents, :through => :dependencies
+  has_many :inverse_dependencies,  :class_name => "Dependency", :foreign_key => "dependent_id"
+  has_many :inverse_dependents, :through => :inverse_dependencies, :source => :person
+
+
 
   has_one :person_profile
   attr_accessor :relation
