@@ -19,3 +19,6 @@
           =link_to_if(can?(:edit,User),"Edit",edit_user_path(u),:class=>"btn btn-warning")
         %td
           =link_to_if(can?(:delete,User),"Delete",u,:confirm=>"Are you sure?",:method=>:delete,:class=>"btn btn-danger")
+
+%hr.clearfix
+=link_to "Add User", new_user_path, class: "btn btn-primary"

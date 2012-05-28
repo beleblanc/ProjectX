@@ -1,0 +1,25 @@
+%p
+  %strong= t("activerecord.attributes.order.soaps_id", :default => t("activerecord.labels.soaps_id", :default => "Soaps")) + ":"
+  %br
+  = @order.soaps_id
+%p
+  %strong= t("activerecord.attributes.order.department_operations_id", :default => t("activerecord.labels.department_operations_id", :default => "Department operations")) + ":"
+  %br
+  = @order.department_operations_id
+%p
+  %strong= t("activerecord.attributes.order.comments", :default => t("activerecord.labels.comments", :default => "Comments")) + ":"
+  %br
+  = @order.comments
+%p
+  %strong= t("activerecord.attributes.order.time", :default => t("activerecord.labels.time", :default => "Time")) + ":"
+  %br
+  = @order.time
+%p
+  %strong= t("activerecord.attributes.order.user_id", :default => t("activerecord.labels.user_id", :default => "User")) + ":"
+  %br
+  = @order.user_id
+
+.form-actions
+  = link_to "Back", orders_path, :class => 'btn'
+  = link_to "Edit", edit_order_path(@order), :class => 'btn'
+  = link_to "Delete", order_path(@order), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-danger'

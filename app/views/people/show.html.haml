@@ -1,9 +1,9 @@
+= link_to 'Edit', edit_person_path(@person), :class => 'btn btn-success pull-right'
+= link_to 'Back', people_path, :class => 'btn btn-primary right pull-right'
+%hr.clearfix
+%h3="#{@person}"
+%hr.clearfix
 
-%h3.span8="#{@person}"
-%hr.clearfix.span9
-= link_to 'Edit', edit_person_path(@person), :class => 'btn btn-success right'
-= link_to 'Back', people_path, :class => 'btn btn-primary right'
-%hr.clearfix.span9
 .span4
   %h3 Personal Details
   %h4 Sex
@@ -59,11 +59,17 @@
       =link_to consul.status, consultation_path(consul), :class => "btn btn-primary"
       %hr
 
+-if @person.dependents.any?
+  =render 'dependents', f: @person
 
-
-
-=render 'waitlist', id: @person.id
+-if !@person.inverse_dependent.nil?
+  =render 'providers', f: @person.inverse_dependent
 
 %hr.clearfix.span9
+=render 'waitlist', id: @person.id
+
 = link_to 'Edit', edit_person_path(@person), :class => 'btn btn-success left'
 = link_to 'Back', people_path, :class => 'btn btn-primary left'
+
+-content_for :sidebar do
+  =link_to "Add Dependant", new_person_path(person_id: @person.id) , :class=>"btn btn-large"

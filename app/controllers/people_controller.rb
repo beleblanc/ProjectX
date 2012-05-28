@@ -1,4 +1,7 @@
 class PeopleController < ApplicationController
+
+  before_filter :destroy_dependency, :except => [:new,:create ]
+
   # GET /people
   # GET /people.json
   def index
@@ -26,6 +29,12 @@ class PeopleController < ApplicationController
   def new
     @person = Person.new
 
+    if params.has_key?:person_id
+      @dependency = true
+      session[:person_id] = params[:person_id]
+
+    end
+
     respond_to do |format|
       format.html # new.html.haml
       format.json { render json: @person }
@@ -42,8 +51,13 @@ class PeopleController < ApplicationController
   def create
     @person = Person.new(params[:person])
 
+
     respond_to do |format|
       if @person.save
+        unless session[:person_id].nil?
+          @person.create_dependency(session[:person_id])
+          session[:person_id] = nil
+        end
         format.html { redirect_to @person, notice: 'Person was successfully created.' }
         format.json { render json: @person, status: :created, location: @person }
       else
@@ -82,4 +96,12 @@ class PeopleController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+private
+
+def destroy_dependency
+    session[:person_id] = nil
+
+end
+
 end

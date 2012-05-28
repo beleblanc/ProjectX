@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 
         format.json {render :json => @users}
         format.xml {head :ok}
-        format.html{redirect_to :action => :index, notice: "User successfully created!" }
+        format.html{redirect_to users_path, notice: "User successfully created!" }
 
       end
     else
@@ -104,13 +104,13 @@ class UsersController < ApplicationController
   #DELETE /users/:id.json
 #--------------------------------------------------------------------------------------------------------
   def destroy
-    @user.destroy!
+    @user.destroy
 
     respond_to do |format|
 
-      format.json {respond_to_destroy(:ajax)}
+      format.json {render text: "Successfully removed user"}
       format.xml {head :ok}
-      format.html  {respond_to_destroy(:html)}
+      format.html  {redirect_to users_path, notice:"Successfully removed user"}
 
     end
     rescue ActiveRecord::RecordNotFound
