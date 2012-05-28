@@ -208,19 +208,6 @@ ActiveRecord::Schema.define(:version => 20120525151921) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "profiles", :force => true do |t|
-    t.integer  "person_id"
-    t.integer  "profile_type_id"
-    t.string   "description"
-    t.date     "time"
-    t.integer  "user_id"
-    t.boolean  "snapshot",        :default => false
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
-  end
-
-  add_index "profiles", ["person_id"], :name => "index_profiles_on_person_id"
-
   create_table "relations", :force => true do |t|
     t.string "name"
   end

@@ -73,22 +73,16 @@ GEM
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
-<<<<<<< HEAD
-=======
     fastercsv (1.5.5)
     formtastic (2.1.1)
       actionpack (~> 3.0)
->>>>>>> 09af7109fb3c68ca17752ecdb3691dcb7e7b9812
     haml (3.1.6)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
       activesupport (~> 3.0)
       haml (~> 3.0)
       railties (~> 3.0)
-<<<<<<< HEAD
-=======
     has_scope (0.5.1)
->>>>>>> 09af7109fb3c68ca17752ecdb3691dcb7e7b9812
     highline (1.6.11)
     hike (1.2.1)
     httparty (0.8.3)
@@ -234,12 +228,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   haml-rails
-<<<<<<< HEAD
-  jquery-datatables-rails!
-  jquery-rails
-=======
   jquery-datatables-rails
->>>>>>> 09af7109fb3c68ca17752ecdb3691dcb7e7b9812
   jquery-ui-rails
   jquery-ui-themes
   meta_search (>= 1.1.0.pre)

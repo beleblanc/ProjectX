@@ -11,23 +11,21 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-<<<<<<< HEAD
+
 //= require ajaxform
 //= require jquery_ujs
-=======
->>>>>>> 09af7109fb3c68ca17752ecdb3691dcb7e7b9812
+
+
 //= require twitter/bootstrap
 //= require dataTables/jquery.dataTables
 //= require jquery.ui.datepicker
 //= require_tree .
-<<<<<<< HEAD
+
 $(document).ready (function() {
 
     $(document).on("change", ".ptid", function(){
 
-          alert($(".ptid :selected").val());
-
-        var selid = $(".ptid :selected").val();
+       var selid = $(".ptid :selected").val();
 
         // make a POST call and replace the content
        // $.post("getPSub", function(data) {
@@ -42,6 +40,3 @@ $(document).ready (function() {
     });
 
 });
-=======
-
->>>>>>> 09af7109fb3c68ca17752ecdb3691dcb7e7b9812
