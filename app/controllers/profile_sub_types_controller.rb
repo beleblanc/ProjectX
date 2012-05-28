@@ -27,7 +27,7 @@ class ProfileSubTypesController < ApplicationController
   end
 
   def create
-    @profile_sub_type = ProfileSubType.new(params[:profile_sub_type])
+    @profile_sub_type = ProfileSubType.new(params[:profile_sub_types])
 
     respond_to do |format|
       if @profile_sub_type.save
