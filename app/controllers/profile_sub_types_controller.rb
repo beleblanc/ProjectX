@@ -50,7 +50,7 @@ class ProfileSubTypesController < ApplicationController
     @profile_sub_type = ProfileSubType.find(params[:id])
 
     respond_to do |format|
-      if @profile_sub_type.update_attributes(params[:profile_sub_types])
+      if @profile_sub_type.update_attributes(params[:profile_sub_type])
         format.html { redirect_to @profile_sub_type, notice: 'Profile Sub Type was successfully updated.' }
         format.json { head :no_content }
       else

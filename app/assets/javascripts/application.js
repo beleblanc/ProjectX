@@ -25,9 +25,7 @@ $(document).ready (function() {
 
     $(document).on("change", ".ptid", function(){
 
-          alert($(".ptid :selected").val());
-
-        var selid = $(".ptid :selected").val();
+       var selid = $(".ptid :selected").val();
 
         // make a POST call and replace the content
        // $.post("getPSub", function(data) {
@@ -37,8 +35,9 @@ $(document).ready (function() {
         $.ajax({
             type: 'POST',
             url: 'getPSub',
-            data: {psubid: selid},
+            data: {psubid: selid}
         })
     });
+
 
 });
