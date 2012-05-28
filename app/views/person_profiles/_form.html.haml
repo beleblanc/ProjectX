@@ -1,11 +1,10 @@
-=simple_form_for(@person_profile,:html => {:class=>"form-inline "}) do |f|
+=simple_form_for(@person_profile,:html => {:class=>"form-horizontal "}) do |f|
   .span4
-    %fieldset
-      =f.input :comments
-
-
+    =f.input :person_id
+    =f.input :comments
+    .span4.well
+      =f.fields_for :profile_items do |stype|
+        =render 'profile_item_fields', f: stype
+      =link_to_add_fields "Add Profile Item", f, :profile_items
+    .span4
       =f.button :submit
-//.span4
-// =f.fields_for :profile_sub_types do |stype|
-//=render 'profile_sub_type_fields', f: stype
-// =link_to_add_fields "Add Sub Type", f, :profile_sub_types

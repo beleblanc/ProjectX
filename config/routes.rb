@@ -23,8 +23,7 @@ ProjectX::Application.routes.draw do
   resources :dependencies
   resources :consultations
 
-
-
+  match 'person_profiles/getPSub' => 'person_profiles#getPsub'
 
   get "home/index"
 

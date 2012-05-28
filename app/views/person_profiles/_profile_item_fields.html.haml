@@ -1,0 +1,12 @@
+%fieldset
+  =f.input :profile_type_id, :collection => ProfileType.all, :label_method => :name, :value_method => :id, :input_html => { :class => "ptid" }
+  .psubtype
+    =f.fields_for :profile_sub_items do |subtype|
+      =render 'profile_sub_item_fields', f: subtype
+    =link_to_add_fields "Add Sub Profile Item", f, :profile_sub_items
+
+  =f.input :value
+  =f.hidden_field :time, :value => DateTime.now
+  =f.hidden_field :_destroy
+
+  =link_to "Remove", "#", :class => "remove_fields btn btn-danger"
