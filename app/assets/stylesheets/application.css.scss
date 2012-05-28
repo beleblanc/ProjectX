@@ -1,0 +1,25 @@
+@import "bootstrap_and_overrides";
+@import "consultation";
+@import "dependencies";
+@import "diagnoses";
+@import "home";
+@import "medical_aid";
+@import "medical_aid_plan";
+@import "orders";
+@import "people";
+@import "person_medical_aid";
+@import "person_profiles";
+@import "profile_items";
+@import "profile_sub_items";
+@import "profile_sub_types";
+@import "profile_types";
+@import "profiles";
+@import "scaffolds";
+@import "wait_list";
+@import "jquery.ui.datepicker";
+@import "dataTables/jquery.dataTables";
+
+
+.left{float:left}
+
+#user_admin{position: absolute; bottom:10px; right:10px}

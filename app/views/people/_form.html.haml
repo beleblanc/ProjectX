@@ -20,7 +20,7 @@
   =f.input :title
   =f.input :first_name
   =f.input :surname
-  =f.input :dob, :as => :date, :start_year => Date.today.year - 100, :end_year => Date.today.year,  :order => [:year,:month, :day]
+  =f.input :dob, :as => :string, :input_html=>{class:"datepicker"}
   =f.input :other_name
   =f.input :sex ,:collection=> ["M","F"], :include_blank=>true
   =f.input :post_address

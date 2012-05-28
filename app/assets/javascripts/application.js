@@ -11,8 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
 //= require twitter/bootstrap
 //= require dataTables/jquery.dataTables
+//= require jquery.ui.datepicker
 //= require_tree .
 

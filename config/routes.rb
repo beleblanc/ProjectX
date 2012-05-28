@@ -4,6 +4,8 @@ ProjectX::Application.routes.draw do
 
 
 
+  ActiveAdmin.routes(self)
+
   devise_for :users# , :controllers => {:registrations => 'registrations'}
 
 
