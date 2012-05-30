@@ -1,7 +1,8 @@
 %fieldset
-  =f.input :profile_sub_type_id, :collection => ProfileSubType.find_by_profile_type_id(@selected_id), :label_method => :name, :value_method => :id, :input_html => { :class => "sptid" }
-  =f.input :value
-  =f.hidden_field :time, :value => DateTime.now
-  =f.hidden_field :_destroy
+  -ProfileSubType.find_all_by_profile_type_id(@selected_id).each do |p|
+    =f.hidden_field :profile_sub_type_id, :value => p.id
+    =f.input :value, :label => p.name
+    =f.hidden_field :time, :value => DateTime.now
+    =f.hidden_field :_destroy
 
   =link_to "Remove", "#", :class => "remove_fields btn btn-danger"

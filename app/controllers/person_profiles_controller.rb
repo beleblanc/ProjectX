@@ -51,7 +51,7 @@ class PersonProfilesController < ApplicationController
     @person_profile = PersonProfile.find(params[:id])
 
     respond_to do |format|
-      if @person_profile.update_attributes(params[:person_profiles])
+      if @person_profile.update_attributes(params[:person_profile])
         format.html { redirect_to @person_profile, notice: 'Person Profile was successfully updated.' }
         format.json { head :no_content }
       else
@@ -84,10 +84,10 @@ class PersonProfilesController < ApplicationController
 
     @selected_id = params[:psubid]
 
-    respond_to do |format|
-      format.js
-    end
 
+      respond_to do |format|
+      format.js {render :partial =>  "profile_sub_item_fields" }
+    end
 
   end
 

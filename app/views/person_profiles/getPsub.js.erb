@@ -1,2 +1,0 @@
-$('#ptid').html("");
-$(".ptid").after("<div id='ptid'><%if ProfileSubType.find(@selected_id).nil? == false %> <% @profst = ProfileSubType.find_all_by_profile_type_id(@selected_id) %> <table><% @profst.each do |p| %><tr><td><%=  p.name %></td></tr><%end%></table><%end%></div>");
