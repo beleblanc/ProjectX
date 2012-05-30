@@ -20,7 +20,7 @@ class PersonProfilesController < ApplicationController
 
   def new
     @person_profile = PersonProfile.new
-
+    @person_profile.profile_sub_items.build
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @person_profile }
@@ -76,16 +76,11 @@ class PersonProfilesController < ApplicationController
 
   def getPsub
 
+    @selected_id = ProfileSubType.find_all_by_profile_type_id(params[:psubid])
 
- #calculated = params[:id]
- #  render(:profile_item_fields) {|page|
- #     page << "$('.psubtype').html(#{calculated})"
- #   }
-
-    @selected_id = params[:psubid]
 
     respond_to do |format|
-      format.js
+      format.js {render :json => @selected_id}
     end
 
 

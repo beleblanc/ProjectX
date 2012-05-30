@@ -20,7 +20,7 @@
 //= require dataTables/jquery.dataTables
 //= require jquery.ui.datepicker
 //= require_tree .
-
+var dataHolder = null;
 $(document).ready (function() {
 
     $(document).on("change", ".ptid", function(){
@@ -32,12 +32,30 @@ $(document).ready (function() {
        //
        // });
 
-        $.ajax({
+        /*$.ajax({
             type: 'POST',
             url: 'getPSub',
-            data: {psubid: selid}
-        })
-    });
+            data: {"psubid": selid},
+            success: function(data){  alert(data)}}
+   );     */
+        $.ajax({ type: "POST",
+            url : "getPSub",
+            cache: false,
+            dataType:'json',
+            data: {psubid: selid},
+            success: function(data){
+                options = '';
+
+                for (var i =0; i < data.length; i++)
+                {
+                    options += '<option value="'+data[i].id+'">'+data[i].name+'</option>';
+                }
+                dataHolder = options;
+                 },
+            error: function(xhr){ alert("The error is: "+xhr.statusText); } });
 
 
-});
+}); });
+
+
+
