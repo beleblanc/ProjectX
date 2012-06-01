@@ -22,6 +22,7 @@ ProjectX::Application.routes.draw do
   resources :profile_items
   resources :dependencies
   resources :consultations
+  resources :vitals
 
   match 'person_profiles/getPSub' => 'person_profiles#getPsub'
 

@@ -1,5 +1,5 @@
 class Soap < ActiveRecord::Base
-  attr_accessible :comment, :consultation_id, :soap_type_id, :user_id, :vitals_attributes
+  attr_accessible :comment, :consultation_id, :soap_type_id, :user_id, :vitals_attributes, :orders_attributes
 
   has_many :vitals
   has_many :orders
@@ -8,6 +8,6 @@ class Soap < ActiveRecord::Base
   belongs_to :consultation
   belongs_to :soap_type
 
-  accepts_nested_attributes_for :vitals
+  accepts_nested_attributes_for :vitals ,:orders, :allow_destroy => true
 
 end

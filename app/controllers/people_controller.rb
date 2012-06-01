@@ -51,7 +51,7 @@ class PeopleController < ApplicationController
   def create
     @person = Person.new(params[:person])
 
-
+    @person.build_person_profile
     respond_to do |format|
       if @person.save
         unless session[:person_id].nil?

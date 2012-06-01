@@ -9,6 +9,13 @@ class DependenciesController < ApplicationController
   end
 
   def destroy
+    @dependency = Dependency.find(params[:id])
+    @dependency.destroy
+
+    respond_to do |format|
+      format.html {redirect_to person_path(@dependency.person)}
+
+    end
 
 
 

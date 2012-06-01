@@ -1,7 +1,9 @@
+
 %fieldset
-  =f.input :profile_type_id, :collection => ProfileType.all, :label_method => :name, :value_method => :id, :input_html => { :class => "ptid" }
+  =f.input :profile_type_id, :collection => ProfileType.all, :label_method => :name, :value_method => :id, :input_html => { :class => "ptid", :id=> rand_id }
   .psubtype
     =f.fields_for :profile_sub_items do |subtype|
+
       =render 'profile_sub_item_fields', f: subtype
     =link_to_add_fields "Add Sub Profile Item", f, :profile_sub_items
 

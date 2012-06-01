@@ -5,5 +5,9 @@ class DepartmentOperation < ActiveRecord::Base
 
   belongs_to :department
 
+  def code_name
+    "#{:code}-#{:name}"
+  end
+
 
 end

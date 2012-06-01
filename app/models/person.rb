@@ -18,8 +18,8 @@ class Person < ActiveRecord::Base
   accepts_nested_attributes_for :person_medical_aids, :allow_destroy => true
   accepts_nested_attributes_for :dependencies, :allow_destroy => true
 
-  validates_uniqueness_of :pin
-  validates_numericality_of :pin,:tel_home,:tel_mobile,:tel_office
+  validates_uniqueness_of :pin  , :allow_blank => true
+  validates_numericality_of :pin,:tel_home,:tel_mobile,:tel_office , :allow_blank => true
 
   def to_s
     "#{self.first_name} #{self.surname}"

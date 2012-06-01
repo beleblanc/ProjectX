@@ -1,3 +1,5 @@
+=render 'person_profile'
+
 %h2 Consultation for #{@consultation.person.first_name} #{@consultation.person.surname}
 
 %h3.well.offset5 Consultation: #{@consultation.status}
@@ -16,6 +18,7 @@
     %hr
     -soap.vitals.each do |v|
       .span3
+
         %h5 Vitals
         %h6.span2 Blood Pressure
         %p.span1=v.blood_pressure

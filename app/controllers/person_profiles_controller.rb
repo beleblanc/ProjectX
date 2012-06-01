@@ -20,7 +20,7 @@ class PersonProfilesController < ApplicationController
 
   def new
     @person_profile = PersonProfile.new
-    @person_profile.profile_sub_items.build
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @person_profile }
