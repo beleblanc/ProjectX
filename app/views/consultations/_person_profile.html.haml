@@ -2,4 +2,4 @@
   -if @consultation.person.person_profile.nil? == true
     =link_to "Person Has No Profile - Create Profile", new_person_profile_path, :class=>"btn btn-warning"
   -else
-    =link_to "View Person Profile", person_profile_path(@consultation.person.person_profile.id), :class=>"btn btn-success"
+    =link_to "View Person Profile", person_profile_path(@consultation.person.person_profile.id), :class=>"btn btn-success btn-large"

@@ -7,7 +7,7 @@
     <th>Title</th>
     <th>First name</th>
     <th>Surname</th>
-    <th>Other name</th>
+
     <th>Sex</th>
     <th>Tel home</th>
     <th>Tel mobile</th>
@@ -23,14 +23,13 @@
     <td><%= person.title %></td>
     <td><%= person.first_name %></td>
     <td><%= person.surname %></td>
-    <td><%= person.other_name %></td>
     <td><%= person.sex %></td>
     <td><%= person.tel_home %></td>
     <td><%= person.tel_mobile %></td>
     <td><%= person.pin %></td>
     <td><%= link_to 'Show', person, :class => "btn" %></td>
     <td><%= link_to 'Edit', edit_person_path(person), :class => "btn" %></td>
-    <td><%= link_to 'Delete', person, confirm: 'Are you sure?', method: :delete, :class => "btn" %></td>
+    <td><%= link_to_if(can?(:destroy,Person), 'Delete', person, confirm: 'Are you sure?', method: :delete, :class => "btn") %></td>
   </tr>
 <% end %>
 </tbody>
@@ -40,5 +39,8 @@
 <br />
 <div class="span8">
 <br />
-<%= link_to 'New Person', new_person_path, :class => "btn btn-success" %>
+<% content_for :sidebar do%>
+	<%= link_to 'New Person', new_person_path, :class => "btn btn-success btn-large" %>
+<% end%>
+
 </div>

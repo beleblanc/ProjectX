@@ -8,7 +8,7 @@
       =f.input :department, :collection=> Department.all, :label_method=>:name, :value_method=>:id
       =f.input :department_operation_id, :collection=>DepartmentOperation.all, :label_method => :code_name, :value_method=>:id
 
-      =f.input :comments
+      =f.input :comments, :input_html=>{rows:"4"}
       .form-action
         =f.submit
   -content_for :sidebar do
