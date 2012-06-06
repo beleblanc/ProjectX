@@ -172,65 +172,6 @@ ActiveRecord::Schema.define(:version => 20120601144547) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "profile_items", :force => true do |t|
-    t.integer  "person_profile_id"
-    t.integer  "profile_type_id"
-    t.string   "value"
-    t.datetime "time"
-    t.integer  "user_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-  end
-
-  create_table "profile_sub_items", :force => true do |t|
-    t.integer  "person_profile_id"
-    t.integer  "profile_sub_type_id"
-    t.string   "value"
-    t.datetime "time"
-    t.integer  "user_id"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-  end
-
-  create_table "profile_sub_types", :force => true do |t|
-    t.integer  "profile_type_id"
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
-  create_table "profile_sub_values", :force => true do |t|
-    t.integer  "profile_id"
-    t.integer  "profile_sub_type_id"
-    t.string   "value"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-  end
-
-  add_index "profile_sub_values", ["profile_id"], :name => "index_profile_sub_values_on_profile_id"
-  add_index "profile_sub_values", ["profile_sub_type_id"], :name => "index_profile_sub_values_on_profile_sub_type_id"
-
-  create_table "profile_types", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  create_table "profiles", :force => true do |t|
-    t.integer  "person_id"
-    t.integer  "profile_type_id"
-    t.string   "description"
-    t.date     "time"
-    t.integer  "user_id"
-    t.boolean  "snapshot",        :default => false
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
-  end
-
-  add_index "profiles", ["person_id"], :name => "index_profiles_on_person_id"
-
   create_table "relations", :force => true do |t|
     t.string "name"
   end
@@ -245,6 +186,11 @@ ActiveRecord::Schema.define(:version => 20120601144547) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
 
   create_table "soap_types", :force => true do |t|
     t.string   "name"
