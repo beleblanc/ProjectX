@@ -55,7 +55,11 @@ $(document).ready (function() {
             error: function(xhr){ alert("The error is: "+xhr.statusText); } });
 
 
-}); });
+});
+    $('.datepicker').datepicker({firstDay: 0,changeYear: true });
+
+});
+
 
 
 

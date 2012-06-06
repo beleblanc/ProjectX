@@ -1,6 +1,6 @@
 
 %fieldset
-  =f.input :profile_type_id, :collection => ProfileType.all, :label_method => :name, :value_method => :id, :input_html => { :class => "ptid", :id=> rand_id }
+  =f.input :profile_type_id, :collection => ProfileType.all, :label_method => :name, :value_method => :id, :input_html => { :class => "ptid" }
   .psubtype
     =f.fields_for :profile_sub_items do |subtype|
 

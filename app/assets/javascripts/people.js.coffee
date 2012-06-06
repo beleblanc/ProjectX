@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
   $('#peopleData').dataTable()
-  $('.datepicker').datepicker({ changeYear: true });
+
 
 
 #jQuery ->

@@ -40,10 +40,11 @@
         .row
           .span9
             = yield
-          .span3
-            .well.sidebar-nav
-              %h3 Action Bar
-              =yield(:sidebar)
+          -if content_for? :sidebar
+            .span3
+              .well.sidebar-nav
+                %h3 Action Bar
+                =yield(:sidebar)
               
 					
                 
