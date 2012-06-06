@@ -217,6 +217,9 @@ GEM
       raindrops (~> 0.7)
     warden (1.1.1)
       rack (>= 1.0)
+    wicked (0.1.6)
+      activesupport (>= 3.0.7)
+      rails (>= 3.0.7)
 
 PLATFORMS
   ruby
@@ -244,3 +247,4 @@ DEPENDENCIES
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
   unicorn
+  wicked

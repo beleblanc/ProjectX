@@ -1,0 +1,11 @@
+#profile-type.modal.fade{:style=>"display:none;"}
+  %h3 Add Profile Type
+  =simple_form_for(@profile_item, :html => {:class=>"form-horizontal "}) do |f|
+    =f.input :profile_type_id, :collection => ProfileType.all, :label_method => :name, :value_method => :id
+    =f.input :value
+    =f.input :time
+    =f.hidden_field :user_id, :value => current_user.id
+
+.span4
+  %a.btn.btn-large{"data-toggle"=> "modal", :href=>"#profile-type"}Add Profile Type
+%br

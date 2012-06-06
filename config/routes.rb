@@ -25,6 +25,7 @@ ProjectX::Application.routes.draw do
   resources :departments
   resources :department_operations
   resources :vitals
+  resources :person_profile_steps
 
   match 'person_profiles/getPSub' => 'person_profiles#getPsub'
   ActiveAdmin.routes(self)
