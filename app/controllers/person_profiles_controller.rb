@@ -48,6 +48,7 @@ class PersonProfilesController < ApplicationController
   def edit
     @person_profile = PersonProfile.find(params[:id])
     @profile_item = @person_profile.profile_items.new
+    render_wizard
   end
 
   def update
