@@ -1,0 +1,6 @@
+%fieldset
+  %h4 Price Schema for:
+  =f.grouped_collection_select :medical_aid_id, MedicalAid.order(:name),:medical_aid_plan,:name,:id,:plan_name
+  =f.input :price
+  =f.hidden_field :_destroy
+  =link_to "Remove", "#", :class => "remove_fields btn btn-danger"

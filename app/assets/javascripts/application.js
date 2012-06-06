@@ -11,15 +11,14 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-
 //= require ajaxform
 //= require jquery_ujs
-
-
 //= require twitter/bootstrap
 //= require dataTables/jquery.dataTables
 //= require jquery.ui.datepicker
 //= require_tree .
+
+
 var dataHolder = null;
 $(document).ready (function() {
 
@@ -56,7 +55,7 @@ $(document).ready (function() {
 
 
 });
-    $('.datepicker').datepicker({firstDay: 0,changeYear: true });
+    $('.datepicker').datepicker({firstDay: 1,changeYear: true, dateFormat: 'yy-mm-dd', yearRange: 'c-100:c', changeMonth: true });
 
 });
 

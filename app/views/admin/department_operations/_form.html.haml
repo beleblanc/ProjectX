@@ -1,0 +1,9 @@
+=semantic_form_for [:admin,@department_operation] do |f|
+  =f.input :department_id, :as=> :select ,:collection => Department.all
+  =f.input :name
+  =f.input :code
+  =f.input :description
+  =f.semantic_fields_for :prices do |price|
+    =render 'price_fields', f:price
+  =link_to_add_fields "Add Price Schema", f, :prices
+  =f.submit

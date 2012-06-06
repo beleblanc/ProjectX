@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   #GET /user/new.xml
 #--------------------------------------------------------------------------------------------------------
   def new
-
+    @user = User.new
     respond_to do |format|
 
       format.json {render :json => @users}
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 
         format.json {render :json => @users}
         format.xml {head :ok}
-        format.html{redirect_to users_path, notice: "User successfully created!" }
+        format.html{redirect_to user_path, notice: "User successfully created!" }
 
       end
     else
@@ -87,6 +87,8 @@ class UsersController < ApplicationController
   #GET /users/:id/edit.json
 #--------------------------------------------------------------------------------------------------------
   def edit
+    @user = User.find(params[:id])
+
     respond_to do |format|
 
       format.json {render :json =>@user}
@@ -123,16 +125,15 @@ class UsersController < ApplicationController
 #--------------------------------------------------------------------------------------------------------
   def update
     if params[:user][:password].blank?
-      [:password,:password_confirmation,:current_password].collect{|p| params[:user].delete(p)}
-    else
-      @user.errors[:base] << "The password you entered is incorrect" unless @user.valid_password?(params[:user][:current_password])
+      params[:user].delete(:password)
+      params[:user].delete(:password_confirmation)
     end
-
+    @user = User.find(params[:id])
     respond_to do |format|
       if @user.errors[:base].empty? and @user.update_attributes(params[:user])
         format.json {render :json => @user, :status => 200}
         format.xml {head :ok}
-        format.html {redirect_to action: :index, notice: "User successfully updated!"}
+        format.html {redirect_to users_path, notice: "User successfully updated!"}
       else
         format.json {render :text => "Could not update user", :status=>:unprocessable_entity }
         format.xml {head :ok}

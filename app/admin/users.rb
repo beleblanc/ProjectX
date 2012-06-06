@@ -8,5 +8,7 @@ ActiveAdmin.register User do
 
     default_actions
   end
+
+  form :partial => "form"
   
 end
