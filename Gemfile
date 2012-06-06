@@ -11,13 +11,15 @@ gem 'cancan'
 gem 'simple_form'
 gem 'mysql2'
 gem 'rolify'
-gem 'paperclip'
+gem 'paperclip', '~> 3.0.4'
 gem 'haml-rails'
 gem 'capistrano'
 gem 'rspec', :group => :development
 gem 'activeadmin'
 gem 'activeadmin-cancan'
 gem 'meta_search', '>= 1.1.0.pre'
+gem 'wicked'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
