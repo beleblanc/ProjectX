@@ -5,4 +5,6 @@ class Order < ActiveRecord::Base
   belongs_to :department_operation
   belongs_to :soap
 
+  has_one :price, as: :priceable
+
 end

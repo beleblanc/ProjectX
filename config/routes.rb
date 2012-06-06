@@ -1,6 +1,6 @@
 ProjectX::Application.routes.draw do
 
-  ActiveAdmin.routes(self)
+
 
   devise_for :users# , :controllers => {:registrations => 'registrations'}
 
@@ -22,10 +22,12 @@ ProjectX::Application.routes.draw do
   resources :profile_items
   resources :dependencies
   resources :consultations
+  resources :departments
+  resources :department_operations
   resources :vitals
 
   match 'person_profiles/getPSub' => 'person_profiles#getPsub'
-
+  ActiveAdmin.routes(self)
   get "home/index"
 
   get "home/about"

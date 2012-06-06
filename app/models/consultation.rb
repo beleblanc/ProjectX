@@ -3,6 +3,8 @@ class Consultation < ActiveRecord::Base
   has_many :soaps
   belongs_to :person
 
-  accepts_nested_attributes_for :soaps, :allow_destroy => true
+
+
+  accepts_nested_attributes_for :soaps, :allow_destroy => true ,:reject_if => :all_blank
 
 end

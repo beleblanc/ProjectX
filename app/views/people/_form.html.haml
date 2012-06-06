@@ -16,31 +16,33 @@
 
 
 
-    
-  =f.input :title
-  =f.input :first_name
-  =f.input :surname
-  =f.input :dob, :as => :string, :input_html=>{class:"datepicker"}
-  =f.input :other_name
-  =f.input :sex ,:collection=> ["M","F"], :include_blank=>true
-  =f.input :post_address
-  =f.input :tel_home
-  =f.input :tel_office
-  =f.input :tel_mobile
-  =f.input :email
-  =f.input :home_address
-  =f.input :city
-  =f.input :township
-  =f.input :province
-  =f.input :post_code
-  =f.input :nationality
-  =f.input :pin
-  =f.input :employer
-  =f.input :occupation
-  =f.hidden_field :user
-  =f.file_field :pin_image
+  .span4.right
+    =f.fields_for :person_medical_aids do |medaid|
+      =render 'people/person_medical_aid_fields', f: medaid
+    =link_to_add_fields "Add Medcial Aid Plan", f, :person_medical_aids
+  .span4
+    =f.input :title
+    =f.input :first_name
+    =f.input :surname
+    =f.input :dob, :as => :string, :input_html=>{class:"datepicker"}
+    =f.input :other_name
+    =f.input :sex ,:collection=> ["M","F"], :include_blank=>true
+    =f.input :post_address
+    =f.input :tel_home
+    =f.input :tel_office
+    =f.input :tel_mobile
+    =f.input :email
+    =f.input :home_address
+    =f.input :city
+    =f.input :township
+    =f.input :province
+    =f.input :post_code
+    =f.input :nationality
+    =f.input :pin
+    =f.input :employer
+    =f.input :occupation
+    =f.hidden_field :user
+    =f.file_field :pin_image
 
-  =f.fields_for :person_medical_aids do |medaid|
-    =render 'people/person_medical_aid_fields', f: medaid
-  =link_to_add_fields "Add Plan", f, :person_medical_aids
-  =f.submit
+  .form-actions.span8
+    =f.submit

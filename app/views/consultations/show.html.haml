@@ -52,10 +52,12 @@
 
 
 %hr.clearfix
-=link_to  edit_consultation_path(@consultation),:class=>"btn btn-warning" do
 
-  %i.icon-pencil
-  &nbsp;Edit
+-content_for :sidebar do
+  %br
+  =link_to  edit_consultation_path(@consultation),:class=>"btn btn-large" do
+    %i.icon-pencil
+    &nbsp;Edit Consultation
 
 
 

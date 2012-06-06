@@ -29,6 +29,8 @@
             %ul.nav
               %li= link_to "Patients", people_path
               %li= link_to "Waiting List",wait_lists_path
+              -if can?(:read,Consultation)
+                %li= link_to "Consultations", consultations_path
             =render :partial => 'layouts/user_admin'
               
 

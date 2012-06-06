@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120601144547) do
+ActiveRecord::Schema.define(:version => 20120604101845) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -171,6 +171,15 @@ ActiveRecord::Schema.define(:version => 20120601144547) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "prices", :force => true do |t|
+    t.decimal "price",          :precision => 10, :scale => 0
+    t.integer "medical_aid_id"
+    t.integer "priceable_id"
+    t.string  "priceable_type"
+  end
+
+  add_index "prices", ["priceable_id", "priceable_type"], :name => "index_prices_on_priceable_id_and_priceable_type"
 
   create_table "profile_items", :force => true do |t|
     t.integer  "person_profile_id"
