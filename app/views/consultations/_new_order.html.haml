@@ -1,12 +1,21 @@
 -unless @consultation.soaps.nil?
   #new_order.modal.fade{:style=>"display:none"}
-    %h3 New order for #{@consultation.person}
+
+
+    %h3.clearfix New order for #{@consultation.person}
+
+    .clearfix
     =simple_form_for(Order.new, :html=>{class:"form-horizontal"},:controller=>:orders,:action=>:new) do |f|
       =f.hidden_field :soap_id, :value=> @consultation.soaps.last.id
       =f.hidden_field :user_id, :value=> current_user.id
       =f.hidden_field :time, :value=> DateTime.now
       =f.input :department, :collection=> Department.all, :label_method=>:name, :value_method=>:id
-      =f.input :department_operation_id, :collection=>DepartmentOperation.all, :label_method => :code_name, :value_method=>:id
+      %blockquote#price.pull-right
+        %h3 E0.00
+      .control-group.select.optional
+        %label.select.optional.control-label Operation
+        .controls
+          =f.grouped_collection_select :department_operation_id, Department.order(:name), :department_operations, :name,:id,:name, :include_blank=> true
 
       =f.input :comments, :input_html=>{rows:"4"}
       .form-action

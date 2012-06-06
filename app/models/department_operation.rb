@@ -3,10 +3,12 @@ class DepartmentOperation < ActiveRecord::Base
 
   has_many :orders
 
+  has_many :prices, as: :priceable
+
   belongs_to :department
 
   def code_name
-    "#{:code}-#{:name}"
+    "#{self.code}-#{self.name}"
   end
 
 

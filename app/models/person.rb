@@ -15,7 +15,7 @@ class Person < ActiveRecord::Base
   attr_accessor :relation
   attr_accessible :city, :dob, :email, :employer, :first_name, :home_address, :nationality, :occupation, :other_name, :pin, :post_address, :post_code, :province, :sex, :surname, :tel_home, :tel_mobile, :tel_office, :title, :township, :user,:pin_image, :person_medical_aids_attributes,:dependencies_attributes, :relation
 
-  accepts_nested_attributes_for :person_medical_aids, :allow_destroy => true
+  accepts_nested_attributes_for :person_medical_aids, :allow_destroy => true,:reject_if => :all_blank
   accepts_nested_attributes_for :dependencies, :allow_destroy => true
 
   validates_uniqueness_of :pin  , :allow_blank => true

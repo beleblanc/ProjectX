@@ -5,7 +5,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Project X"
+  config.site_title = "Mkhiwa Clinic"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -34,7 +34,7 @@ ActiveAdmin.setup do |config|
   #   config.default_namespace = false
   #
   # Default:
-  # config.default_namespace = :admin
+   config.default_namespace = :admin
   #
   # You can customize the settings for each namespace by using
   # a namespace block. For example, to change the site title

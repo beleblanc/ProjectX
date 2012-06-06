@@ -8,7 +8,7 @@
         %li=link_to "Edit Account", edit_user_registration_path
         %li=link_to "Sign Out", destroy_user_session_path, :method=>:delete
         -if can?(:read, User)
-          %li=link_to "Admin", users_path
+          %li=link_to "Admin",  users_path
   -else
     %li=link_to "Sign In", new_user_session_path
 

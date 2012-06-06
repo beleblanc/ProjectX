@@ -8,6 +8,6 @@ class Soap < ActiveRecord::Base
   belongs_to :consultation
   belongs_to :soap_type
 
-  accepts_nested_attributes_for :vitals ,:orders, :allow_destroy => true
+  accepts_nested_attributes_for :vitals ,:orders, :allow_destroy => true ,:reject_if => :all_blank
 
 end
