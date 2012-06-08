@@ -1,6 +1,6 @@
 %fieldset
-  =f.grouped_collection_select :medical_aids_id, MedicalAid.order(:name), :medical_aid_plan,:name,:id,:plan_name
+  =f.grouped_collection_select :medical_aid_plan_id, MedicalAid.order(:name), :medical_aid_plans,:name,:id,:name
   =f.input :join_date
-  =f.input :aid_number
+  =f.input :number
   =f.hidden_field :_destroy
   =link_to "Remove", "#", :class => "remove_fields btn btn-danger"
