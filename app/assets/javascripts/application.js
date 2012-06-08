@@ -19,12 +19,12 @@
 //= require_tree .
 
 
-var dataHolder = null;
+//var dataHolder = null;
 $(document).ready (function() {
 
-    $(document).on("change", ".ptid", function(){
+    $(document).on("change", "#order_department_operation_id", function(){
 
-       var selid = $(".ptid :selected").val();
+       var selid = $("#order_department_operation_id :selected").val();
 
         // make a POST call and replace the content
        // $.post("getPSub", function(data) {
@@ -38,18 +38,12 @@ $(document).ready (function() {
             success: function(data){  alert(data)}}
    );     */
         $.ajax({ type: "POST",
-            url : "getPSub",
+            url : "get_order_price",
             cache: false,
             dataType:'json',
-            data: {psubid: selid},
+            data: {department_operation : selid, person_id:$('#person_id').data('person_id') },
             success: function(data){
-                options = '';
-
-                for (var i =0; i < data.length; i++)
-                {
-                    options += '<option value="'+data[i].id+'">'+data[i].name+'</option>';
-                }
-                dataHolder = options;
+                $('#price').html(data);
                  },
             error: function(xhr){ alert("The error is: "+xhr.statusText); } });
 

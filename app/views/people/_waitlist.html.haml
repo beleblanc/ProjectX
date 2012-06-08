@@ -6,7 +6,7 @@
       =f.hidden_field :person_id, :value => id
       =f.input :next_action, :collection => ["Doctor", "Nurse", "Review", "Quick"], :include_blank => false
       =f.input :next_action_name
-      =f.input :payment_type
+      =f.input :medical_aid_plan_id, :collection=> @person.medical_aid_plans.all, :label_method=> :name, :value_method=> :id
 
       =f.button :submit
 -unless @person.wait_lists.where(:attended=>false).exists? or @person.consultations.where('status !="Closed"').exists?

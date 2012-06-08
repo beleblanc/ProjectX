@@ -10,7 +10,7 @@ ProjectX::Application.routes.draw do
   resources :users
   resources :medical_aids
   resources :person_medical_aids
-  resources :medical_aid_plan
+  resources :medical_aid_plans
   resources :wait_lists
   resources :consultations
   resources :diagnoses
@@ -28,6 +28,7 @@ ProjectX::Application.routes.draw do
   resources :person_profile_steps
 
   match 'person_profiles/getPSub' => 'person_profiles#getPsub'
+  match 'consultations/get_order_price' => 'consultations#get_order_price'
   ActiveAdmin.routes(self)
   get "home/index"
 

@@ -2,6 +2,8 @@
   #new_order.modal.fade{:style=>"display:none"}
 
     %h3.clearfix New order for #{@consultation.person}
+    #person_id.hidden{:data=>{:person_id=>@consultation.person_id}}}
+
 
     .clearfix
     =simple_form_for(Order.new, :html=>{class:"form-horizontal"},:controller=>:orders,:action=>:new) do |f|

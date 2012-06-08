@@ -1,6 +1,6 @@
 class MedicalAidPlan < ActiveRecord::Base
-  attr_accessible  :plan_name
+  attr_accessible  :plan_name, :medical_aids_id
 
-  belongs_to :medical_aid, :foreign_key => :medical_aids_id ,:primary_key => :id
-  belongs_to :person_medical_aid, :foreign_key => :medical_aids_id, :primary_key => :medical_aids_id
+  belongs_to :medical_aid
+  has_many :person_medical_aids
 end

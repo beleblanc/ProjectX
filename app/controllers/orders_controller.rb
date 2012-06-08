@@ -67,5 +67,7 @@ class OrdersController < ApplicationController
       @order = Order.find(params[:id])
       @order.destroy
     end
-  
-end
+
+
+    end
+

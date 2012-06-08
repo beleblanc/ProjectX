@@ -84,4 +84,32 @@ class ConsultationsController < ApplicationController
     end
 
   end
+
+  def get_order_price
+     person = Person.find(params[:person_id])
+     order_type = DepartmentOperation.find(params[:department_operation])
+
+     if person.person_medical_aids.exists?
+       aid_plans = []
+       person.person_medical_aids.each do |medaid|
+         aid_plans << medaid.medical_aids_id
+       end
+       if !aid_plans.empty?
+         prices =Price.where(:medical_aid_id=>aid_plans,:priceable_type=>order_type.class.to_s,:priceable_id=>order_type.id)
+         respond_to do |format|
+           format.json {render :text =>format_prices(prices) }
+         end
+       end
+     end
+  end
+
+  private
+  def format_prices(prices)
+     return_string = "<div id='price_block'> "
+     prices.each do |price|
+      return_string << "<span>#{MedicalAidPlan.find(price.medical_aid_id).plan_name}: E#{price.price}</span><br />"
+     end
+    return_string << "</div>"
+    return_string
+  end
 end
