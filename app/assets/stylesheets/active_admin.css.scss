@@ -11,3 +11,67 @@
  }
 
 body {padding-top: 0px}
+
+.action_items{
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: -moz-linear-gradient(-90deg, #FDFDFD, #E8E8E8) repeat scroll 0 0 transparent;
+    border-color: #D3D3D3 #C7C7C7 #C2C2C2;
+    border-radius: 200px 200px 200px 200px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+    color: #777777;
+    display: inline-block;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 12px;
+    margin: 0;
+    padding: 12px 17px 10px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 white;
+}
+.action_items:hover {
+    background: -moz-linear-gradient(-90deg, #8B9297, #484D51) repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+}
+ .action_items:hover span.icon svg path,.action_items:hover span.icon svg polygon, .action_items:hover span.icon svg rect, .action_items:hover span.icon svg circle {
+    fill: white !important;
+}
+.action_items:active {
+    background: -moz-linear-gradient(-90deg, #7E858B, #3C4043) repeat scroll 0 0 transparent;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset, 0 1px 0 0 white;
+}
+.action_items:hover {
+    background: -moz-linear-gradient(-90deg, #FDFDFD, #EAEAEA) repeat scroll 0 0 transparent;
+    color: #444444;
+}
+.action_items:hover span.icon svg path,.action_items:hover span.icon svg polygon,.action_items:hover span.icon svg rect, .action_items:hover span.icon svg circle {
+    fill: #444444 !important;
+}
+.action_items:active {
+    background: -moz-linear-gradient(-90deg, #FCFCFC, #E5E4E5) repeat scroll 0 0 transparent;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18) inset, 0 1px 0 0 #EEEEEE;
+}
+.action_items.disabled {
+    color: #777777;
+    cursor: default;
+    opacity: 0.6;
+}
+.action_items.disabled:hover {
+    color: #777777;
+}
+.action_items.disabled:active {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 0 0 1px white inset;
+}
+.action_items span.icon {
+    margin-right: 4px;
+    vertical-align: bottom;
+}
+.action_items:hover span.icon svg path, .action_items:hover span.icon svg polygon, .action_items:hover span.icon svg rect, .action_items:hover span.icon svg circle {
+    fill: black !important;
+}

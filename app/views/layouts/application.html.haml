@@ -33,10 +33,13 @@
                 %li= link_to "Consultations", consultations_path
             =render :partial => 'layouts/user_admin'
               
-
+    #title_bar
+      -if content_for? :title_bar
+        =yield(:title_bar)
     .container
 
       .content
+
         .row
           .span9
             = yield

@@ -5,5 +5,7 @@
   =f.input :description
   =f.semantic_fields_for :prices do |price|
     =render 'price_fields', f:price
+
   =link_to_add_fields "Add Price Schema", f, :prices
+  %br
   =f.submit
