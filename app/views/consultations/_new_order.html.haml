@@ -1,6 +1,5 @@
--unless @consultation.soaps.nil?
+-if @consultation.soaps.exists?
   #new_order.modal.fade{:style=>"display:none"}
-
 
     %h3.clearfix New order for #{@consultation.person}
 
