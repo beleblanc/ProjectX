@@ -2,6 +2,8 @@ ProjectX::Application.routes.draw do
 
 
 
+  get "department_operation/get_operation_price"
+
   devise_for :users, :controllers => {:registrations => 'registrations'} ,:path_prefix=>'d'
 
 
@@ -28,7 +30,7 @@ ProjectX::Application.routes.draw do
   resources :person_profile_steps
 
   match 'person_profiles/getPSub' => 'person_profiles#getPsub'
-  match 'consultations/get_order_price' => 'consultations#get_order_price'
+  match 'department_operation/get_operation_price' => 'department_operation#get_operation_price'
   ActiveAdmin.routes(self)
   get "home/index"
 

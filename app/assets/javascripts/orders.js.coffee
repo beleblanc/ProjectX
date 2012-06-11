@@ -7,7 +7,9 @@ jQuery ->
   $('#order_department').change ->
     department = $('#order_department :selected').text()
     options = $(operations).filter("optgroup[label='#{department}']").html()
+
     if options
+      options ='<option selected = "selected"> </option>' + options
       $('#order_department_operation_id').html(options)
       $('#order_department_operation_id').parent().parent().show()
     else

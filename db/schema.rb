@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120608135854) do
+ActiveRecord::Schema.define(:version => 20120611121906) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -174,8 +174,8 @@ ActiveRecord::Schema.define(:version => 20120608135854) do
   end
 
   create_table "prices", :force => true do |t|
-    t.decimal "price",          :precision => 10, :scale => 0
-    t.integer "medical_aid_id"
+    t.decimal "price",               :precision => 10, :scale => 0
+    t.integer "medical_aid_plan_id"
     t.integer "priceable_id"
     t.string  "priceable_type"
   end

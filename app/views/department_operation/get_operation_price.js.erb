@@ -1,0 +1,5 @@
+ $('#price').html(' ');
+ <%@prices.each do |p| %>
+
+  $('#price').append('<span><strong><%= escape_javascript(p.medical_aid_plan.name) %>:</strong> E <%= p.price %><span>');
+ <% end %>
