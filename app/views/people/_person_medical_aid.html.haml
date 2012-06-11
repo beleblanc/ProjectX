@@ -5,7 +5,8 @@
     %th Join Date
     %th Policy Number
   -@person.person_medical_aids.each do |m|
-    %tr
-      %td="#{m.medical_aid_plan.medical_aid.name} #{m.medical_aid_plan.name}"
-      %td=m.join_date
-      %td=m.number
+    -unless m.medical_aid_plan.name == "Cash"
+      %tr
+        %td="#{m.medical_aid_plan.medical_aid.name} #{m.medical_aid_plan.name}" unless m.medical_aid_plan.name == "Cash"
+        %td=m.join_date
+        %td=m.number
