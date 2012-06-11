@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120608135854) do
+ActiveRecord::Schema.define(:version => 20120611140039) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -193,7 +193,7 @@ ActiveRecord::Schema.define(:version => 20120608135854) do
   end
 
   create_table "profile_sub_items", :force => true do |t|
-    t.integer  "person_profile_id"
+    t.integer  "profile_item_id"
     t.integer  "profile_sub_type_id"
     t.string   "value"
     t.datetime "time"
@@ -255,6 +255,11 @@ ActiveRecord::Schema.define(:version => 20120608135854) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
 
   create_table "soap_types", :force => true do |t|
     t.string   "name"

@@ -2,6 +2,8 @@ ProjectX::Application.routes.draw do
 
 
 
+  get "profile_item_steps/show"
+
   devise_for :users, :controllers => {:registrations => 'registrations'} ,:path_prefix=>'d'
 
 
@@ -26,6 +28,7 @@ ProjectX::Application.routes.draw do
   resources :department_operations
   resources :vitals
   resources :person_profile_steps
+  resources :profile_item_steps
 
   match 'person_profiles/getPSub' => 'person_profiles#getPsub'
   match 'consultations/get_order_price' => 'consultations#get_order_price'
