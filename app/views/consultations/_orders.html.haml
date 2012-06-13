@@ -1,0 +1,19 @@
+%table.span9
+  %tr
+    %th Department
+    %th Operation
+    %th Comments
+    %th Price (E)
+    %th Delete
+  -@consultation.orders.each do |o|
+    %tr
+      %td=o.department_operation.department
+      %td=o.department_operation.code_name
+      %td=o.comments
+      %td=o.price
+      %td= link_to_if(can?(:destroy,Order), 'Delete', o, confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger")
+  %tr
+    %td{:colspan=> "2"}
+    %td
+      %strong Total
+    %td=@consultation.orders.sum(:price)

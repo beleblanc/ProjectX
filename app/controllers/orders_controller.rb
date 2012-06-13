@@ -32,7 +32,7 @@ class OrdersController < ApplicationController
   
       respond_to do |format|
         if @order.save
-          format.html { redirect_to @order, notice: 'Order was successfully created.' }
+          format.html { redirect_to @order.soap.consultation, notice: 'Order was successfully created.' }
           format.json { render json: @order, status: :created, location: @order }
         else
           format.html { render action: "new" }
@@ -66,6 +66,10 @@ class OrdersController < ApplicationController
     def destroy
       @order = Order.find(params[:id])
       @order.destroy
+
+      respond_to do |format|
+        format.html {redirect_to @order.soao.consultation, notice:"Order was successfully removed"}
+      end
     end
 
 

@@ -51,13 +51,13 @@
     =link_to "Add Diagnosis", new_diagnosis_path(:soap_id => soap.id),:class => "btn btn-primary"
 
 
-%hr.clearfix
+.clearfix
 
 -content_for :sidebar do
   %br
   =link_to  edit_consultation_path(@consultation),:class=>"btn btn-large" do
     %i.icon-pencil
-    &nbsp;Edit Consultation
+    &nbsp;Edit
 
-
+=render 'orders'
 

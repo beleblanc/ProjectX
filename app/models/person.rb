@@ -1,5 +1,5 @@
 class Person < ActiveRecord::Base
-  has_attached_file :pin_image, :styles => { :medium => "250x250>", :thumb => "100x100>" }
+  
   has_many :person_medical_aids
   has_many :medical_aid_plans, :through=> :person_medical_aids
   has_many :wait_lists
@@ -8,13 +8,18 @@ class Person < ActiveRecord::Base
   has_many :orders, :through => :soaps
   has_many :diagnoses, :through => :soaps
   has_many :dependencies
+  has_many :invoices
   has_many :dependents, :through => :dependencies
+  has_attached_file :pin_image, :styles => { :medium => "250x250>", :thumb => "100x100>" }
   has_one :inverse_dependency,  :class_name => "Dependency", :foreign_key => "dependent_id"
   has_one :inverse_dependent, :through => :inverse_dependency, :source => :person
   has_one :person_profile
 
   attr_accessor :relation
-  attr_accessible :city, :dob, :email, :employer, :first_name, :home_address, :nationality, :occupation, :other_name, :pin, :post_address, :post_code, :province, :sex, :surname, :tel_home, :tel_mobile, :tel_office, :title, :township, :user,:pin_image, :person_medical_aids_attributes,:dependencies_attributes, :relation
+  attr_accessible :city, :dob, :email, :employer, :first_name, :home_address, 
+    :nationality, :occupation, :other_name, :pin, :post_address, :post_code, :province, :sex, 
+    :surname, :tel_home, :tel_mobile, :tel_office, :title, :township, :user,:pin_image, 
+    :person_medical_aids_attributes,:dependencies_attributes, :relation
 
   accepts_nested_attributes_for :person_medical_aids, :allow_destroy => true,:reject_if => :all_blank
   accepts_nested_attributes_for :dependencies, :allow_destroy => true

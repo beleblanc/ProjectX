@@ -18,6 +18,7 @@ class ConsultationsController < ApplicationController
     end
 
     @consultation.person_id = params[:person_id]
+    @consultation.medical_aid_plan_id = @waitlist.medical_aid_plan_id
 
 
     respond_to do |format|
