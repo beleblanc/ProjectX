@@ -1,16 +1,19 @@
 %h3 Choose your sub values for #{@profile_item.profile_type.name} - #{@profile_item.value}
--if @profile_subtypes.nil? == false
-  =simple_form_for @profile_item do |x|
+-if !@profile_subtypes.nil?
+  =simple_form_for @profile_item ,url: wizard_path do |x|
     =x.hidden_field :id, :value => @profile_item.id
-    =simple_fields_for :profile_sub_items do |y|
-      -@profile_subtypes.each do |z|
-        %fieldset
-          =y.hidden_field :profile_item_id, :value => @profile_item.id
-          =y.hidden_field :profile_sub_type_id, :value => z.id
-          =y.input :value, :label => z.name
-          =y.hidden_field :time, :value => DateTime.now
-          =y.hidden_field :user_id, :value => current_user.id
+    -counter = 0
+    =x.fields_for :profile_sub_items do |y|
+
+      %fieldset
+        =y.hidden_field :profile_item_id, :value => @profile_item.id
+        =y.hidden_field :profile_sub_type_id, :value => @profile_subtypes[counter].id
+        =y.input :value, :label => @profile_subtypes[counter].name
+        =y.hidden_field :time, :value => DateTime.now
+        =y.hidden_field :user_id, :value => current_user.id
+        -counter +=1
     =x.submit "Next"
 
 -else
   %h2 "There are no sub types for the selected type"
+=link_to "Skip", next_wizard_path, class: "btn btn-small btn-inverse"

@@ -1,6 +1,6 @@
 = link_to 'Edit', edit_person_path(@person), :class => 'btn btn-success pull-right'
 = link_to 'Back', people_path, :class => 'btn btn-primary right pull-right'
-%hr.clearfix
+.clearfix
 %h3="#{@person}"
 %hr.clearfix
 
@@ -66,7 +66,8 @@
 -if !@person.inverse_dependent.nil?
   =render 'providers', f: @person.inverse_dependent
 
-%hr.clearfix.span9
+.clearfix
+%hr
 =render 'waitlist', id: @person.id
 
 = link_to 'Edit', edit_person_path(@person), :class => 'btn btn-success left'
@@ -74,3 +75,4 @@
 
 -content_for :sidebar do
   =link_to "Add Dependant", new_person_path(person_id: @person.id) , :class=>"btn btn-large"
+  =link_to "View Medical Profile", person_profile_path(@person.person_profile), :class=> "btn btn-large"
