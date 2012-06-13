@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120612170156) do
+ActiveRecord::Schema.define(:version => 20120613124247) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -87,8 +87,16 @@ ActiveRecord::Schema.define(:version => 20120612170156) do
   end
 
   create_table "invoices", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
+    t.integer  "consultation_id"
+    t.integer  "person_id"
+    t.date     "invoice_date"
+    t.decimal  "total",                 :precision => 10, :scale => 0
+    t.float    "discount"
+    t.integer  "person_medical_aid_id"
+    t.date     "payment_date"
+    t.boolean  "submitted_for_claim?"
   end
 
   create_table "medical_aid_plans", :force => true do |t|

@@ -1,15 +1,46 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  person_profile_id: 1
-  profile_sub_type_id: 1
-  value: MyString
-  time: 2012-05-14 10:33:04
+---
+profile_sub_items_0001:
+  id: 1
+  profile_item_id: 3
+  profile_sub_type_id: 5
+  value: Diabetes
+  time: 2012-06-13 08:57:35.000000000Z
   user_id: 1
-
-two:
-  person_profile_id: 1
-  profile_sub_type_id: 1
-  value: MyString
-  time: 2012-05-14 10:33:04
+  created_at: 2012-06-13 08:58:02.000000000Z
+  updated_at: 2012-06-13 08:58:02.000000000Z
+profile_sub_items_0002:
+  id: 2
+  profile_item_id: 5
+  profile_sub_type_id: 3
+  value: '43'
+  time: 2012-06-13 09:43:49.000000000Z
   user_id: 1
+  created_at: 2012-06-13 09:44:56.000000000Z
+  updated_at: 2012-06-13 09:44:56.000000000Z
+profile_sub_items_0003:
+  id: 3
+  profile_item_id: 5
+  profile_sub_type_id: 4
+  value: Severe
+  time: 2012-06-13 09:43:49.000000000Z
+  user_id: 1
+  created_at: 2012-06-13 09:44:56.000000000Z
+  updated_at: 2012-06-13 09:44:56.000000000Z
+profile_sub_items_0004:
+  id: 4
+  profile_item_id: 6
+  profile_sub_type_id: 1
+  value: Cat1
+  time: 2012-06-13 10:05:06.000000000Z
+  user_id: 1
+  created_at: 2012-06-13 10:05:24.000000000Z
+  updated_at: 2012-06-13 10:05:24.000000000Z
+profile_sub_items_0005:
+  id: 5
+  profile_item_id: 6
+  profile_sub_type_id: 2
+  value: asd
+  time: 2012-06-13 10:05:06.000000000Z
+  user_id: 1
+  created_at: 2012-06-13 10:05:24.000000000Z
+  updated_at: 2012-06-13 10:05:24.000000000Z

@@ -1,11 +1,58 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+---
+users_0001:
+  id: 1
+  email: ben.leblanc@gmail.com
+  username: ZenAnthro
+  encrypted_password: $2a$10$b4Gr6VIEShy0a6CCzyku2Oibgfx9wEidTpUF8D6hRqfjpVUAGLqkC
+  reset_password_token: !!null 
+  reset_password_sent_at: !!null 
+  remember_created_at: !!null 
+  sign_in_count: 30
+  current_sign_in_at: 2012-06-13 08:14:33.000000000Z
+  last_sign_in_at: 2012-06-13 07:25:55.000000000Z
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  failed_attempts: 0
+  unlock_token: !!null 
+  locked_at: !!null 
+  created_at: 2012-05-16 19:23:07.000000000Z
+  updated_at: 2012-06-13 08:14:33.000000000Z
+  redirect: !!null 
+users_0002:
+  id: 3
+  email: lnxumalo7@gmail.com
+  username: Linda
+  encrypted_password: $2a$10$7rJslDmUwDoHSSBR0LEFBOFX1xk1GBmfnF7V6W7j/lNEalOjTiSjG
+  reset_password_token: !!null 
+  reset_password_sent_at: !!null 
+  remember_created_at: !!null 
+  sign_in_count: 1
+  current_sign_in_at: 2012-05-21 08:36:17.000000000Z
+  last_sign_in_at: 2012-05-21 08:36:17.000000000Z
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  failed_attempts: 0
+  unlock_token: !!null 
+  locked_at: !!null 
+  created_at: 2012-05-21 08:36:17.000000000Z
+  updated_at: 2012-05-21 08:36:17.000000000Z
+  redirect: !!null 
+users_0003:
+  id: 5
+  email: test@test.com
+  username: test
+  encrypted_password: $2a$10$vZ4UEYSR/GHasjCZWv.2IOtfQtlbhnpEnIApt0UveHiXKBmSCOHdu
+  reset_password_token: !!null 
+  reset_password_sent_at: !!null 
+  remember_created_at: !!null 
+  sign_in_count: 0
+  current_sign_in_at: !!null 
+  last_sign_in_at: !!null 
+  current_sign_in_ip: !!null 
+  last_sign_in_ip: !!null 
+  failed_attempts: 0
+  unlock_token: !!null 
+  locked_at: !!null 
+  created_at: 2012-06-06 15:49:31.000000000Z
+  updated_at: 2012-06-06 15:55:39.000000000Z
+  redirect: !!null 

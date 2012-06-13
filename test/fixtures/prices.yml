@@ -1,13 +1,19 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  price: 9.99
-  medical_aid_id: 1
+---
+prices_0001:
+  id: 1
+  price: 56.0
+  medical_aid_plan_id: 2
+  priceable_id: 3
+  priceable_type: DepartmentOperation
+prices_0002:
+  id: 2
+  price: 1234.0
+  medical_aid_plan_id: 4
   priceable_id: 1
-  priceable_type: MyString
-
-two:
-  price: 9.99
-  medical_aid_id: 1
-  priceable_id: 1
-  priceable_type: MyString
+  priceable_type: DepartmentOperation
+prices_0003:
+  id: 3
+  price: 11234.0
+  medical_aid_plan_id: 4
+  priceable_id: 2
+  priceable_type: DepartmentOperation

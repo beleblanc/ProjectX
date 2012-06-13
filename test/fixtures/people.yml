@@ -1,47 +1,262 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  title: MyString
-  first_name: MyString
-  surname: MyString
-  dob: 2012-04-20
-  other_name: MyString
-  sex: MyString
-  post_address: MyString
-  tel_home: MyString
-  tel_office: MyString
-  tel_mobile: MyString
-  email: MyString
-  home_address: MyString
-  city: MyString
-  township: MyString
-  province: MyString
-  post_code: MyString
-  nationality: MyString
-  pin: MyString
-  employer: MyString
-  occupation: MyString
-  user: 1
-
-two:
-  title: MyString
-  first_name: MyString
-  surname: MyString
-  dob: 2012-04-20
-  other_name: MyString
-  sex: MyString
-  post_address: MyString
-  tel_home: MyString
-  tel_office: MyString
-  tel_mobile: MyString
-  email: MyString
-  home_address: MyString
-  city: MyString
-  township: MyString
-  province: MyString
-  post_code: MyString
-  nationality: MyString
-  pin: MyString
-  employer: MyString
-  occupation: MyString
-  user: 1
+---
+people_0001:
+  id: 1
+  title: Mrs.
+  first_name: Linda
+  surname: Nxumalo-LeBlanc
+  dob: 1980-02-25
+  other_name: ''
+  sex: F
+  post_address: dummy address
+  tel_home: '+26876022189'
+  tel_office: '+26876022189'
+  tel_mobile: '+26876022189'
+  email: lnxumalo7@gmail.com
+  home_address: a'sdjkhfakdjshfa;kdjshf;akdjshf;ksadjhf
+  city: a;ksdjf;ewkhf
+  township: fasdfadsfk;j
+  province: ads;kfhasdkfjh
+  post_code: '234324'
+  nationality: Swazi
+  pin: '1234567854'
+  employer: Unicef
+  occupation: Child Protection Specialist
+  user: !!null 
+  pin_image_file_name: LindaNxumaloLeBlanc.jpg
+  pin_image_content_type: image/jpeg
+  pin_image_file_size: 111954
+  pin_image_updated_at: 2012-05-16 19:25:02.000000000Z
+  created_at: 2012-05-16 19:25:03.000000000Z
+  updated_at: 2012-05-16 19:25:03.000000000Z
+people_0002:
+  id: 2
+  title: !!null 
+  first_name: Benoit
+  surname: LeBlanc
+  dob: !!null 
+  other_name: !!null 
+  sex: !!null 
+  post_address: !!null 
+  tel_home: '123'
+  tel_office: '123'
+  tel_mobile: '123'
+  email: !!null 
+  home_address: !!null 
+  city: !!null 
+  township: !!null 
+  province: !!null 
+  post_code: !!null 
+  nationality: !!null 
+  pin: '123'
+  employer: !!null 
+  occupation: !!null 
+  user: !!null 
+  pin_image_file_name: !!null 
+  pin_image_content_type: !!null 
+  pin_image_file_size: !!null 
+  pin_image_updated_at: !!null 
+  created_at: 2012-05-21 15:09:19.000000000Z
+  updated_at: 2012-05-21 15:09:19.000000000Z
+people_0003:
+  id: 9
+  title: ''
+  first_name: Cassiah
+  surname: LeBlanc
+  dob: 2012-05-23
+  other_name: ''
+  sex: F
+  post_address: ''
+  tel_home: '1234'
+  tel_office: '1234'
+  tel_mobile: '1234'
+  email: ''
+  home_address: ''
+  city: ''
+  township: ''
+  province: ''
+  post_code: ''
+  nationality: ''
+  pin: '98765'
+  employer: ''
+  occupation: ''
+  user: !!null 
+  pin_image_file_name: !!null 
+  pin_image_content_type: !!null 
+  pin_image_file_size: !!null 
+  pin_image_updated_at: !!null 
+  created_at: 2012-05-23 14:20:07.000000000Z
+  updated_at: 2012-05-23 14:20:07.000000000Z
+people_0004:
+  id: 10
+  title: ''
+  first_name: Benoit
+  surname: Asrat
+  dob: 2012-05-23
+  other_name: ''
+  sex: M
+  post_address: ''
+  tel_home: '123354'
+  tel_office: '2314234'
+  tel_mobile: '234234'
+  email: ''
+  home_address: ''
+  city: ''
+  township: ''
+  province: ''
+  post_code: ''
+  nationality: ''
+  pin: '12377557'
+  employer: ''
+  occupation: ''
+  user: !!null 
+  pin_image_file_name: !!null 
+  pin_image_content_type: !!null 
+  pin_image_file_size: !!null 
+  pin_image_updated_at: !!null 
+  created_at: 2012-05-23 14:26:11.000000000Z
+  updated_at: 2012-05-23 14:26:11.000000000Z
+people_0005:
+  id: 11
+  title: ''
+  first_name: Benoit
+  surname: Nxumalo-LeBlanc
+  dob: 2011-05-23
+  other_name: ''
+  sex: M
+  post_address: ''
+  tel_home: '1234'
+  tel_office: '123234'
+  tel_mobile: '123234'
+  email: 124234@gmail.com
+  home_address: ''
+  city: ''
+  township: ''
+  province: ''
+  post_code: ''
+  nationality: ''
+  pin: '4455'
+  employer: ''
+  occupation: ''
+  user: !!null 
+  pin_image_file_name: !!null 
+  pin_image_content_type: !!null 
+  pin_image_file_size: !!null 
+  pin_image_updated_at: !!null 
+  created_at: 2012-05-23 14:29:15.000000000Z
+  updated_at: 2012-05-23 14:29:15.000000000Z
+people_0006:
+  id: 12
+  title: Mr
+  first_name: Cassiah
+  surname: Nxumalo-LeBlanc
+  dob: 2004-05-25
+  other_name: ''
+  sex: F
+  post_address: ''
+  tel_home: '12345'
+  tel_office: '12345'
+  tel_mobile: '12345'
+  email: '12345'
+  home_address: ''
+  city: ''
+  township: ''
+  province: ''
+  post_code: ''
+  nationality: ''
+  pin: '44556'
+  employer: ''
+  occupation: ''
+  user: !!null 
+  pin_image_file_name: !!null 
+  pin_image_content_type: !!null 
+  pin_image_file_size: !!null 
+  pin_image_updated_at: !!null 
+  created_at: 2012-05-25 12:37:46.000000000Z
+  updated_at: 2012-05-25 12:37:46.000000000Z
+people_0007:
+  id: 16
+  title: ''
+  first_name: Benoit
+  surname: ''
+  dob: !!null 
+  other_name: ''
+  sex: F
+  post_address: ''
+  tel_home: '124'
+  tel_office: '26876022189'
+  tel_mobile: '234134'
+  email: 123@hotmail.com
+  home_address: ''
+  city: ''
+  township: ''
+  province: ''
+  post_code: ''
+  nationality: ''
+  pin: '567'
+  employer: ''
+  occupation: ''
+  user: !!null 
+  pin_image_file_name: !!null 
+  pin_image_content_type: !!null 
+  pin_image_file_size: !!null 
+  pin_image_updated_at: !!null 
+  created_at: 2012-06-01 13:35:05.000000000Z
+  updated_at: 2012-06-01 13:35:05.000000000Z
+people_0008:
+  id: 17
+  title: ''
+  first_name: Benoit
+  surname: Hlophe
+  dob: 1981-09-24
+  other_name: ''
+  sex: M
+  post_address: ''
+  tel_home: ''
+  tel_office: ''
+  tel_mobile: ''
+  email: ''
+  home_address: ''
+  city: ''
+  township: ''
+  province: ''
+  post_code: ''
+  nationality: ''
+  pin: ''
+  employer: ''
+  occupation: ''
+  user: !!null 
+  pin_image_file_name: !!null 
+  pin_image_content_type: !!null 
+  pin_image_file_size: !!null 
+  pin_image_updated_at: !!null 
+  created_at: 2012-06-06 15:19:17.000000000Z
+  updated_at: 2012-06-06 15:19:17.000000000Z
+people_0009:
+  id: 18
+  title: Mr
+  first_name: Paul
+  surname: LeBlanc
+  dob: 1954-04-14
+  other_name: Iroy
+  sex: M
+  post_address: 4379 Rte 535
+  tel_home: '15067438000'
+  tel_office: ''
+  tel_mobile: ''
+  email: leblanpi@nbnet.nb.ca
+  home_address: 4379 Rte 535
+  city: Saint-Thomas-de-Kent
+  township: ''
+  province: New-Brunswick
+  post_code: E4S 4Z3
+  nationality: Canadian
+  pin: '123456742323'
+  employer: N/A
+  occupation: Retired
+  user: !!null 
+  pin_image_file_name: !!null 
+  pin_image_content_type: !!null 
+  pin_image_file_size: !!null 
+  pin_image_updated_at: !!null 
+  created_at: 2012-06-11 09:20:43.000000000Z
+  updated_at: 2012-06-11 09:20:43.000000000Z

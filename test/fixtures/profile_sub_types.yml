@@ -1,13 +1,36 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
+---
+profile_sub_types_0001:
+  id: 1
   profile_type_id: 1
-  name: MyString
-  description: MyString
-  validation: MyString
-
-two:
+  name: Test
+  description: !!null 
+  created_at: 2012-05-28 13:27:12.000000000Z
+  updated_at: 2012-05-28 13:27:12.000000000Z
+profile_sub_types_0002:
+  id: 2
   profile_type_id: 1
-  name: MyString
-  description: MyString
-  validation: MyString
+  name: Severity
+  description: !!null 
+  created_at: 2012-05-28 13:28:48.000000000Z
+  updated_at: 2012-05-28 13:28:48.000000000Z
+profile_sub_types_0003:
+  id: 3
+  profile_type_id: 2
+  name: How many packs a day?
+  description: How many packs a day?
+  created_at: 2012-05-28 13:55:12.000000000Z
+  updated_at: 2012-05-28 13:55:12.000000000Z
+profile_sub_types_0004:
+  id: 4
+  profile_type_id: 2
+  name: Severity
+  description: Severity2
+  created_at: 2012-05-28 13:58:48.000000000Z
+  updated_at: 2012-05-28 13:58:48.000000000Z
+profile_sub_types_0005:
+  id: 5
+  profile_type_id: 3
+  name: Diabetes
+  description: ''
+  created_at: 2012-05-30 10:42:53.000000000Z
+  updated_at: 2012-05-30 10:42:53.000000000Z

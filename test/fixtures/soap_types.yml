@@ -1,9 +1,8 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  name: 
-  instructions: MyText
-
-two:
-  name: 
-  instructions: MyText
+---
+soap_types_0001:
+  id: 1
+  name: Subjective
+  instructions: Fill this field with the patients description of the problem that
+    he or she is feeling
+  created_at: 2012-05-02 10:00:42.000000000Z
+  updated_at: 2012-05-02 10:00:42.000000000Z

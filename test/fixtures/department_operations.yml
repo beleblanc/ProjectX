@@ -1,13 +1,25 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
+---
+department_operations_0001:
+  id: 1
   department_id: 1
-  name: MyString
-  code: MyString
-  description: MyText
-
-two:
-  department_id: 1
-  name: MyString
-  code: MyString
-  description: MyText
+  name: BloodTest
+  code: ''
+  description: ''
+  created_at: 2012-05-28 13:07:46.000000000Z
+  updated_at: 2012-05-28 13:07:46.000000000Z
+department_operations_0002:
+  id: 2
+  department_id: 2
+  name: HeadScan
+  code: XHS01
+  description: ''
+  created_at: 2012-06-04 12:39:50.000000000Z
+  updated_at: 2012-06-04 12:39:50.000000000Z
+department_operations_0003:
+  id: 3
+  department_id: 2
+  name: Body Scan
+  code: BS111
+  description: ! "\r\n"
+  created_at: 2012-06-06 16:42:59.000000000Z
+  updated_at: 2012-06-06 16:42:59.000000000Z

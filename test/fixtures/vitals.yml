@@ -1,21 +1,61 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
+---
+vitals_0001:
+  id: 2
   soap_id: 1
-  time: 
-  blood_pressure: MyString
-  pulse: 1
-  temperature: 9.99
-  respiratory_rate: 1
-  height: 9.99
-  weight: 9.99
-
-two:
-  soap_id: 1
-  time: 
-  blood_pressure: MyString
-  pulse: 1
-  temperature: 9.99
-  respiratory_rate: 1
-  height: 9.99
-  weight: 9.99
+  time: 2012-05-14 08:06:33.000000000Z
+  blood_pressure: '123'
+  pulse: !!null 
+  temperature: !!null 
+  respiratory_rate: !!null 
+  height: !!null 
+  weight: !!null 
+  created_at: 2012-05-14 08:06:33.000000000Z
+  updated_at: 2012-05-14 08:06:33.000000000Z
+vitals_0002:
+  id: 3
+  soap_id: 2
+  time: 2012-05-14 08:16:03.000000000Z
+  blood_pressure: '12313'
+  pulse: 123123
+  temperature: 234234.0
+  respiratory_rate: 34134
+  height: 34345.0
+  weight: 234345.0
+  created_at: 2012-05-14 08:17:21.000000000Z
+  updated_at: 2012-05-14 08:17:21.000000000Z
+vitals_0003:
+  id: 6
+  soap_id: 10
+  time: !!null 
+  blood_pressure: '123'
+  pulse: 123
+  temperature: 123.0
+  respiratory_rate: 123
+  height: 123.0
+  weight: 123.0
+  created_at: 2012-05-16 08:04:41.000000000Z
+  updated_at: 2012-05-16 08:04:41.000000000Z
+vitals_0004:
+  id: 7
+  soap_id: 11
+  time: !!null 
+  blood_pressure: '12323'
+  pulse: 12334
+  temperature: 23445343.0
+  respiratory_rate: 234234
+  height: 343.0
+  weight: 45345.0
+  created_at: 2012-05-16 08:05:13.000000000Z
+  updated_at: 2012-05-16 08:05:13.000000000Z
+vitals_0005:
+  id: 8
+  soap_id: 8
+  time: !!null 
+  blood_pressure: ''
+  pulse: !!null 
+  temperature: !!null 
+  respiratory_rate: !!null 
+  height: !!null 
+  weight: !!null 
+  created_at: 2012-05-16 08:55:47.000000000Z
+  updated_at: 2012-05-16 08:55:47.000000000Z

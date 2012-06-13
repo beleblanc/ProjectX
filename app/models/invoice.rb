@@ -1,4 +1,5 @@
 class Invoice < ActiveRecord::Base
-  has_many :orders
+  belongs_to :consultation
   belongs_to :person
+  belongs_to :person_medical_aid
 end
