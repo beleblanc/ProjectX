@@ -52,6 +52,7 @@ class PeopleController < ApplicationController
     @person = Person.new(params[:person])
 
     @person.build_person_profile
+    @person.person_medical_aids.new(:join_date=>Date.today, :medical_aid_plan_id => MedicalAidPlan.find_by_name("Cash").id)
     respond_to do |format|
       if @person.save
         unless session[:person_id].nil?

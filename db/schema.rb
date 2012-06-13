@@ -174,8 +174,8 @@ ActiveRecord::Schema.define(:version => 20120611140039) do
   end
 
   create_table "prices", :force => true do |t|
-    t.decimal "price",          :precision => 10, :scale => 0
-    t.integer "medical_aid_id"
+    t.decimal "price",               :precision => 10, :scale => 0
+    t.integer "medical_aid_plan_id"
     t.integer "priceable_id"
     t.string  "priceable_type"
   end

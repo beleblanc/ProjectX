@@ -38,14 +38,13 @@ $(document).ready (function() {
             success: function(data){  alert(data)}}
    );     */
         $.ajax({ type: "POST",
-            url : "get_order_price",
+            url : "../department_operation/get_operation_price",
             cache: false,
-            dataType:'json',
-            data: {department_operation : selid, person_id:$('#person_id').data('person_id') },
-            success: function(data){
-                $('#price').html(data);
-                 },
-            error: function(xhr){ alert("The error is: "+xhr.statusText); } });
+            //dataType:'json',
+            data: {department_operation : selid, person_id:$('#person_id').data('person_id') }//,
+
+           // error: function(xhr){ alert("The error is: "+xhr.statusText); }
+        });
 
 
 });

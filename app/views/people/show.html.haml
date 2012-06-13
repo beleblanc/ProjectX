@@ -43,8 +43,9 @@
   %h4 Post code
   %p= @person.post_code
 
-.span4.well
-  = render 'person_medical_aid', f: @person.person_medical_aids
+-unless @person.person_medical_aids.count < 2
+  .span4.well
+    = render 'person_medical_aid', f: @person.person_medical_aids
 
 .notices.span4.well
   %h3 Notices
