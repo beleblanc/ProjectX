@@ -4,7 +4,7 @@ class ProfileItem < ActiveRecord::Base
   belongs_to :profile_type
 
   has_many :profile_sub_types, :through => :profile_type
-  has_many :profile_sub_items, :through => :person_profile
+  has_many :profile_sub_items
 
   accepts_nested_attributes_for :profile_sub_items
 end

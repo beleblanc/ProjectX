@@ -1,8 +1,5 @@
 class PersonProfilesController < ApplicationController
 
-  include Wicked::Wizard
-  steps :step1, :step2
-
   def index
     @person_profiles = PersonProfile.all
 
@@ -47,8 +44,7 @@ class PersonProfilesController < ApplicationController
 
   def edit
     @person_profile = PersonProfile.find(params[:id])
-    @profile_item = @person_profile.profile_items.new
-    render_wizard
+    @profile_item = ProfileItem.new(:person_profile_id => @person_profile.id)
   end
 
   def update

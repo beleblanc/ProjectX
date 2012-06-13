@@ -32,8 +32,11 @@ class ProfileItemsController < ApplicationController
 
     respond_to do |format|
       if @profile_item.save
-        format.html { redirect_to @profile_item, notice: 'Profile Item was successfully created.' }
+        session[:profile_item_id] = @profile_item.id
+
+        format.html { redirect_to profile_item_steps_path }
         format.json { render json: @profile_item, status: :created, location: @profile_item}
+
       else
         format.html { render action: "new" }
         format.json { render json: @profile_item.errors, status: :unprocessable_entity }
@@ -51,7 +54,7 @@ class ProfileItemsController < ApplicationController
     @profile_item = ProfileItem.find(params[:id])
 
     respond_to do |format|
-      if @profile_item.update_attributes(params[:profile_items])
+      if @profile_item.update_attributes(params[:profile_item])
         format.html { redirect_to @profile_item, notice: 'Profile Item was successfully updated.' }
         format.json { head :no_content }
       else
