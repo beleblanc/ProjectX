@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613124247) do
+ActiveRecord::Schema.define(:version => 20120615080600) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -96,7 +96,18 @@ ActiveRecord::Schema.define(:version => 20120613124247) do
     t.float    "discount"
     t.integer  "person_medical_aid_id"
     t.date     "payment_date"
-    t.boolean  "submitted_for_claim?"
+    t.boolean  "submitted_for_claim"
+  end
+
+  create_table "line_items", :force => true do |t|
+    t.integer  "invoice_id"
+    t.integer  "quantity"
+    t.decimal  "unit_cost",  :precision => 10, :scale => 0
+    t.float    "tax"
+    t.integer  "total"
+    t.integer  "price_id"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   create_table "medical_aid_plans", :force => true do |t|

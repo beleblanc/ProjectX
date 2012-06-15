@@ -1,7 +1,7 @@
 ProjectX::Application.routes.draw do
 
 
-  get "department_operation/get_operation_price"
+  
   devise_for :users, :controllers => {:registrations => 'registrations'} ,:path_prefix=>'d'
   resources :people
   resources :users
@@ -24,6 +24,7 @@ ProjectX::Application.routes.draw do
   resources :vitals
   resources :person_profile_steps
   resources :profile_item_steps
+  resources :invoices
 
   match 'person_profiles/getPSub' => 'person_profiles#getPsub'
   match 'department_operation/get_operation_price' => 'department_operation#get_operation_price'

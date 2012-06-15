@@ -1,0 +1,21 @@
+%h1 Invoices
+%table.table.table-striped
+  %thead
+    %tr
+      %th ID
+      %th
+        = t("activerecord.attributes.invoice.consultation_id", :default => t("activerecord.labels.consultation_id", :default => "Consultation_id"))
+      %th Created at
+      %th Actions
+  %tbody
+    - @invoices.each do |invoice|
+      %tr
+        %td= invoice.id
+        %td= link_to invoice.consultation_id, invoice_path(invoice)
+        %td= invoice.created_at
+        %td
+          = link_to "Show", invoice_path(invoice), :class => 'btn btn-mini'
+          = link_to "Edit", edit_invoice_path(invoice), :class => 'btn btn-mini'
+          = link_to "Destroy", invoice_path(invoice), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-mini btn-danger' 
+
+= link_to "New", new_invoice_path, :class => 'btn btn-primary'

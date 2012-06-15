@@ -1,0 +1,37 @@
+%p
+  %strong= t("activerecord.attributes.invoice.consultation_id", :default => t("activerecord.labels.consultation_id", :default => "Consultation")) + ":"
+  %br
+  = @invoice.consultation_id
+%p
+  %strong= t("activerecord.attributes.invoice.person_id", :default => t("activerecord.labels.person_id", :default => "Person")) + ":"
+  %br
+  = @invoice.person_id
+%p
+  %strong= t("activerecord.attributes.invoice.invoice_date", :default => t("activerecord.labels.invoice_date", :default => "Invoice date")) + ":"
+  %br
+  = @invoice.invoice_date
+%p
+  %strong= t("activerecord.attributes.invoice.total", :default => t("activerecord.labels.total", :default => "Total")) + ":"
+  %br
+  = @invoice.total
+%p
+  %strong= t("activerecord.attributes.invoice.discount", :default => t("activerecord.labels.discount", :default => "Discount")) + ":"
+  %br
+  = @invoice.discount
+%p
+  %strong= t("activerecord.attributes.invoice.person_medical_aid_id", :default => t("activerecord.labels.person_medical_aid_id", :default => "Person medical aid")) + ":"
+  %br
+  = @invoice.person_medical_aid_id
+%p
+  %strong= t("activerecord.attributes.invoice.payment_date", :default => t("activerecord.labels.payment_date", :default => "Payment date")) + ":"
+  %br
+  = @invoice.payment_date
+%p
+  %strong= t("activerecord.attributes.invoice.submitted_for_claim", :default => t("activerecord.labels.submitted_for_claim", :default => "Submitted for claim")) + ":"
+  %br
+  = @invoice.submitted_for_claim
+
+.form-actions
+  = link_to "Back", invoices_path, :class => 'btn'
+  = link_to "Edit", edit_invoice_path(@invoice), :class => 'btn'
+  = link_to "Delete", invoice_path(@invoice), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-danger'

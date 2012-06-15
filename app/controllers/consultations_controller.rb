@@ -81,7 +81,7 @@ class ConsultationsController < ApplicationController
     @consultation.save!
 
     respond_to do |format|
-        format.html {redirect_to consultations_path, notice: "Consultation successfully closed"}
+        format.html {redirect_to new_invoice_path(:consultation_id=> @consultation.id, person_id: @consultation.person_id, medical_aid_plan_id: @consultation.medical_aid_plan_id), notice: "Consultation successfully closed"}
     end
 
   end
