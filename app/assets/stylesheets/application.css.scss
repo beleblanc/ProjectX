@@ -18,64 +18,77 @@
 @import "wait_list";
 @import "jquery.ui.datepicker";
 @import "dataTables/jquery.dataTables";
+@import "invoice.css.scss";
 
-
-.right {float:right;}
-
+.right {
+  float: right;
+}
 
 #title_bar {
-    -moz-border-bottom-colors: none;
-    -moz-border-image: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    -moz-box-sizing: border-box;
-    background: -moz-linear-gradient(-90deg, #EFEFEF, #DFE1E2) repeat scroll 0 0 transparent;
-    border-color: #E6E6E6 #D4D4D4 #EEEEEE;
-    border-style: solid;
-    border-width: 1px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
-    color: #5E6469;
-    display: table;
-    font-size: 1em;
-    font-weight: bold;
-    line-height: 18px;
-    margin: 0 0 15px;
-    padding: 10px 30px;
-    position: relative;
-    text-shadow: 0 1px 0 white;
-    width: 100%;
-    z-index: 800;
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  -moz-box-sizing: border-box;
+  background: -moz-linear-gradient(-90deg, #EFEFEF, #DFE1E2) repeat scroll 0 0 transparent;
+  border-color: #E6E6E6 #D4D4D4 #EEEEEE;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+  color: #5E6469;
+  display: table;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 18px;
+  margin: 0 0 15px;
+  padding: 10px 30px;
+  position: relative;
+  text-shadow: 0 1px 0 white;
+  width: 100%;
+  z-index: 800;
 }
+
 #title_bar span.icon svg path, #title_bar span.icon svg polygon, #title_bar span.icon svg rect, #title_bar span.icon svg circle {
-    fill: #5E6469 !important;
+  fill: #5E6469 !important;
 }
+
 #title_bar span.icon {
-    height: 1em;
-    width: 1em;
+  height: 1em;
+  width: 1em;
 }
+
 #title_bar span.icon svg {
-    height: 1em;
-    width: 1em;
+  height: 1em;
+  width: 1em;
 }
+
 #title_bar:before, #title_bar:after {
-    content: "";
-    display: table;
+  content: "";
+  display: table;
 }
+
 #title_bar:after {
-    clear: both;
+  clear: both;
 }
+
 #title_bar #titlebar_left, #title_bar #titlebar_right {
-    display: table-cell;
-    height: 50px;
-    vertical-align: middle;
+  display: table-cell;
+  height: 50px;
+  vertical-align: middle;
 }
+
 #title_bar #titlebar_right {
-    text-align: right;
+  text-align: right;
 }
+
 #title_bar h2 {
-    font-size: 2.6em;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
+  font-size: 2.6em;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.form-horizontal .control-group {
+  margin-bottom: 2px
 }

@@ -1,40 +1,52 @@
-= form_for @invoice, :html => { :class => 'form-horizontal' } do |f|
-  %fieldset
-    %legend
-      = controller.action_name.capitalize
-      /Invoice
-    .control-group
-      = f.label :consultation_id, :class => 'control-label'
-      .controls
-        = f.number_field :consultation_id, :class => 'number_field'
-    .control-group
-      = f.label :person_id, :class => 'control-label'
-      .controls
-        = f.number_field :person_id, :class => 'number_field'
-    .control-group
-      = f.label :invoice_date, :class => 'control-label'
-      .controls
-        = f.date_select :invoice_date, :class => 'date_select'
-    .control-group
-      = f.label :total, :class => 'control-label'
-      .controls
-        = f.number_field :total, :class => 'number_field'
-    .control-group
-      = f.label :discount, :class => 'control-label'
-      .controls
-        = f.text_field :discount, :class => 'text_field'
-    .control-group
-      = f.label :person_medical_aid_id, :class => 'control-label'
-      .controls
-        = f.number_field :person_medical_aid_id, :class => 'number_field'
-    .control-group
-      = f.label :payment_date, :class => 'control-label'
-      .controls
-        = f.date_select :payment_date, :class => 'date_select'
-    .control-group
-      = f.label :submitted_for_claim, :class => 'control-label'
-      .controls
-        = f.check_box :submitted_for_claim, :class => 'check_box'
-    .form-actions
-      = f.submit nil, :class => 'btn btn-primary'
-      = link_to "Cancel", invoices_path, :class => 'btn'
+= simple_form_for @invoice, :html => { :class => 'form-horizontal form-inline invoice-form' } do |f|
+
+  %legend
+    ="#{controller.action_name.capitalize} Invoice "
+    /Invoice
+
+  .control-group.pull-right
+    .controls
+      = f.input :invoice_date, as: :string, :input_html =>{ class: 'datepicker text-right'}
+    .controls
+      = f.input :discount, :label=> "Discount (%)", :input_html => {class: "text-right "}
+    .controls
+      = f.input :payment_date,  as: :string, :input_html =>{ class: 'datepicker text-right'}
+    .controls
+      = f.input :submitted_for_claim
+      = f.hidden_field :person_medical_aid_id
+  .control-group.pull-left.well
+    %h3=@invoice.person
+    %h5= @invoice.person.post_address
+    %h5= @invoice.person.home_address
+    %h5= @invoice.person.city
+    %h5= @invoice.person.tel_mobile
+    %h5= @invoice.person.email
+  .clearfix
+  %hr
+  =link_to_add_fields "Add Line Item",f,:line_items, "add_invoice_fields pull-right"
+  .clearfix
+  %table#invoice-table.table.table-striped.table-bordered.table-condensed.span6.right
+    %thead
+      %tr
+        %th
+          Description
+        %th
+          Unit Cost
+        %th
+          Qty
+        %th
+          Tax
+        %th
+          Line Total
+    %tbody
+      =f.simple_fields_for :line_items do |line|
+        =render 'line_item_fields', f: line
+
+  .control-group.pull-right
+    .controls
+      = f.input :total,:disabled=>true
+  .clearfix
+  %hr
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to "Cancel", invoices_path, :class => 'btn'

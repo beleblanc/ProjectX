@@ -1,0 +1,14 @@
+%tr.invoice_row
+  %td
+    =f.input :description,label: false,input_html: {class:"autocomplete", data: {autocomplete_source: department_operations_path}}
+  %td
+    =f.input :unit_cost, label: false ,input_html: {class:"input-mini line_unit_cost"}
+  %td
+    =f.input :quantity , label: false  ,input_html: {class:"input-mini line_quantity"}
+  %td
+    =f.input :tax , label: false ,input_html: {class:"input-mini line_tax"}
+  %td
+    =f.input :total ,label: false ,input_html: {class:"input-mini line_total"}, :disabled=>true
+  %td
+    =f.hidden_field :_destroy
+    =link_to "X", "#", :class => "remove_fields btn btn-danger btn-mini"

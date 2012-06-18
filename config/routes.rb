@@ -1,8 +1,7 @@
 ProjectX::Application.routes.draw do
 
 
-  
-  devise_for :users, :controllers => {:registrations => 'registrations'} ,:path_prefix=>'d'
+  devise_for :users, :controllers => {:registrations => 'registrations'}, :path_prefix => 'd'
   resources :people
   resources :users
   resources :medical_aids
@@ -28,6 +27,7 @@ ProjectX::Application.routes.draw do
 
   match 'person_profiles/getPSub' => 'person_profiles#getPsub'
   match 'department_operation/get_operation_price' => 'department_operation#get_operation_price'
+  match 'invoices/department_operation_price' => 'invoices#department_operation_price'
   ActiveAdmin.routes(self)
   get "home/index"
 
