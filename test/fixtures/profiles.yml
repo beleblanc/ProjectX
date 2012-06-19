@@ -1,17 +1,1 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  person_id: 1
-  profile_type_id: 1
-  description: MyString
-  time: 2012-04-30
-  user_id: 1
-  snapshot: false
-
-two:
-  person_id: 1
-  profile_type_id: 1
-  description: MyString
-  time: 2012-04-30
-  user_id: 1
-  snapshot: false
+--- {}

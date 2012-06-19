@@ -1,9 +1,19 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  name: MyString
-  snapshot: false
-
-two:
-  name: MyString
-  snapshot: false
+---
+profile_types_0001:
+  id: 1
+  name: Allergy
+  description: !!null 
+  created_at: 2012-05-28 13:28:03.000000000Z
+  updated_at: 2012-05-28 13:28:03.000000000Z
+profile_types_0002:
+  id: 2
+  name: Nicotine2
+  description: Nicotine use
+  created_at: 2012-05-28 13:55:12.000000000Z
+  updated_at: 2012-05-28 13:58:36.000000000Z
+profile_types_0003:
+  id: 3
+  name: Chronic Illness
+  description: Patient has a chronic illness
+  created_at: 2012-05-30 10:42:21.000000000Z
+  updated_at: 2012-05-30 10:42:21.000000000Z

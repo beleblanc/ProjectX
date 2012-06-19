@@ -19,7 +19,8 @@ gem 'activeadmin'
 gem 'activeadmin-cancan'
 gem 'meta_search', '>= 1.1.0.pre'
 gem 'wicked'
-
+gem 'prawn'
+gem 'country-select'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -38,7 +39,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'country-select'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

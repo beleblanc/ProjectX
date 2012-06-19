@@ -1,11 +1,16 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  name: MyString
-  staff_id: 1
-  description: MyText
-
-two:
-  name: MyString
-  staff_id: 1
-  description: MyText
+---
+departments_0001:
+  id: 1
+  name: Labratory
+  staff_id: !!null 
+  description: This deparment is in charge of all the tests that are required by the
+    clinic
+  created_at: 2012-05-25 14:00:06.000000000Z
+  updated_at: 2012-05-25 14:00:06.000000000Z
+departments_0002:
+  id: 2
+  name: X-Ray
+  staff_id: !!null 
+  description: ''
+  created_at: 2012-06-04 12:39:16.000000000Z
+  updated_at: 2012-06-04 12:39:16.000000000Z
