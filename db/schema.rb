@@ -262,6 +262,11 @@ ActiveRecord::Schema.define(:version => 20120612170156) do
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
 
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
+
   create_table "soap_types", :force => true do |t|
     t.string   "name"
     t.text     "instructions"
