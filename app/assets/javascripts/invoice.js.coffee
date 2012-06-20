@@ -19,8 +19,7 @@ jQuery ->
           cache: false,
           url: "/invoices/department_operation_price",
           dataType: "json",
-          data:
-            {key_string: ui.item.value, person_medical_aid_id: $('#invoice_person_medical_aid_id').val()},
+          data: {key_string: ui.item.value, person_medical_aid_id: $('#invoice_person_medical_aid_id').val()},
           success: (data) ->
             $parent = $(event.currentTarget).closest('tr')
             $($parent).find('.line_unit_cost').val(data.price)
@@ -41,8 +40,7 @@ jQuery ->
         cache: false,
         url: "/invoices/department_operation_price",
         dataType: "json",
-        data:
-          {key_string: ui.item.value, person_medical_aid_id: $('#invoice_person_medical_aid_id').val()},
+        data: {key_string: ui.item.value, person_medical_aid_id: $('#invoice_person_medical_aid_id').val()},
         success: (data) ->
           $parent = $(event.currentTarget).closest('tr')
           $($parent).find('.line_unit_cost').val(data.price)

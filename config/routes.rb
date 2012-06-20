@@ -1,19 +1,7 @@
 ProjectX::Application.routes.draw do
 
 
-  get "payments/index"
 
-  get "payments/show"
-
-  get "payments/new"
-
-  get "payments/create"
-
-  get "payments/edit"
-
-  get "payments/update"
-
-  get "payments/destroy"
 
   devise_for :users, :controllers => {:registrations => 'registrations'}, :path_prefix => 'd'
   resources :people
@@ -38,6 +26,7 @@ ProjectX::Application.routes.draw do
   resources :person_profile_steps
   resources :profile_item_steps
   resources :invoices
+  resources :payments
 
   match 'person_profiles/getPSub' => 'person_profiles#getPsub'
   match 'department_operation/get_operation_price' => 'department_operation#get_operation_price'
