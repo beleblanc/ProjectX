@@ -1,6 +1,20 @@
 ProjectX::Application.routes.draw do
 
 
+  get "payments/index"
+
+  get "payments/show"
+
+  get "payments/new"
+
+  get "payments/create"
+
+  get "payments/edit"
+
+  get "payments/update"
+
+  get "payments/destroy"
+
   devise_for :users, :controllers => {:registrations => 'registrations'}, :path_prefix => 'd'
   resources :people
   resources :users

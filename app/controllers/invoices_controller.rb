@@ -7,9 +7,11 @@ class InvoicesController < ApplicationController
 
   def department_operation_price
     @department_operation = DepartmentOperation.find_by_code(params[:key_string].split("-").first)
-    @price = @department_operation.prices.find_by_medical_aid_plan_id(params[:person_medical_aid_id]).price
 
-    render json: {price :@price}
+    @price = @department_operation.prices.find_by_medical_aid_plan_id(params[:person_medical_aid_id]).price unless if @price.nil?
+                                                                                                                     @price = @department_operation.prices.find_by_medical_aid_plan_id(MedicalAidPlan.find_by_name("Cash").id).price
+                                                                                                                   end
+    render json: {price: @price}
 
   end
 
@@ -38,7 +40,7 @@ class InvoicesController < ApplicationController
   def update
     respond_to do |format|
       if @invoice.update_attributes(params[:invoice])
-        format.html { redirect_to @invoice, notice :"Successfully updated invoice" }
+        format.html { redirect_to @invoice, notice: "Successfully updated invoice" }
 
       else
         format.html { render :action => "edit" }

@@ -1,5 +1,6 @@
 class Invoice < ActiveRecord::Base
   has_many :line_items
+  has_many :payments
   belongs_to :consultation
   belongs_to :person
   belongs_to :person_medical_aid
@@ -10,11 +11,15 @@ class Invoice < ActiveRecord::Base
 
   def build_line_items
     self.invoice_date = Date.today
+    self.build_order_items
+    self.total = self.line_items.sum(:total)
+  end
+
+  def build_order_items
     self.consultation.orders.all.each do |order|
-      line = {:quantity => 1.0, :unit_cost => order.price, :total => order.price, :description => "#{order.department_operation.name} - #{order.department_operation.code}"}
-      self.line_items.new(line)
+      line = {:quantity => 1.0, :unit_cost => order.price, :total => order.price, :description => order.department_operation.code_name}
+      self.line_items.build(line)
     end
-    self.total = self.line_items.calculate(:sum, :total)
   end
 
 end
