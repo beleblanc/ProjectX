@@ -7,16 +7,16 @@ users_0001:
   reset_password_token: !!null 
   reset_password_sent_at: !!null 
   remember_created_at: !!null 
-  sign_in_count: 30
-  current_sign_in_at: 2012-06-13 08:14:33.000000000Z
-  last_sign_in_at: 2012-06-13 07:25:55.000000000Z
+  sign_in_count: 39
+  current_sign_in_at: 2012-06-20 15:09:36.000000000Z
+  last_sign_in_at: 2012-06-20 09:49:59.000000000Z
   current_sign_in_ip: 127.0.0.1
   last_sign_in_ip: 127.0.0.1
   failed_attempts: 0
   unlock_token: !!null 
   locked_at: !!null 
   created_at: 2012-05-16 19:23:07.000000000Z
-  updated_at: 2012-06-13 08:14:33.000000000Z
+  updated_at: 2012-06-20 15:09:36.000000000Z
   redirect: !!null 
 users_0002:
   id: 3
@@ -55,4 +55,23 @@ users_0003:
   locked_at: !!null 
   created_at: 2012-06-06 15:49:31.000000000Z
   updated_at: 2012-06-06 15:55:39.000000000Z
+  redirect: !!null 
+users_0004:
+  id: 6
+  email: teddya2007@gmail.com
+  username: teddy
+  encrypted_password: $2a$10$71ckFtkdznAYBkGWJ78EbetfFn2w.CN13vMauNpN8sT2pAZP0Krdi
+  reset_password_token: !!null 
+  reset_password_sent_at: !!null 
+  remember_created_at: !!null 
+  sign_in_count: 0
+  current_sign_in_at: !!null 
+  last_sign_in_at: !!null 
+  current_sign_in_ip: !!null 
+  last_sign_in_ip: !!null 
+  failed_attempts: 0
+  unlock_token: !!null 
+  locked_at: !!null 
+  created_at: 2012-06-20 15:10:33.000000000Z
+  updated_at: 2012-06-20 15:10:33.000000000Z
   redirect: !!null 

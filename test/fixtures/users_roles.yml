@@ -1,0 +1,22 @@
+---
+users_roles_0001:
+  user_id: 1
+  role_id: 1
+users_roles_0002:
+  user_id: 1
+  role_id: 2
+users_roles_0003:
+  user_id: 3
+  role_id: 2
+users_roles_0004:
+  user_id: 5
+  role_id: 1
+users_roles_0005:
+  user_id: 5
+  role_id: 2
+users_roles_0006:
+  user_id: 6
+  role_id: 1
+users_roles_0007:
+  user_id: 6
+  role_id: 2
