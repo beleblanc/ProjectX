@@ -3,7 +3,7 @@ By default uses development database. Set RAILS_ENV to override'
 
 task :extract_fixtures => :environment do
   sql = "SELECT * FROM %s"
-  skip_tables = ["schema_info"]
+  skip_tables = ["schema_migrations"]
   ActiveRecord::Base.establish_connection
   (ActiveRecord::Base.connection.tables - skip_tables).each do |table_name|
     i = "0000"

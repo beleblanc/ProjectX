@@ -96,6 +96,7 @@
   = link_to "Back", invoices_path, :class => 'btn'
   = link_to "Edit", edit_invoice_path(@invoice), :class => 'btn'
   = link_to "Delete", invoice_path(@invoice), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-danger'
+  =link_to "Print Invoice (PDF)", invoice_path(@invoice, format: :pdf), class: "btn btn-success"
 
 
 
