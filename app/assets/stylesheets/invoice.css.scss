@@ -6,10 +6,6 @@
   margin-left: 0
 }
 
-.text-right {
-  text-align: right
-}
-
 ul.ui-autocomplete {
   position: absolute;
   list-style: none;
@@ -29,6 +25,41 @@ ul.ui-autocomplete {
     }
     a.ui-state-hover, a.ui-state-active {
       background-color: #FFFCB2;
+    }
+  }
+}
+
+.blank-cell {
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+}
+
+.clinic_details {
+  padding: 35px 20px
+}
+
+#invoice-details {
+  width: 300px;
+
+  h5 {
+    span {
+      float: right
+    }
+  }
+}
+
+#invoice-table {
+  th {
+    text-align: right
+  }
+  tfoot {
+    border-top: 1px solid #DDDDDD;
+    tr {
+      border: medium none;
+      td {
+        border: none;
+      }
     }
   }
 }

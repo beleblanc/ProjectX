@@ -33,7 +33,7 @@ class ConsultationsController < ApplicationController
 
     respond_to do |format|
       if @consultation.save
-        format.html { redirect_to people_path, notice: 'Consultation was successfully created.' }
+        format.html { redirect_to @consultation, notice: 'Consultation was successfully created.' }
         format.json { render json: @consultation, status: :created, location: @consultation }
 
       else

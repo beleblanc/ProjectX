@@ -1,5 +1,7 @@
 = simple_form_for @invoice, :html => { :class => 'form-horizontal form-inline invoice-form' } do |f|
-
+  =f.hidden_field :person_id
+  =f.hidden_field :consultation_id
+  =f.hidden_field :person_medical_aid_id
   %legend
     ="#{controller.action_name.capitalize} Invoice "
     /Invoice

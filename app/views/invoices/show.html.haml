@@ -1,37 +1,104 @@
-%p
-  %strong= t("activerecord.attributes.invoice.consultation_id", :default => t("activerecord.labels.consultation_id", :default => "Consultation")) + ":"
-  %br
-  = @invoice.consultation_id
-%p
-  %strong= t("activerecord.attributes.invoice.person_id", :default => t("activerecord.labels.person_id", :default => "Person")) + ":"
-  %br
-  = @invoice.person_id
-%p
-  %strong= t("activerecord.attributes.invoice.invoice_date", :default => t("activerecord.labels.invoice_date", :default => "Invoice date")) + ":"
-  %br
-  = @invoice.invoice_date
-%p
-  %strong= t("activerecord.attributes.invoice.total", :default => t("activerecord.labels.total", :default => "Total")) + ":"
-  %br
-  = @invoice.total
-%p
-  %strong= t("activerecord.attributes.invoice.discount", :default => t("activerecord.labels.discount", :default => "Discount")) + ":"
-  %br
-  = @invoice.discount
-%p
-  %strong= t("activerecord.attributes.invoice.person_medical_aid_id", :default => t("activerecord.labels.person_medical_aid_id", :default => "Person medical aid")) + ":"
-  %br
-  = @invoice.person_medical_aid_id
-%p
-  %strong= t("activerecord.attributes.invoice.payment_date", :default => t("activerecord.labels.payment_date", :default => "Payment date")) + ":"
-  %br
-  = @invoice.payment_date
-%p
-  %strong= t("activerecord.attributes.invoice.submitted_for_claim", :default => t("activerecord.labels.submitted_for_claim", :default => "Submitted for claim")) + ":"
-  %br
-  = @invoice.submitted_for_claim
 
+=image_tag "logo.jpg" ,:class=>"pull-right"
+.clinic_details
+  %p
+    %strong
+      Plot 760 Trelawyn Park Inyatsi House,
+      %br
+      369 David Hynd Road,
+      %br
+      Manzini, M200
+
+.clearfix
+
+%hr
+#invoice-details.pull-right
+  %h5
+    Invoice #:
+    %span #{@invoice.id}
+  %h5
+    Date:
+    %span #{@invoice.invoice_date}
+  %h5
+    Amount Due:
+    %span #{number_to_currency(@invoice.total, unit: "E ")}
+
+
+.contact_details.well.span3
+  %h3=@invoice.person
+  %h5=@invoice.person.post_address
+  %h5=@invoice.person.home_address
+  %h5=@invoice.person.city
+  %h5=@invoice.person.tel_mobile
+  %h5=@invoice.person.email
+
+
+.clearfix
+
+%table#invoice-table.table.table-striped.table-condensed
+  %thead
+    %tr
+      %th.text-left
+        Description
+      %th
+        Unit Cost
+      %th
+        Qty
+      %th
+        Tax
+      %th
+        Line Total
+  %tbody
+    -@invoice.line_items.each do |line|
+      %tr
+        %td
+          =line.description
+        %td.text-right
+          =line.unit_cost
+        %td.text-right
+          =line.quantity
+        %td.text-right
+          =line.tax
+        %td.text-right
+          =line.total
+  %tfoot
+    %tr
+
+      %td.blank-cell
+      %td.blank-cell
+      %td.blank-cell
+      %td{colspan:"2"}
+        %strong
+          Total:
+          %span.pull-right
+            #{number_to_currency(@invoice.total, unit: "E ")}
+    %tr
+      %td.blank-cell
+      %td.blank-cell
+      %td.blank-cell
+      %td{colspan:"2"}
+        %strong
+          Amount Paid:
+          %span.pull-right
+            #{number_to_currency(@invoice.payments.sum(:amount) , unit: "E ")}
+    %tr
+      %td.blank-cell
+      %td.blank-cell
+      %td.blank-cell
+      %td{colspan:"2"}
+        %strong
+          Amount Remaining:
+          %span.pull-right
+            #{number_to_currency(@invoice.total-@invoice.payments.sum(:amount), unit: "E ")}
+
+.clearfix
 .form-actions
   = link_to "Back", invoices_path, :class => 'btn'
   = link_to "Edit", edit_invoice_path(@invoice), :class => 'btn'
   = link_to "Delete", invoice_path(@invoice), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-danger'
+  =link_to "Print Invoice (PDF)", invoice_path(@invoice, format: :pdf), class: "btn btn-success"
+
+
+
+-content_for :title_bar do
+  %h2 View Invoice

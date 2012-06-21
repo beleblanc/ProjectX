@@ -39,10 +39,14 @@ $(document).ready(function () {
          success: function(data){  alert(data)}}
          );     */
         $.ajax({ type:"POST",
-            url:"../department_operation/get_operation_price",
+            url:"/department_operations/get_operation_price",
             cache:false,
-            //dataType:'json',
-            data:{department_operation:selid, person_id:$('#person_id').data('person_id'), medical_aid_plan_id:$('#person_id').data('medical_aid_plan_id') }//,
+            dataType:'json',
+            data:{department_operation:selid, person_id:$('#person_id').data('person_id'), medical_aid_plan_id:$('#person_id').data('medical_aid_plan_id') },
+            success: function(data){
+                $('#price').html("<h3>E "+data.price.toString()+"</h3>");
+            }
+
 
             // error: function(xhr){ alert("The error is: "+xhr.statusText); }
         });

@@ -10,10 +10,10 @@ class DepartmentOperationsController < ApplicationController
   def get_operation_price
     @person = Person.find(params[:person_id])
     @department_operation = DepartmentOperation.find(params[:department_operation])
-    @prices = Price.where(:priceable_type => @department_operation.class.to_s, :priceable_id => @department_operation.id, :medical_aid_plan_id => params[:medical_aid_plan_id])
+    @price = Price.where(:priceable_type => @department_operation.class.to_s, :priceable_id => @department_operation.id, :medical_aid_plan_id => params[:medical_aid_plan_id]).first
 
     respond_to do |format|
-      format.js
+      format.js {render :json=> {price: @price.price}}
     end
 
   end

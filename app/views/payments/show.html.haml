@@ -1,0 +1,33 @@
+%p
+  %strong= t("activerecord.attributes.payment.invoice_id", :default => t("activerecord.labels.invoice_id", :default => "Invoice")) + ":"
+  %br
+  = @payment.invoice_id
+%p
+  %strong= t("activerecord.attributes.payment.notes", :default => t("activerecord.labels.notes", :default => "Notes")) + ":"
+  %br
+  = @payment.notes
+%p
+  %strong= t("activerecord.attributes.payment.payment_date", :default => t("activerecord.labels.payment_date", :default => "Payment date")) + ":"
+  %br
+  = @payment.payment_date
+%p
+  %strong= t("activerecord.attributes.payment.amount", :default => t("activerecord.labels.amount", :default => "Amount")) + ":"
+  %br
+  = @payment.amount
+%p
+  %strong= t("activerecord.attributes.payment.payment_type_id", :default => t("activerecord.labels.payment_type_id", :default => "Payment type")) + ":"
+  %br
+  = @payment.payment_type_id
+%p
+  %strong= t("activerecord.attributes.payment.user_id", :default => t("activerecord.labels.user_id", :default => "User")) + ":"
+  %br
+  = @payment.user_id
+%p
+  %strong= t("activerecord.attributes.payment.eft_number", :default => t("activerecord.labels.eft_number", :default => "Eft number")) + ":"
+  %br
+  = @payment.eft_number
+
+.form-actions
+  = link_to "Back", payments_path, :class => 'btn'
+  = link_to "Edit", edit_payment_path(@payment), :class => 'btn'
+  = link_to "Delete", payment_path(@payment), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-danger'

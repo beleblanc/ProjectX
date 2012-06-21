@@ -17,3 +17,9 @@ prices_0003:
   medical_aid_plan_id: 4
   priceable_id: 2
   priceable_type: DepartmentOperation
+prices_0004:
+  id: 4
+  price: 234567.0
+  medical_aid_plan_id: 4
+  priceable_id: 3
+  priceable_type: DepartmentOperation
