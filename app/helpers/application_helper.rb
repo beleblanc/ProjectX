@@ -39,5 +39,20 @@ module ApplicationHelper
     end
     html
   end
+
+  # Returns the number of years between now and the specified date.
+  def years_ago(date)
+    dateDifference = DateTime.now - date
+    dateDifference.to_f
+    years = dateDifference / 365.25
+
+  if years <= 1
+   years = years.floor
+  else
+   years = years.ceil
+  end
+
+    return years
+  end
 end
 
