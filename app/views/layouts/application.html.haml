@@ -38,7 +38,10 @@
       #title_bar
         =yield(:title_bar)
     .container
-
+      -flash.each do |name,msg|
+        %div{class: "alert alert-#{name == :notice ? "success" : "error"}"}
+          %a.close{data: {dismiss:"alert"}} X
+          =msg
       .content
 
         .row-fluid

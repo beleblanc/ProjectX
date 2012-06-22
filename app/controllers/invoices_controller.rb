@@ -1,5 +1,5 @@
 class InvoicesController < ApplicationController
-  before_filter :find_invoice, only: [:show, :edit, :update, :destroy]
+  before_filter :find_invoice, only: [:show, :edit, :update, :destroy, :remaining_balance]
 
   def index
     @invoices = Invoice.all
@@ -60,11 +60,22 @@ class InvoicesController < ApplicationController
   end
 
   def destroy
-    @invoice.destroy!
+    @invoice.destroy
     respond_to do |format|
-      format.html { redirect_to @invoice.person, "Invoice succesfully destroyed" }
+      format.html { redirect_to (@invoice.person ? @invoice.person : invoices_path ), notice: "Invoice succesfully destroyed" }
     end
 
+  end
+
+  def remaining_balance
+
+    remaining = @invoice.total  - @invoice.payments.sum(:amount)
+
+    if remaining > 0
+      render json: {total: remaining}
+    else
+      render json: []
+    end
   end
 
 

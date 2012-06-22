@@ -1,6 +1,6 @@
 class Invoice < ActiveRecord::Base
-  has_many :line_items
-  has_many :payments
+  has_many :line_items, :dependent => :delete_all
+  has_many :payments, :dependent => :delete_all
   belongs_to :consultation
   belongs_to :person
   belongs_to :person_medical_aid
@@ -21,5 +21,6 @@ class Invoice < ActiveRecord::Base
       self.line_items.build(line)
     end
   end
+
 
 end

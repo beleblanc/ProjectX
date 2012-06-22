@@ -9,12 +9,16 @@ class PaymentsController < ApplicationController
 
   def new
     @payment = Payment.new()
+    @payment.invoice_id = params[:invoice_id]
   end
 
   def create
     @payment = Payment.new(params[:payment])
 
+    @payment.invoice.payment_date = @payment.payment_date  if @payment.invoice.payments.sum(:amount) >= @payment.invoice.total
+
     if @payment.save!
+
       redirect_to @payment.invoice, notice: "Payment successfully captured"
     else
       render action: "new"
@@ -29,7 +33,7 @@ class PaymentsController < ApplicationController
   def update
     @payment = Payment.find(params[:id])
 
-    if @payment.update_attributes([:payment])
+    if @payment.update_attributes(params[:payment])
       redirect_to @payment.invoice, notice: "Payment successfully updated"
     end
   end
@@ -37,5 +41,7 @@ class PaymentsController < ApplicationController
   def destroy
     @payment = Payment.find(params[:id])
     @payment.destroy
+
+    redirect_to @payment.invoice, :notice => "Payment Sucessfully deleted"
   end
 end

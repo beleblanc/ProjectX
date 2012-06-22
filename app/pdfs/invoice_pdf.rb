@@ -3,10 +3,10 @@ class InvoicePdf < Prawn::Document
     super(margin: 20, page_size: "A4")
     @invoice = invoice
     @view = view
-    stroke_axis
+
     logo
     company_address
-    stroke_across
+    stroke_across("F0F0F0")
     person_details
     invoice_details
     generate_table
@@ -22,17 +22,35 @@ class InvoicePdf < Prawn::Document
   end
 
   def generate_table
+    row_end = @invoice.line_items.count
     move_cursor_to 580
     table_container = [["Description","Unit Cost","Quantity","Tax","Line Total"]]
 
     @invoice.line_items.each do |line|
       table_container << [line.description,line.unit_cost,line.quantity,"%#{line.tax}",price(line.total)]
     end
-    table_container << ["","","","","Total: #{price @invoice.total}"]
-    table_container << ["","","","","Amount Paid: #{price(@invoice.payments.sum(:amount))}"]
-    table_container << ["","","","","Amount Remaining: #{price(@invoice.total - @invoice.payments.sum(:amount))}"]
 
-    table(table_container)
+    table_container << ["","","","Total:"," #{price @invoice.total}"]
+    table_container << ["","","","Amount Paid:"," #{price(@invoice.payments.sum(:amount))}"]
+    table_container << ["","","","Amount Remaining: ","#{price(@invoice.total - @invoice.payments.sum(:amount))}"]
+
+    table(table_container,:header=>true,:width=>bounds.right) do
+      cells.padding = 3
+      cells.borders = []
+
+      rows(0).borders = [:bottom]
+      rows(0).font_style = :bold
+      rows(row_end).borders = [:bottom]
+    #  rows(row_end).border_color = "F0F0F0"
+      rows(0..row_end).columns(1..4).align = :right
+
+      cells.rows(1..row_end) do |c|
+        c.background_color =  ((c.row % 2).zero? ? "FFFFFF" : "F0F0F0")
+      end
+      rows(row_end..(row_end+3)).columns(4).align = :right
+      rows(row_end+1..(row_end+3)).columns(3..4).font_style = :bold
+      rows(row_end+1..(row_end+3)).columns(3..4).background_color = "F0F0F0"
+    end
 
   end
 
@@ -64,9 +82,10 @@ class InvoicePdf < Prawn::Document
     @view.number_to_currency(num, :unit => symbol)
   end
 
-  def stroke_across
+  def stroke_across(color="000000")
     stroke do
       self.line_width= 1
+      stroke_color(color)
       horizontal_rule
     end
 

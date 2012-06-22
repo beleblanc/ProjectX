@@ -7,6 +7,7 @@ class Person < ActiveRecord::Base
   has_many :soaps, :through => :consultations
   has_many :orders, :through => :soaps
   has_many :diagnoses, :through => :soaps
+  has_many :payments, :through => :invoices
   has_many :dependencies
   has_many :invoices
   has_many :dependents, :through => :dependencies
