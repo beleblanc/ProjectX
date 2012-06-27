@@ -43,7 +43,7 @@ class WaitListsController < ApplicationController
   # POST /waitlist.json
   def create
     @waitlist = WaitList.new(params[:wait_list])
-    PrivatePub.publish_to "/messages/super_admin", :chat_message => "Hello, world!"
+    Message.create(:role=>"super_admin",message: "Testing it out", :user_id=> current_user.id)
     respond_to do |format|
       if @waitlist.save
         format.html { redirect_to people_path, notice: 'Patient was successfully checked-in.' }
