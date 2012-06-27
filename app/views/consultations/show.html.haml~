@@ -5,22 +5,11 @@
 .span4.well.offset4
   %h3 Consultation: #{@consultation.status}
   %br
-  %h4 Patient Details
+  %h4 Patient Profile
   %b Name: #{@consultation.person.first_name} #{@consultation.person.surname}
   %br
-  %b Age: #{years_ago(@consultation.person.dob)}
-  %p
-  %h4 Patient Profile
-  %table.table.table-striped.table-bordered.table-condensed
-    %tr
-      %td
-        %b Type
-      %td
-        %b Info
-    %tr
-      -@consultation.person.person_profile.profile_items.each do |x|
-        %td #{x.profil e_type.name}
-        %td #{x.value}
+  %b Age: #{years_ago("01/01/2012".to_date)}
+
 
 .clearfix
 

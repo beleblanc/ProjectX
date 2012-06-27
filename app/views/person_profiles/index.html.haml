@@ -8,9 +8,9 @@
    %th="Edit"
    %th="Delete"
  %tbody
-  - @person_profiles.each do |t|
+  -@person_profiles.each do |t|
    %tr
-    %td=t.person.first_name + t.person.surname
+    %td=t.person.to_s
     %td=t.time
     %td=link_to "Show", person_profile_path(t.id), :class => "btn"
     %td=link_to "Edit", edit_person_profile_path(t.id), :class => "btn"
