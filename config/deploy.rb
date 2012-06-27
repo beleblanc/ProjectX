@@ -1,9 +1,9 @@
 require "bundler/capistrano"
 
-server "192.168.0.253", :web, :app, :db, primary: true
+server "perishare.sytes.net:8003", :web, :app, :db, primary: true
 
 set :application, "ProjectX"
-set :user, "passenger"
+set :user, "teddy"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false

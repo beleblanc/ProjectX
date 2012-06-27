@@ -1,4 +1,5 @@
 class WaitListsController < ApplicationController
+  load_and_authorize_resource
   # GET /waitlist
   # GET /waitlist.json
   def index
