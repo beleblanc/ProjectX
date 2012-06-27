@@ -1,0 +1,16 @@
+-if user_signed_in?
+  -current_user.roles.each do |role|
+    =subscribe_to "/messages/#{role.name}"
+  -if current_user.has_role?(:doctor)
+    =subscribe_to "/messages/#{current_user.username}"
+  -if current_user.has_role?(:doctor)
+    :javascript
+      PrivatePub.subscribe("/messages/#{current_user.username}", function(data, channel) {
+        $("#messaging").append('<div class="alert"><a class="close" data-dismiss= "alert">x</a>'+data.chat_message+'</div>');});
+          
+  -current_user.roles.each do |role|
+    :javascript
+      PrivatePub.subscribe("/messages/#{role.name}", function(data, channel) {
+        $("#messaging").append('<div class="alert"><a class="close" data-dismiss= "alert">x</a>'+data.chat_message+'</div>');});
+  
+  #messaging

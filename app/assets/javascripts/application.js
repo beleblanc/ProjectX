@@ -17,6 +17,7 @@
 //= require dataTables/jquery.dataTables
 //= require jquery.ui.datepicker
 //= require jquery.ui.autocomplete
+//= require private_pub
 //= require_tree .
 
 
