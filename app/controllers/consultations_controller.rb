@@ -13,11 +13,11 @@ class ConsultationsController < ApplicationController
     @consultation = Consultation.new
     if params.has_key? :wait_list_id
       @waitlist = WaitList.find(params[:wait_list_id])
-      @waitlist.attended= true
-      @waitlist.save
+      @consultation.wait_list_id = params[:wait_list_id]
+
     end
 
-    @consultation.person_id = params[:person_id]
+    @consultation.person_id = @waitlist.person_id
     @consultation.medical_aid_plan_id = @waitlist.medical_aid_plan_id
 
 
@@ -30,10 +30,13 @@ class ConsultationsController < ApplicationController
 
   def create
     @consultation = Consultation.new(params[:consultation])
+    @waitlist = WaitList.find(@consultation.wait_list_id)
 
     respond_to do |format|
       if @consultation.save
-        format.html { redirect_to people_path, notice: 'Consultation was successfully created.' }
+        @waitlist.attended= true
+        @waitlist.save
+        format.html { redirect_to @consultation, notice: 'Consultation was successfully created.' }
         format.json { render json: @consultation, status: :created, location: @consultation }
 
       else

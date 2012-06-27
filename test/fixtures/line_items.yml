@@ -1,0 +1,111 @@
+---
+line_items_0001:
+  id: 1
+  invoice_id: 1
+  quantity: 1.0
+  unit_cost: 1234.0
+  tax: !!null 
+  total: !!null 
+  price: !!null 
+  created_at: 2012-06-18 13:59:40.000000000Z
+  updated_at: 2012-06-18 13:59:40.000000000Z
+  description: BloodTest - BL123
+line_items_0002:
+  id: 2
+  invoice_id: 1
+  quantity: 3.0
+  unit_cost: 11234.0
+  tax: !!null 
+  total: !!null 
+  price: !!null 
+  created_at: 2012-06-18 13:59:40.000000000Z
+  updated_at: 2012-06-18 13:59:40.000000000Z
+  description: XHS01-HeadScan
+line_items_0003:
+  id: 3
+  invoice_id: 1
+  quantity: 11.0
+  unit_cost: 234567.0
+  tax: !!null 
+  total: !!null 
+  price: !!null 
+  created_at: 2012-06-18 13:59:40.000000000Z
+  updated_at: 2012-06-18 13:59:40.000000000Z
+  description: BS111-Body Scan
+line_items_0004:
+  id: 4
+  invoice_id: 1
+  quantity: 1.0
+  unit_cost: 11234.0
+  tax: !!null 
+  total: !!null 
+  price: !!null 
+  created_at: 2012-06-18 13:59:40.000000000Z
+  updated_at: 2012-06-18 13:59:40.000000000Z
+  description: XHS01-HeadScan
+line_items_0005:
+  id: 5
+  invoice_id: 2
+  quantity: 1.0
+  unit_cost: 1234.0
+  tax: !!null 
+  total: !!null 
+  price: !!null 
+  created_at: 2012-06-18 14:00:37.000000000Z
+  updated_at: 2012-06-18 14:00:37.000000000Z
+  description: BloodTest - BL123
+line_items_0006:
+  id: 6
+  invoice_id: 2
+  quantity: 1.0
+  unit_cost: 11234.0
+  tax: !!null 
+  total: !!null 
+  price: !!null 
+  created_at: 2012-06-18 14:00:37.000000000Z
+  updated_at: 2012-06-18 14:00:37.000000000Z
+  description: XHS01-HeadScan
+line_items_0007:
+  id: 7
+  invoice_id: 3
+  quantity: 1.0
+  unit_cost: 0.0
+  tax: !!null 
+  total: !!null 
+  price: !!null 
+  created_at: 2012-06-18 14:28:35.000000000Z
+  updated_at: 2012-06-18 14:28:35.000000000Z
+  description: BL123-BloodTest
+line_items_0008:
+  id: 8
+  invoice_id: 3
+  quantity: 1.0
+  unit_cost: 0.0
+  tax: !!null 
+  total: !!null 
+  price: !!null 
+  created_at: 2012-06-18 14:28:35.000000000Z
+  updated_at: 2012-06-18 14:28:35.000000000Z
+  description: XHS01-HeadScan
+line_items_0009:
+  id: 9
+  invoice_id: 3
+  quantity: 1.0
+  unit_cost: 11234.0
+  tax: !!null 
+  total: !!null 
+  price: !!null 
+  created_at: 2012-06-18 14:28:35.000000000Z
+  updated_at: 2012-06-18 14:28:35.000000000Z
+  description: XHS01-HeadScan
+line_items_0010:
+  id: 10
+  invoice_id: 4
+  quantity: 1.0
+  unit_cost: 1234.0
+  tax: !!null 
+  total: !!null 
+  price: !!null 
+  created_at: 2012-06-20 09:57:44.000000000Z
+  updated_at: 2012-06-20 09:57:44.000000000Z
+  description: BL123-BloodTest

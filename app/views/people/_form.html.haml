@@ -42,7 +42,10 @@
     =f.input :employer
     =f.input :occupation
     =f.hidden_field :user
-    =f.file_field :pin_image
-
-  .form-actions.span8
+    =f.label "Image", :class =>"pull-left"
+    =f.file_field :pin_image , :class =>"pull-left input-small"
+  .clearfix
+  .form-actions
     =f.submit
+    = link_to 'Show', @person , :class => "btn"
+    = link_to 'Back', people_path, :class => "btn"

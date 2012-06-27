@@ -29,8 +29,11 @@ ProjectX::Application.routes.draw do
   resources :payments
 
   match 'person_profiles/getPSub' => 'person_profiles#getPsub'
-  match 'department_operation/get_operation_price' => 'department_operation#get_operation_price'
+  match 'department_operations/get_operation_price' => 'department_operations#get_operation_price'
+
+  match 'invoices/remaining_balance' => 'invoices#remaining_balance'
   match 'invoices/department_operation_price' => 'invoices#department_operation_price'
+
   ActiveAdmin.routes(self)
   get "home/index"
 

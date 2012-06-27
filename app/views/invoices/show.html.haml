@@ -12,7 +12,7 @@
 .clearfix
 
 %hr
-#invoice-details.pull-right
+#invoice-details.pull-right.well
   %h5
     Invoice #:
     %span #{@invoice.id}
@@ -21,11 +21,15 @@
     %span #{@invoice.invoice_date}
   %h5
     Amount Due:
-    %span #{number_to_currency(@invoice.total, unit: "E ")}
+    %span #{number_to_currency(@invoice.total-@invoice.payments.sum(:amount), unit: "E ")}
+  - if @invoice.total-@invoice.payments.sum(:amount) <=0
+    %h5
+      Payment Date:
+      %span #{@invoice.payment_date}
 
 
 .contact_details.well.span3
-  %h3=@invoice.person
+  %h3= link_to @invoice.person, @invoice.person
   %h5=@invoice.person.post_address
   %h5=@invoice.person.home_address
   %h5=@invoice.person.city
@@ -34,7 +38,7 @@
 
 
 .clearfix
-
+%h2 Invoice Items
 %table#invoice-table.table.table-striped.table-condensed
   %thead
     %tr
@@ -92,10 +96,14 @@
             #{number_to_currency(@invoice.total-@invoice.payments.sum(:amount), unit: "E ")}
 
 .clearfix
+
+=render 'payments'
 .form-actions
   = link_to "Back", invoices_path, :class => 'btn'
   = link_to "Edit", edit_invoice_path(@invoice), :class => 'btn'
   = link_to "Delete", invoice_path(@invoice), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-danger'
+  =link_to "Print Invoice (PDF)", invoice_path(@invoice, format: :pdf), class: "btn btn-success"
+  = link_to "Enter Payment", new_payment_path(invoice_id: @invoice.id), class: "btn btn-success"  unless   @invoice.total-@invoice.payments.sum(:amount) <=0
 
 
 

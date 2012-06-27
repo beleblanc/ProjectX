@@ -2,8 +2,14 @@
 =render 'new_order'
 
 %h2 Consultation for #{@consultation.person.first_name} #{@consultation.person.surname}
+.span4.well.offset4
+  %h3 Consultation: #{@consultation.status}
+  %br
+  %h4 Patient Profile
+  %b Name: #{@consultation.person.first_name} #{@consultation.person.surname}
+  %br
+  %b Age: #{years_ago("01/01/2012".to_date)}
 
-%h3.well.offset5 Consultation: #{@consultation.status}
 
 .clearfix
 

@@ -38,7 +38,10 @@
       #title_bar
         =yield(:title_bar)
     .container
-
+      -flash.each do |name,msg|
+        %div{class: "alert alert-#{name == :notice ? "success" : "error"}"}
+          %a.close{data: {dismiss:"alert"}} X
+          =msg
       .content
 
         .row-fluid
@@ -52,7 +55,7 @@
               
 					
                 
-    
+      
       %footer
         %p &copy; Company 2012
     /
@@ -60,3 +63,4 @@
       \==================================================
     / Placed at the end of the document so the pages load faster
     = javascript_include_tag "application"
+    =render :partial  => 'layouts/messaging'

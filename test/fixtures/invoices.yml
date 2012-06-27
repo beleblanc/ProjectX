@@ -1,1 +1,49 @@
---- {}
+---
+invoices_0001:
+  id: 1
+  created_at: 2012-06-18 13:59:40.000000000Z
+  updated_at: 2012-06-18 13:59:40.000000000Z
+  consultation_id: !!null 
+  person_id: !!null 
+  invoice_date: 2012-06-18
+  total: 0.0
+  discount: 10.0
+  person_medical_aid_id: 4
+  payment_date: !!null 
+  submitted_for_claim: 0
+invoices_0002:
+  id: 2
+  created_at: 2012-06-18 14:00:37.000000000Z
+  updated_at: 2012-06-18 14:00:37.000000000Z
+  consultation_id: !!null 
+  person_id: !!null 
+  invoice_date: 2012-06-18
+  total: 0.0
+  discount: 10.0
+  person_medical_aid_id: 4
+  payment_date: !!null 
+  submitted_for_claim: 0
+invoices_0003:
+  id: 3
+  created_at: 2012-06-18 14:28:35.000000000Z
+  updated_at: 2012-06-18 14:28:35.000000000Z
+  consultation_id: !!null 
+  person_id: !!null 
+  invoice_date: 2012-06-18
+  total: 0.0
+  discount: !!null 
+  person_medical_aid_id: !!null 
+  payment_date: !!null 
+  submitted_for_claim: 0
+invoices_0004:
+  id: 4
+  created_at: 2012-06-20 09:57:44.000000000Z
+  updated_at: 2012-06-20 09:57:44.000000000Z
+  consultation_id: 3
+  person_id: 18
+  invoice_date: 2012-06-20
+  total: 0.0
+  discount: !!null 
+  person_medical_aid_id: 4
+  payment_date: !!null 
+  submitted_for_claim: 0
