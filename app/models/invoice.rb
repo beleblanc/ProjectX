@@ -21,6 +21,12 @@ class Invoice < ActiveRecord::Base
       self.line_items.build(line)
     end
   end
-
+ 
+  def build_prescription_items
+    self.consulation.prescriptions.all.each do |prescription|
+	line = {:quantity => 1.0, :unit_cost => prescription.price, :total => prescription.price, :description => prescription.pharmacy_inventory.description}
+	self.line_items.build(line)
+    end
+  end
 
 end

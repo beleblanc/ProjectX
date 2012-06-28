@@ -1,14 +1,19 @@
 =render 'person_profile'
 =render 'new_order'
+=render 'new_prescription'
 
 %h2 Consultation for #{@consultation.person.first_name} #{@consultation.person.surname}
-.span4.well.offset4
-  %h3 Consultation: #{@consultation.status}
+.span4.well
+  %h3 Status: #{@consultation.status}
   %br
   %h4 Patient Details
+  =image_tag @consultation.person.pin_image.url (:medium)
+  %br
   %b Name: #{@consultation.person.first_name} #{@consultation.person.surname}
   %br
   %b Age: #{years_ago(@consultation.person.dob)}
+  %br
+  %b Gender: #{@consultation.person.sex}
   %p
   %h4 Patient Profile
   %table.table.table-striped.table-bordered.table-condensed
@@ -19,7 +24,7 @@
         %b Info
     %tr
       -@consultation.person.person_profile.profile_items.each do |x|
-        %td #{x.profil e_type.name}
+        %td #{x.profile_type.name}
         %td #{x.value}
 
 .clearfix
@@ -77,4 +82,3 @@
     &nbsp;Edit
 
 =render 'orders'
-

@@ -1,8 +1,11 @@
 %h3 Patient Profile For #{@person_profiles.person.first_name + " " + @person_profiles.person.surname}
 %p
   -@person_profiles.profile_items.each do |x|
-    %h3 #{x.value + " " + x.profile_type.name}
-    %b.offset2
+    %h4 Profile Type 
+    %b #{x.profile_type.name}
+    %br
       -x.profile_sub_items.each do |y|
         %b.offset1=y.profile_sub_type.name
+        %b.offset1=y.value
+        %br
 

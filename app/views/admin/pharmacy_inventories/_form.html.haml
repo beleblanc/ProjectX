@@ -1,0 +1,13 @@
+=semantic_form_for [:admin,@pharmacy_inventory] do |f|
+  =f.input :name
+  =f.input :description
+  =f.input :stock_on_hand
+  =f.input :reorder_level
+  =f.input :expiry_date
+  =f.semantic_fields_for :prices do |price|
+    =render 'price_fields', f:price
+
+  =link_to_add_fields "Add Price Schema", f, :prices
+  %br
+  =f.submit
+

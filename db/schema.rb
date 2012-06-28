@@ -87,6 +87,8 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
   end
 
   create_table "invoices", :force => true do |t|
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",
     t.datetime "created_at",                                                            :null => false
     t.datetime "updated_at",                                                            :null => false
     t.integer  "consultation_id"
@@ -101,10 +103,17 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
 
   create_table "line_items", :force => true do |t|
     t.integer  "invoice_id"
+<<<<<<< HEAD
+    t.integer  "quantity"
+    t.decimal  "unit_cost",   :precision => 10, :scale => 0
+    t.float    "tax"
+    t.integer  "total"
+=======
     t.decimal  "quantity",    :precision => 11, :scale => 2
     t.decimal  "unit_cost",   :precision => 10, :scale => 2
     t.float    "tax"
     t.decimal  "total",       :precision => 11, :scale => 2
+>>>>>>> d423f6ae1d11601b1de36e975b8b9a6028c02037
     t.integer  "price"
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
@@ -133,6 +142,8 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
     t.string   "fax",            :limit => 15
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+<<<<<<< HEAD
+=======
   end
 
   create_table "messages", :force => true do |t|
@@ -141,6 +152,7 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+>>>>>>> d423f6ae1d11601b1de36e975b8b9a6028c02037
   end
 
   create_table "orders", :force => true do |t|
@@ -151,7 +163,11 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
     t.integer  "user_id"
     t.datetime "created_at",                                             :null => false
     t.datetime "updated_at",                                             :null => false
+<<<<<<< HEAD
+    t.decimal  "price",                   :precision => 10, :scale => 0
+=======
     t.decimal  "price",                   :precision => 10, :scale => 2
+>>>>>>> d423f6ae1d11601b1de36e975b8b9a6028c02037
   end
 
   create_table "payments", :force => true do |t|
@@ -218,7 +234,11 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
   end
 
   create_table "prices", :force => true do |t|
+<<<<<<< HEAD
+    t.decimal "price",               :precision => 10, :scale => 0
+=======
     t.decimal "price",               :precision => 10, :scale => 2
+>>>>>>> d423f6ae1d11601b1de36e975b8b9a6028c02037
     t.integer "medical_aid_plan_id"
     t.integer "priceable_id"
     t.string  "priceable_type"
@@ -254,6 +274,8 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
     t.datetime "updated_at",      :null => false
   end
 
+<<<<<<< HEAD
+=======
   create_table "profile_sub_values", :force => true do |t|
     t.integer  "profile_id"
     t.integer  "profile_sub_type_id"
@@ -265,11 +287,14 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
   add_index "profile_sub_values", ["profile_id"], :name => "index_profile_sub_values_on_profile_id"
   add_index "profile_sub_values", ["profile_sub_type_id"], :name => "index_profile_sub_values_on_profile_sub_type_id"
 
+>>>>>>> d423f6ae1d11601b1de36e975b8b9a6028c02037
   create_table "profile_types", :force => true do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+<<<<<<< HEAD
+=======
   end
 
   create_table "profiles", :force => true do |t|
@@ -281,9 +306,8 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
     t.boolean  "snapshot",        :default => false
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
+>>>>>>> d423f6ae1d11601b1de36e975b8b9a6028c02037
   end
-
-  add_index "profiles", ["person_id"], :name => "index_profiles_on_person_id"
 
   create_table "relations", :force => true do |t|
     t.string "name"
@@ -299,6 +323,11 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
 
   create_table "soap_types", :force => true do |t|
     t.string   "name"
