@@ -2,10 +2,12 @@
 =render 'new_order'
 
 %h2 Consultation for #{@consultation.person.first_name} #{@consultation.person.surname}
-.span4.well.offset4
-  %h3 Consultation: #{@consultation.status}
+.span4.well
+  %h3 Status: #{@consultation.status}
   %br
   %h4 Patient Details
+  =image_tag @consultation.person.pin_image.url (:medium)
+  %br
   %b Name: #{@consultation.person.first_name} #{@consultation.person.surname}
   %br
   %b Age: #{years_ago(@consultation.person.dob)}
