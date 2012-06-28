@@ -9,6 +9,8 @@
   %b Name: #{@consultation.person.first_name} #{@consultation.person.surname}
   %br
   %b Age: #{years_ago(@consultation.person.dob)}
+  %br
+  %b Gender: #{@consultation.person.sex}
   %p
   %h4 Patient Profile
   %table.table.table-striped.table-bordered.table-condensed
@@ -19,7 +21,7 @@
         %b Info
     %tr
       -@consultation.person.person_profile.profile_items.each do |x|
-        %td #{x.profil e_type.name}
+        %td #{x.profile_type.name}
         %td #{x.value}
 
 .clearfix
