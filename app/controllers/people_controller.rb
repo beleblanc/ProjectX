@@ -1,7 +1,6 @@
 class PeopleController < ApplicationController
-
   before_filter :destroy_dependency, :except => [:new,:create ]
-
+  load_and_authorize_resource
   # GET /people
   # GET /people.json
   def index

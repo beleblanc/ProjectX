@@ -1,4 +1,5 @@
 class InvoicesController < ApplicationController
+  load_and_authorize_resource
   before_filter :find_invoice, only: [:show, :edit, :update, :destroy, :remaining_balance]
 
   def index

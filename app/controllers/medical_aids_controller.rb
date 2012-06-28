@@ -1,4 +1,5 @@
 class MedicalAidsController < ApplicationController
+  load_and_authorize_resource
   def index
     @medical_aids = MedicalAid.all
 

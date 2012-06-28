@@ -5,5 +5,4 @@ require 'prawn/layout'
 module Prawn
 
 
-
 end
