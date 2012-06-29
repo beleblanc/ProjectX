@@ -3,13 +3,13 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
 
-  $('#new_prescription').on 'change', '#prescription_pharmacy_inventory', ->
+  $('#new_prescription').on 'change', '#prescription_pharmacy_inventory_id', ->
 
     $.ajax({
       type:'POST',
       url:'/prescriptions/prescription_price',
       dataType:'json',
-      data: {id: $('#prescription_pharmacy_inventory').val(), medical_aid_plan_id: $('#person_id').data('medical_aid_plan_id')},
+      data: {id: $('#prescription_pharmacy_inventory_id').val(), medical_aid_plan_id: $('#person_id').data('medical_aid_plan_id')},
       success: (data) ->
         if(data.price)
           $('#prescription_price').val(data.price)
