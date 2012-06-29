@@ -9,11 +9,17 @@ class InvoicesController < ApplicationController
   def department_operation_price
     @department_operation = DepartmentOperation.find_by_code(params[:key_string].split("-").first)
 
-    @price = @department_operation.prices.find_by_medical_aid_plan_id(params[:person_medical_aid_id]).price unless if @price.nil?
-                                                                                                                     @price = @department_operation.prices.find_by_medical_aid_plan_id(MedicalAidPlan.find_by_name("Cash").id).price
-                                                                                                                   end
+    @price = @department_operation.prices.find_by_medical_aid_plan_id(params[:person_medical_aid_id]).price
+
+    if @price.nil?
+      @price = @department_operation.prices.find_by_medical_aid_plan_id(MedicalAidPlan.find_by_name("Cash").id).price
+    end
     render json: {price: @price}
 
+  end
+
+  def prescription_price
+    @pharmacy_inventory = PharmacyInventory.find_by
   end
 
   def show

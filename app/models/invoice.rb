@@ -12,6 +12,7 @@ class Invoice < ActiveRecord::Base
   def build_line_items
     self.invoice_date = Date.today
     self.build_order_items
+    self.build_prescription_items
     self.total = self.line_items.sum(:total)
   end
 
