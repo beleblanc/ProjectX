@@ -6,7 +6,7 @@ class VitalsController < ApplicationController
       @vitals = Vital.all
   
       respond_to do |format|
-        format.html # index.html.erb
+        format.html # index.html.haml
         format.json { render json: @vitals }
       end
     end
@@ -15,7 +15,7 @@ class VitalsController < ApplicationController
       @vitals = Vital.find(params[:id])
   
       respond_to do |format|
-        format.html # index.html.erb
+        format.html # index.html.haml
         format.json { render json: @vitals }
       end
     end
@@ -24,7 +24,7 @@ class VitalsController < ApplicationController
       @vital = Vital.new
   
       respond_to do |format|
-        format.html # index.html.erb
+        format.html # index.html.haml
         format.json { render json: @vital }
       end
     end

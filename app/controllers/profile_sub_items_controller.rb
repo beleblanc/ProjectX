@@ -3,7 +3,7 @@ class ProfileSubItemsController < ApplicationController
     @profile_sub_items = ProfileSubItem.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @profile_sub_items }
     end
   end
@@ -12,7 +12,7 @@ class ProfileSubItemsController < ApplicationController
     @profile_sub_items = ProfileSubItem.find(params[:id])
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @profile_sub_items }
     end
   end
@@ -21,7 +21,7 @@ class ProfileSubItemsController < ApplicationController
     @profile_sub_item = ProfileSubItem.new
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @profile_sub_item }
     end
   end

@@ -4,7 +4,7 @@ class MedicalAidsController < ApplicationController
     @medical_aids = MedicalAid.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @medical_aids }
     end
   end
@@ -13,7 +13,7 @@ class MedicalAidsController < ApplicationController
     @medical_aid = MedicalAid.find(params[:id])
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @medical_aid }
     end
   end
@@ -22,7 +22,7 @@ class MedicalAidsController < ApplicationController
     @medical_aid = MedicalAid.new
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @medical_aid }
     end
   end

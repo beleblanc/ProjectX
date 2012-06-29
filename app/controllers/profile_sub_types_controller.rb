@@ -3,7 +3,7 @@ class ProfileSubTypesController < ApplicationController
     @profile_sub_types = ProfileSubType.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @profile_sub_types }
     end
   end
@@ -12,7 +12,7 @@ class ProfileSubTypesController < ApplicationController
     @profile_sub_types = ProfileSubType.find(params[:id])
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @profile_sub_types }
     end
   end
@@ -21,7 +21,7 @@ class ProfileSubTypesController < ApplicationController
     @profile_sub_type = ProfileSubType.new
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @profile_sub_type }
     end
   end

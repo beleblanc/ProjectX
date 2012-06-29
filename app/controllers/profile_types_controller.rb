@@ -21,7 +21,7 @@ class ProfileTypesController < ApplicationController
     @profile_type = ProfileType.new
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @profile_type }
     end
   end

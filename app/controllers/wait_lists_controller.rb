@@ -6,7 +6,7 @@ class WaitListsController < ApplicationController
     @waitlist = WaitList.find_all_by_attended(false)
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @waitlist }
     end
   end

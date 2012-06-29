@@ -4,7 +4,7 @@ class PersonProfilesController < ApplicationController
     @person_profiles = PersonProfile.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @person_profiles }
     end
   end
@@ -13,7 +13,7 @@ class PersonProfilesController < ApplicationController
     @person_profiles = PersonProfile.find(params[:id])
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @person_profiles }
     end
   end
@@ -22,7 +22,7 @@ class PersonProfilesController < ApplicationController
     @person_profile = PersonProfile.new
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @person_profile }
     end
   end

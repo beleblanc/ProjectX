@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
       @orders = Order.all
   
       respond_to do |format|
-        format.html # index.html.erb
+        format.html # index.html.haml
         format.json { render json: @orders }
       end
     end
@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
       @orders = Order.find(params[:id])
   
       respond_to do |format|
-        format.html # index.html.erb
+        format.html # index.html.haml
         format.json { render json: @orders }
       end
     end
@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
       @order = Order.new
   
       respond_to do |format|
-        format.html # index.html.erb
+        format.html # index.html.haml
         format.json { render json: @order }
       end
     end
