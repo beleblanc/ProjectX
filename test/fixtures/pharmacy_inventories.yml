@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  stock_on_hand: 1
+  reorder_level: 1
+  expiry_date: 2012-06-28
+
+two:
+  name: MyString
+  description: MyText
+  stock_on_hand: 1
+  reorder_level: 1
+  expiry_date: 2012-06-28

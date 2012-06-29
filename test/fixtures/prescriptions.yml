@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  comment: MyString
+  pharmacy_inventory_id: 1
+  soap_id: 1
+  time: 2012-06-28 19:17:10
+  user_id: 1
+  price: 9.99
+
+two:
+  comment: MyString
+  pharmacy_inventory_id: 1
+  soap_id: 1
+  time: 2012-06-28 19:17:10
+  user_id: 1
+  price: 9.99
