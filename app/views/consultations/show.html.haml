@@ -1,7 +1,7 @@
 =render 'person_profile'
 =render 'new_order'
 =render 'new_prescription'
-
+#person_id.hidden{:data=>{:person_id=>@consultation.person_id, :medical_aid_plan_id => @consultation.medical_aid_plan_id}}}
 %h2 Consultation for #{@consultation.person.first_name} #{@consultation.person.surname}
 .span4.well
   %h3 Status: #{@consultation.status}

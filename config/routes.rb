@@ -34,6 +34,8 @@ ProjectX::Application.routes.draw do
   match 'invoices/remaining_balance' => 'invoices#remaining_balance'
   match 'invoices/department_operation_price' => 'invoices#department_operation_price'
 
+  match 'prescriptions/prescription_price' => 'prescriptions#prescription_price'
+
   ActiveAdmin.routes(self)
   get "home/index"
 

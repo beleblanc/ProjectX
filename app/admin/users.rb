@@ -10,5 +10,9 @@ ActiveAdmin.register User do
   end
 
   form :partial => "form"
+
+  show do
+
+  end
   
 end

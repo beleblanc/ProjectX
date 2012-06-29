@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 
         format.json {render :json => @users}
         format.xml {head :ok}
-        format.html{redirect_to user_path, notice: "User successfully created!" }
+        format.html{redirect_to admin_dashboard_path, notice: "User successfully created!" }
 
       end
     else

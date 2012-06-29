@@ -2,7 +2,7 @@
   #new_prescription.modal.fade{:style=>"display:none"}
 
     %h3.clearfix New Prescription for #{@consultation.person}
-    #person_id.hidden{:data=>{:person_id=>@consultation.person_id, :medical_aid_plan_id => @consultation.medical_aid_plan_id}}}
+
 
     .clearfix
     =simple_form_for(Prescription.new, :html=>{class:"form-horizontal"},:controller=>:prescriptions,:action=>:new) do |f|
@@ -10,8 +10,8 @@
       =f.hidden_field :user_id, :value=> current_user.id
       =f.hidden_field :time, :value=> DateTime.now
       =f.hidden_field :price, :value => 0
-      =f.input :pharmacy_inventory, :collection=> PharmacyInventory.all, :label_method=>:name, :value_method=>:id
-      %blockquote#price.pull-right
+      =f.input :pharmacy_inventory_id, :collection=> PharmacyInventory.all, :label_method=>:name, :value_method=>:id
+      %blockquote#prescription_price_display.pull-right
         %h3 E0.00
       =f.input :comment, :input_html=>{rows:"4"}
       .form-action

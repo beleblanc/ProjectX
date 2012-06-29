@@ -87,14 +87,12 @@ ActiveRecord::Schema.define(:version => 20120628171710) do
   end
 
   create_table "invoices", :force => true do |t|
-
     t.datetime "created_at",                                                            :null => false
     t.datetime "updated_at",                                                            :null => false
-
     t.integer  "consultation_id"
     t.integer  "person_id"
     t.date     "invoice_date"
-    t.decimal  "total",                 :precision => 10, :scale => 0
+    t.decimal  "total",                 :precision => 10, :scale => 2, :default => 0.0
     t.float    "discount"
     t.integer  "person_medical_aid_id"
     t.date     "payment_date"
@@ -103,12 +101,10 @@ ActiveRecord::Schema.define(:version => 20120628171710) do
 
   create_table "line_items", :force => true do |t|
     t.integer  "invoice_id"
-
     t.decimal  "quantity",    :precision => 11, :scale => 2
     t.decimal  "unit_cost",   :precision => 10, :scale => 2
     t.float    "tax"
     t.decimal  "total",       :precision => 11, :scale => 2
-
     t.integer  "price"
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
@@ -155,9 +151,7 @@ ActiveRecord::Schema.define(:version => 20120628171710) do
     t.integer  "user_id"
     t.datetime "created_at",                                             :null => false
     t.datetime "updated_at",                                             :null => false
-
     t.decimal  "price",                   :precision => 10, :scale => 2
-
   end
 
   create_table "payments", :force => true do |t|
@@ -245,9 +239,7 @@ ActiveRecord::Schema.define(:version => 20120628171710) do
   end
 
   create_table "prices", :force => true do |t|
-
     t.decimal "price",               :precision => 10, :scale => 2
-
     t.integer "medical_aid_plan_id"
     t.integer "priceable_id"
     t.string  "priceable_type"
@@ -283,7 +275,6 @@ ActiveRecord::Schema.define(:version => 20120628171710) do
     t.datetime "updated_at",      :null => false
   end
 
-
   create_table "profile_sub_values", :force => true do |t|
     t.integer  "profile_id"
     t.integer  "profile_sub_type_id"
@@ -295,14 +286,11 @@ ActiveRecord::Schema.define(:version => 20120628171710) do
   add_index "profile_sub_values", ["profile_id"], :name => "index_profile_sub_values_on_profile_id"
   add_index "profile_sub_values", ["profile_sub_type_id"], :name => "index_profile_sub_values_on_profile_sub_type_id"
 
-
-
   create_table "profile_types", :force => true do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-
   end
 
   create_table "profiles", :force => true do |t|
@@ -314,8 +302,6 @@ ActiveRecord::Schema.define(:version => 20120628171710) do
     t.boolean  "snapshot",        :default => false
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
-
-
   end
 
   add_index "profiles", ["person_id"], :name => "index_profiles_on_person_id"

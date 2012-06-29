@@ -21,41 +21,23 @@
 //= require_tree .
 
 
-//var dataHolder = null;
+
 $(document).ready(function () {
 
     $(document).on("change", "#order_department_operation_id", function () {
 
         var selid = $("#order_department_operation_id :selected").val();
 
-        // make a POST call and replace the content
-        // $.post("getPSub", function(data) {
-        //
-        // });
-
-        /*$.ajax({
-         type: 'POST',
-         url: 'getPSub',
-         data: {"psubid": selid},
-         success: function(data){  alert(data)}}
-         );     */
         $.ajax({ type:"POST",
-<<<<<<< HEAD
-            url:"../department_operations/get_operation_price",
-=======
-            url:"/department_operations/get_operation_price",
->>>>>>> d423f6ae1d11601b1de36e975b8b9a6028c02037
-            cache:false,
-            dataType:'json',
-            data:{department_operation:selid, person_id:$('#person_id').data('person_id'), medical_aid_plan_id:$('#person_id').data('medical_aid_plan_id') },
-            success: function(data){
+                 url:"/department_operations/get_operation_price",
+                 cache:false,
+                dataType:'json',
+                data:{department_operation:selid, person_id:$('#person_id').data('person_id'), medical_aid_plan_id:$('#person_id').data('medical_aid_plan_id') },
+                success: function(data){
                 $('#price').html("<h3>E "+data.price.toString()+"</h3>");
             }
 
-
-            // error: function(xhr){ alert("The error is: "+xhr.statusText); }
         });
-
 
     });
     $('.datepicker').datepicker({firstDay:1, changeYear:true, dateFormat:'yy-mm-dd', yearRange:'c-100:c', changeMonth:true });

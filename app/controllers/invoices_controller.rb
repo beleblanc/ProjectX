@@ -18,9 +18,7 @@ class InvoicesController < ApplicationController
 
   end
 
-  def prescription_price
-    @pharmacy_inventory = PharmacyInventory.find_by
-  end
+
 
   def show
 
