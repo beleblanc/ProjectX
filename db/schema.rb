@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627065048) do
+ActiveRecord::Schema.define(:version => 20120628171710) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -88,13 +88,11 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
 
   create_table "invoices", :force => true do |t|
     t.datetime "created_at",                                           :null => false
-    t.datetime "updated_at",
-    t.datetime "created_at",                                                            :null => false
-    t.datetime "updated_at",                                                            :null => false
+    t.datetime "updated_at",                                           :null => false
     t.integer  "consultation_id"
     t.integer  "person_id"
     t.date     "invoice_date"
-    t.decimal  "total",                 :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "total",                 :precision => 10, :scale => 0
     t.float    "discount"
     t.integer  "person_medical_aid_id"
     t.date     "payment_date"
@@ -103,17 +101,10 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
 
   create_table "line_items", :force => true do |t|
     t.integer  "invoice_id"
-<<<<<<< HEAD
     t.integer  "quantity"
     t.decimal  "unit_cost",   :precision => 10, :scale => 0
     t.float    "tax"
     t.integer  "total"
-=======
-    t.decimal  "quantity",    :precision => 11, :scale => 2
-    t.decimal  "unit_cost",   :precision => 10, :scale => 2
-    t.float    "tax"
-    t.decimal  "total",       :precision => 11, :scale => 2
->>>>>>> d423f6ae1d11601b1de36e975b8b9a6028c02037
     t.integer  "price"
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
@@ -142,8 +133,6 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
     t.string   "fax",            :limit => 15
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
-<<<<<<< HEAD
-=======
   end
 
   create_table "messages", :force => true do |t|
@@ -152,7 +141,6 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
->>>>>>> d423f6ae1d11601b1de36e975b8b9a6028c02037
   end
 
   create_table "orders", :force => true do |t|
@@ -163,11 +151,7 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
     t.integer  "user_id"
     t.datetime "created_at",                                             :null => false
     t.datetime "updated_at",                                             :null => false
-<<<<<<< HEAD
     t.decimal  "price",                   :precision => 10, :scale => 0
-=======
-    t.decimal  "price",                   :precision => 10, :scale => 2
->>>>>>> d423f6ae1d11601b1de36e975b8b9a6028c02037
   end
 
   create_table "payments", :force => true do |t|
@@ -233,12 +217,29 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "pharmacy_inventories", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "stock_on_hand"
+    t.integer  "reorder_level"
+    t.date     "expiry_date"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "prescriptions", :force => true do |t|
+    t.string   "comment"
+    t.integer  "pharmacy_inventory_id"
+    t.integer  "soap_id"
+    t.time     "time"
+    t.integer  "user_id"
+    t.decimal  "price",                 :precision => 10, :scale => 0
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
+  end
+
   create_table "prices", :force => true do |t|
-<<<<<<< HEAD
     t.decimal "price",               :precision => 10, :scale => 0
-=======
-    t.decimal "price",               :precision => 10, :scale => 2
->>>>>>> d423f6ae1d11601b1de36e975b8b9a6028c02037
     t.integer "medical_aid_plan_id"
     t.integer "priceable_id"
     t.string  "priceable_type"
@@ -274,39 +275,11 @@ ActiveRecord::Schema.define(:version => 20120627065048) do
     t.datetime "updated_at",      :null => false
   end
 
-<<<<<<< HEAD
-=======
-  create_table "profile_sub_values", :force => true do |t|
-    t.integer  "profile_id"
-    t.integer  "profile_sub_type_id"
-    t.string   "value"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-  end
-
-  add_index "profile_sub_values", ["profile_id"], :name => "index_profile_sub_values_on_profile_id"
-  add_index "profile_sub_values", ["profile_sub_type_id"], :name => "index_profile_sub_values_on_profile_sub_type_id"
-
->>>>>>> d423f6ae1d11601b1de36e975b8b9a6028c02037
   create_table "profile_types", :force => true do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-<<<<<<< HEAD
-=======
-  end
-
-  create_table "profiles", :force => true do |t|
-    t.integer  "person_id"
-    t.integer  "profile_type_id"
-    t.string   "description"
-    t.date     "time"
-    t.integer  "user_id"
-    t.boolean  "snapshot",        :default => false
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
->>>>>>> d423f6ae1d11601b1de36e975b8b9a6028c02037
   end
 
   create_table "relations", :force => true do |t|
