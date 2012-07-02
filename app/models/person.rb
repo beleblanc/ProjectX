@@ -36,4 +36,15 @@ class Person < ActiveRecord::Base
     Dependency.create(:person_id=> person_id, :dependent_id=> self.id, :relation_id => self.relation)
   end
 
+  def age
+    if self.dob
+      difference = Time.now.to_f - self.dob.to_time.to_f
+      years = difference / 31557600
+      years.floor
+    else
+      "N/A"
+    end
+
+  end
+
 end

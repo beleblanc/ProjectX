@@ -4,7 +4,7 @@ class Consultation < ActiveRecord::Base
   attr_accessor :wait_list_id
   has_many :soaps
   has_many :orders, :through => :soaps
-  has_many :orders, :through => :soaps
+  has_many :prescriptions, :through => :soaps
   belongs_to :person
   has_many :invoices
 

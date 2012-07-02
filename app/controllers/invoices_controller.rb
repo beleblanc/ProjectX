@@ -40,7 +40,7 @@ class InvoicesController < ApplicationController
 
   def create
     @invoice = Invoice.new(params[:invoice])
-
+    @invoice.final_calculation
     respond_to do |format|
       if @invoice.save!
         format.html { redirect_to @invoice, notice: "Invoice Successfully created!" }
@@ -54,6 +54,8 @@ class InvoicesController < ApplicationController
   def update
     respond_to do |format|
       if @invoice.update_attributes(params[:invoice])
+        @invoice.final_calculation
+        @invoice.save
         format.html { redirect_to @invoice, notice: "Successfully updated invoice" }
 
       else

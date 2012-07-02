@@ -1,4 +1,5 @@
 class Invoice < ActiveRecord::Base
+  before_save :final_calculation
   has_many :line_items, :dependent => :delete_all
   has_many :payments, :dependent => :delete_all
   belongs_to :consultation
@@ -25,9 +26,21 @@ class Invoice < ActiveRecord::Base
  
   def build_prescription_items
     self.consultation.prescriptions.all.each do |prescription|
-	line = {:quantity => 1.0, :unit_cost => prescription.price, :total => prescription.price, :description => prescription.pharmacy_inventory.description}
+	line = {:quantity => 1.0, :unit_cost => prescription.price, :total => prescription.price, :description => prescription.pharmacy_inventory.name}
 	self.line_items.build(line)
     end
+  end
+
+  def final_calculation
+    self.line_items.each do |line|
+      line.total = line.unit_cost * line.quantity
+    end
+    if self.discount
+      self.total = self.line_items.sum(:total) * (1.0 -(self.discount / 100))
+    else
+      self.total = self.line_items.sum(:total)
+    end
+
   end
 
 end
