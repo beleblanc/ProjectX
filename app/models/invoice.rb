@@ -17,30 +17,10 @@ class Invoice < ActiveRecord::Base
     self.total = self.line_items.sum(:total)
   end
 
-  def build_order_items
-    self.consultation.orders.all.each do |order|
-      line = {:quantity => 1.0, :unit_cost => order.price, :total => order.price, :description => order.department_operation.code_name}
-      self.line_items.build(line)
-    end
-  end
+
  
-  def build_prescription_items
-    self.consultation.prescriptions.all.each do |prescription|
-	line = {:quantity => 1.0, :unit_cost => prescription.price, :total => prescription.price, :description => prescription.pharmacy_inventory.name}
-	self.line_items.build(line)
-    end
-  end
 
-  def final_calculation
-    self.line_items.each do |line|
-      line.total = line.unit_cost * line.quantity
-    end
-    if self.discount
-      self.total = self.line_items.sum(:total) * (1.0 -(self.discount / 100))
-    else
-      self.total = self.line_items.sum(:total)
-    end
 
-  end
+
 
 end

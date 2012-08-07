@@ -24,22 +24,7 @@
 
 $(document).ready(function () {
 
-    $(document).on("change", "#order_department_operation_id", function () {
-
-        var selid = $("#order_department_operation_id :selected").val();
-
-        $.ajax({ type:"POST",
-                 url:"/department_operations/get_operation_price",
-                 cache:false,
-                dataType:'json',
-                data:{department_operation:selid, person_id:$('#person_id').data('person_id'), medical_aid_plan_id:$('#person_id').data('medical_aid_plan_id') },
-                success: function(data){
-                $('#price').html("<h3>E "+data.price.toString()+"</h3>");
-            }
-
-        });
-
-    });
+   
     $('.datepicker').datepicker({firstDay:1, changeYear:true, dateFormat:'yy-mm-dd', yearRange:'c-100:c', changeMonth:true });
 
 });

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120628171710) do
+ActiveRecord::Schema.define(:version => 20120806143212) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -97,6 +97,38 @@ ActiveRecord::Schema.define(:version => 20120628171710) do
     t.integer  "person_medical_aid_id"
     t.date     "payment_date"
     t.boolean  "submitted_for_claim"
+  end
+
+  create_table "lab_orders", :force => true do |t|
+    t.integer  "lab_test_id"
+    t.integer  "soap_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "lab_results", :force => true do |t|
+    t.integer  "lab_value_id"
+    t.integer  "lab_order_id"
+    t.integer  "user_id"
+    t.float    "value"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "lab_tests", :force => true do |t|
+    t.string  "name"
+    t.string  "code"
+    t.string  "short_code"
+    t.boolean "completed",  :default => false
+  end
+
+  create_table "lab_values", :force => true do |t|
+    t.integer "lab_test_id"
+    t.string  "name",            :null => false
+    t.float   "low_safe_range"
+    t.float   "high_safe_range"
+    t.string  "units"
   end
 
   create_table "line_items", :force => true do |t|

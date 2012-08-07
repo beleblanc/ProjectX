@@ -1,0 +1,9 @@
+=semantic_form_for [:admin,@lab_test] do |f|
+  =f.input :name
+  =f.input :code
+  =f.input :short_code
+  =f.semantic_fields_for :lab_values do |value|
+    =render 'lab_value_fields', f:value
+  =link_to_add_fields "Add Associated Value", f, :lab_values
+  %br
+  =f.submit

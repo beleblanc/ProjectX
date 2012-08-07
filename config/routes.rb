@@ -11,7 +11,7 @@ ProjectX::Application.routes.draw do
   resources :wait_lists
   resources :consultations
   resources :diagnoses
-  resources :orders
+
   resources :person_profiles
   resources :profile_types
   resources :profile_sub_types
@@ -27,6 +27,7 @@ ProjectX::Application.routes.draw do
   resources :invoices
   resources :payments
   resources :prescriptions
+  resources :lab_tests
 
   match 'person_profiles/getPSub' => 'person_profiles#getPsub'
   match 'department_operations/get_operation_price' => 'department_operations#get_operation_price'

@@ -1,0 +1,8 @@
+%fieldset
+  %h4 Test Value:
+  =f.input :name
+  =f.input :low_safe_range
+  =f.input :high_safe_range
+  =f.input :units, :label=>"Measurement Units"
+  =f.hidden_field :_destroy
+  =link_to "Remove", "#", :class => "remove_fields btn btn-danger"
