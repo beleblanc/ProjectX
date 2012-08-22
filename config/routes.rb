@@ -28,6 +28,7 @@ ProjectX::Application.routes.draw do
   resources :payments
   resources :prescriptions
   resources :lab_tests
+  resources :lab_orders
 
   match 'person_profiles/getPSub' => 'person_profiles#getPsub'
   match 'department_operations/get_operation_price' => 'department_operations#get_operation_price'

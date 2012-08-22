@@ -15,4 +15,9 @@ class User < ActiveRecord::Base
   def role?(role)
      !!self.roles.find_by_name(role.to_s)
   end
+  
+  def to_s
+    "#{username}"
+  end
+  
 end

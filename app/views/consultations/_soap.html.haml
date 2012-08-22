@@ -1,0 +1,54 @@
+.well.span3
+  %h4 Type
+  =soap.soap_type.name
+  %hr
+  %h4 Comment
+  =soap.comment
+  %hr
+  -soap.vitals.each do |v|
+    .span3
+
+      %h5 Vitals
+      %h6.span2 Blood Pressure
+      %p.span1=v.blood_pressure
+
+      %h6.span2  Pulse
+      %p.span1=v.pulse
+
+      %h6.span2  Respiratory Rate
+      %p.span1=v.respiratory_rate
+
+      %h6.span2  Temperature
+      %p.span1=v.temperature
+
+      %h6.span2  Height
+      %p.span1=v.height
+
+
+      %h6.span2  Weight
+      %p.span1=v.weight
+  
+  -if soap.lab_orders.any?
+    %h3 Lab Orders
+    %table.table
+      %thead
+        %th Name
+        %th Code
+        %th By
+        %th Remove
+      %tbody
+        - soap.lab_orders.each do |order|
+          %tr
+            %td= order.lab_test.name
+            %td= order.lab_test.code
+            %td= order.user
+            %td= link_to "Remove", order, confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger btn-mini" 
+  -soap.diagnoses.order("id DESC").each do |diag|
+    .diagnosis
+      %h5 Diagnosis
+      =diag.icd
+      =diag.comments
+      %p.small=diag.time.strftime("at %I:%M%p on %a the %d ")
+      =link_to "Edit Diagnosis", edit_diagnosis_path(diag), :class => "btn-mini btn-warning"
+    %hr.clearfix
+  =link_to "Add Diagnosis", new_diagnosis_path(:soap_id => soap.id),:class => "btn btn-primary"

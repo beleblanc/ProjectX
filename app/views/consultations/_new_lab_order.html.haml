@@ -1,0 +1,16 @@
+-if @consultation.soaps.exists?
+  #new_lab_order.modal.fade{:style=>"display:none"}
+
+    %h3.clearfix New Lab Order for #{@consultation.person}
+
+
+    .clearfix
+    =simple_form_for(LabOrder.new, :html=>{class:"form-horizontal"},:controller=>:lab_orders,:action=>:new) do |f|
+      =f.hidden_field :soap_id, :value=> @consultation.soaps.last.id
+      =f.hidden_field :user_id, :value=> current_user.id
+      =f.input :lab_test_id, :collection=> LabTest.all, :label_method=>:name, :value_method=>:id
+      =f.input :comment, :input_html=>{rows:"4"}
+      .form-action
+        =f.submit
+  -content_for :sidebar do
+    %a.btn.btn-large.btn-primary{"data-toggle"=> "modal", :href=>"#new_lab_order"}Add Lab Order

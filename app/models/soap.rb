@@ -5,7 +5,7 @@ class Soap < ActiveRecord::Base
 
   has_many :diagnoses
   has_many :prescriptions
-
+  has_many :lab_orders
   belongs_to :consultation
   belongs_to :soap_type
 
