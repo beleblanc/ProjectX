@@ -27,7 +27,14 @@ class LabOrdersController < ApplicationController
   end
   
   def index
-    
+
+    @lab_orders = LabOrder.all
+
+    respond_to do |format|
+      format.html # index.html.haml
+      format.json { render json:@lab_orders }
+    end
+
   end
   
   def destroy
