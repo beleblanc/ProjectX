@@ -5,9 +5,12 @@
    %th="Patient Name"
    %th="Lab Order"
    %th="Ordering Doctor"
+   %th=""
  %tbody
   - @lab_orders.each do |t|
-   %tr
-    %td=t.soap_id
-    %td=t.lab_test_id
-    %td=t.soap_id
+   - if t.status = 0
+    %tr
+     %td=t.soap.consultation.person
+     %td=t.lab_test.name
+     %td=t.soap_id
+     %td=link_to "Lab Results", class: "btn"

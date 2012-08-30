@@ -6,6 +6,7 @@ class Consultation < ActiveRecord::Base
 
   has_many :prescriptions, :through => :soaps
   belongs_to :person
+  belongs_to :waitlists
   has_many :invoices
 
   accepts_nested_attributes_for :soaps, :allow_destroy => true ,:reject_if => :all_blank
